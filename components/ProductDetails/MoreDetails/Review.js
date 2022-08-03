@@ -10,20 +10,20 @@ const style = {
   review: "text-sm md:text-md text-stone-600",
 };
 // WE ARE GETTING THE ARRAY OF REVIEWS FROM SANITY
-const Review = (reviews) => {
-  console.log(reviews);
+const Review = ({ reviews, slug }) => {
   return (
     <div className={style.wrapper}>
       <h2 className={style.heading}>Customer Review</h2>
       {/* CREATING THE SINGLE REVIEW AND THEN MAP IT ON THE ARRAY */}
-      {reviews.reviews.map((r) => (
-        <div className={style.reviewContainer}>
-          <h2 className={style.name}>{r.author}</h2>
-          <p className={style.date}>{r.date}</p>
-          <p className={style.review}>{r.review}</p>
-        </div>
-      ))}
-      <LeaveAReview />
+      {reviews &&
+        reviews.map((r) => (
+          <div className={style.reviewContainer}>
+            <h2 className={style.name}>{r.name}</h2>
+            <p className={style.date}>{r.date}</p>
+            <p className={style.review}>{r.review}</p>
+          </div>
+        ))}
+      <LeaveAReview slug={slug} />
     </div>
   );
 };

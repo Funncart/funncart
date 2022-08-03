@@ -5,38 +5,20 @@ import Image from "next/image";
 import Box from "@mui/material/Box";
 import Rating from "@mui/material/Rating";
 import ItemCount from "./ItemCount";
+import { urlForThumbnail } from "../../pages/api/image";
+
 // import Color from "./Color";
 import Size from "./Size";
 const ProductDetails = ({
   productName,
-  price = 2599,
+  price,
   description,
   information,
   reviews,
+  slugValue,
+  image,
+  rating,
 }) => {
-  information = [
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, accusantium. Distinctio, consequuntur. Vitae delectus modi saepe ratione. Necessitatibus, dolor perferendis? Atque, libero. Non minus odit, beatae blanditiis excepturi repudiandae incidunt.",
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, accusantium. Distinctio, consequuntur. Vitae delectus modi saepe ratione. Necessitatibus, dolor perferendis? Atque, libero. Non minus odit, beatae blanditiis excepturi repudiandae incidunt.",
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, accusantium. Distinctio, consequuntur. Vitae delectus modi saepe ratione. Necessitatibus, dolor perferendis? Atque, libero. Non minus odit, beatae blanditiis excepturi repudiandae incidunt.",
-  ];
-  productName = "Pottery Wase";
-  description =
-    "Lorem ipsum dolor sit\n amet consectetur, adipisicing elit. Voluptatibus ex laboriosam maiores iste, voluptates quisquam commodi, amet natus ea totam quae optio tempora aliquid nostrum voluptatem, placeat magni delectus sed.";
-  reviews = [
-    {
-      author: "Aplha Beta",
-      review:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus ex laboriosam maiores iste, voluptates quisquam commodi, amet natus ea totam quae optio tempora aliquid nostrum voluptatem, placeat magni delectus sed.",
-      date: "12/12/2000",
-    },
-    {
-      author: "Aplha Gamma",
-      review:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vtem, placeat magni delectus sed.",
-      date: "12/12/2001",
-    },
-  ];
-
   const style = {
     wrapper:
       "w-[95%] md:w-[80%] lg:w-[65%] mx-auto py-12 sm:py-16 md:py-24 lg:py-32 flex flex-col",
@@ -52,21 +34,63 @@ const ProductDetails = ({
     ratings: "text-xs text-stone-500",
   };
   const [RatingValue, setRatingValue] = useState("0");
-  const [SizeValue, setSizeValue] = useState("");
-  const [ItemCounts, setItemCounts] = useState("");
+  const [SizeValue, setSizeValue] = useState("M");
+  const [ItemCounts, setItemCounts] = useState(1);
   const handleGetSize = (size) => {
     setSizeValue(size);
   };
   const handleGetItemCount = (itemCount) => {
     setItemCounts(itemCount);
   };
-  const handleAddToCard = (value) => {
-    // have the value of size and item count
+  const handleAddToCart = () => {
+    // if (ItemCount)
+
+    if (typeof window !== "undefined") {
+      let data = JSON.parse(localStorage.getItem("cart"));
+      if (!data) {
+        data = [];
+      }
+      let existingCartItemIndex;
+      let existingCartItem;
+      let updatedItems;
+      if (data) {
+        existingCartItemIndex = data.findIndex(
+          (item) => item.slug === slugValue
+        );
+        existingCartItem = data[existingCartItemIndex];
+      }
+      if (existingCartItem) {
+        const newUpdatedItem = {
+          ...existingCartItem,
+          quantity:
+            existingCartItem.quantity + ItemCounts <= 3
+              ? existingCartItem.quantity + ItemCounts
+              : existingCartItem.quantity,
+        };
+        updatedItems = [...data];
+        updatedItems[existingCartItemIndex] = newUpdatedItem;
+      } else {
+        updatedItems = data.concat({
+          name: productName,
+          price: price,
+          quantity: ItemCounts,
+          image: urlForThumbnail(image),
+          total: price * ItemCounts,
+          slug: slugValue,
+        });
+      }
+      localStorage.setItem("cart", JSON.stringify(updatedItems));
+    }
   };
   useEffect(() => {
     // CALCULATE THE AVERAGE OF ALL THE RATINGS GIVEN TO THE SYSTEM
     setRatingValue("3.5");
   }, []);
+
+  let sum = 0;
+  for (let r of rating) {
+    sum += +r;
+  }
 
   return (
     <div className="" style={{ fontFamily: "Lato,sans-serif" }}>
@@ -90,12 +114,12 @@ const ProductDetails = ({
               >
                 <Rating
                   name="simple-controlled"
-                  value={RatingValue}
-                  precision={0.5}
+                  value={(sum / rating.length).toFixed(2)}
+                  precision={0.1}
                   size={"small"}
                   readOnly
-               />
-                <p className={style.ratings}>({2} Ratings)</p>
+                />
+                <p className={style.ratings}>({rating.length} Ratings)</p>
               </Box>
             </div>
             <p className={style.priceText}>Rs. {price}</p>
@@ -103,7 +127,7 @@ const ProductDetails = ({
             {/* <Color /> */}
             <Size size={handleGetSize} />
             <ItemCount itemCount={handleGetItemCount} />
-            <button className={style.btn} onClick={handleAddToCard}>
+            <button className={style.btn} onClick={handleAddToCart}>
               Add to Cart
             </button>
             <div className={style.refImageContainer}>
@@ -120,6 +144,7 @@ const ProductDetails = ({
           information={information}
           reviews={reviews}
           productName={productName}
+          slug={slugValue}
         />
       </div>
     </div>

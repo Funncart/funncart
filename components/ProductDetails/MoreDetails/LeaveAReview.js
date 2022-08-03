@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import Rating from "@mui/material/Rating";
+import axios from "axios";
 const style = {
   wrapper: "mt-12",
   heading: "text-2xl md:text-3xl text-stone-700 my-6 font-bold smallDivider",
@@ -8,21 +9,84 @@ const style = {
   reviewContainer: "flex flex-col justify-start",
   input:
     "bg-[#f6f6f6] my-4 px-3 py-3 md:px-4 md:px-5 outline-none border-2 border-transparent focus:border-[#c8a165]",
-    btn:'bg-opacity-[0.8] hover:bg-opacity-[0.95] transition duration-[300ms] my-6 bg-red-400 max-w-fit px-8 md:px-12 py-2 md:py-3 text-stone-100 font-bold tracking-wide',
-
+  btn: "bg-opacity-[0.8] hover:bg-opacity-[0.95] transition duration-[300ms] my-6 bg-red-400 max-w-fit px-8 md:px-12 py-2 md:py-3 text-stone-100 font-bold tracking-wide",
 };
-const LeaveAReview = () => {
+const LeaveAReview = ({ slug }) => {
   const [Review, setReview] = useState("");
   const [Name, setName] = useState("");
   const [RatingValue, setRatingValue] = useState("0");
+  const tokenWithWriteAccess =
+    "skcCBItUtJgAVMB47KUJ1jSlusnFrqwt9B97VntAuRxZFps97GT0xEj0oTgXx1iKN6cDlwX4ZblmntN1MBbSmY2IaeJZwZ4qSL7uvtlR007GUgQE9Fb7V9k8q0kx3mcBiSixAz6Icg6m4lsfIsZo8aTS14P4WH3AdeWWdvW23CtVBtH0Y7wy";
   const handleNameChange = (e) => {
-    setName(e.target.vallue);
+    setName(e.target.value);
   };
   const handleReviewChange = (e) => {
-    setReview(e.target.vallue);
+    setReview(e.target.value);
   };
   const submitReview = () => {
     // SEND THE REQUEST TO SANITY TO SAVE THE DATA IN THE DATABASE
+    const sendData = async () => {
+      const { data } = await axios.post(
+        `https://p0ifd5ok.api.sanity.io/v2021-06-07/data/mutate/production?returnIds=true`,
+        {
+          mutations: [
+            {
+              patch: {
+                query: `*[_type == 'featuredProduct' && slug.current == '${slug}']`,
+                insert: {
+                  after: "reviews[-1]",
+                  items: [
+                    {
+                      name: Name,
+                      createdAt: new Date().toISOString(),
+                      review: Review,
+                      _key: slug,
+                    },
+                  ],
+                },
+              },
+            },
+          ],
+        },
+        {
+          headers: {
+            "Content-type": "application/json",
+            Authorization: `Bearer ${tokenWithWriteAccess}`,
+          },
+        }
+      );
+      const { data1 } = await axios.post(
+        `https://p0ifd5ok.api.sanity.io/v2021-06-07/data/mutate/production?returnIds=true`,
+        {
+          mutations: [
+            {
+              patch: {
+                query: `*[_type == 'featuredProduct' && slug.current == '${slug}']`,
+                insert: {
+                  after: "rating[-1]",
+                  items: [`${RatingValue}`],
+                },
+              },
+            },
+          ],
+        },
+        {
+          headers: {
+            "Content-type": "application/json",
+            Authorization: `Bearer ${tokenWithWriteAccess}`,
+          },
+        }
+      );
+      // to represent the success message
+      const flashTime = setTimeout(() => {
+        // setIsSubmit(false);
+      }, 2000);
+      return () => {
+        clearTimeout(flashTime);
+      };
+    };
+
+    sendData();
   };
   return (
     <div className={style.wrapper} style={{ fontFamily: "Lato,sans-serif" }}>
@@ -43,7 +107,7 @@ const LeaveAReview = () => {
           precision={0.5}
         />
       </Box>
-      <form className={style.reviewContainer} onSubmit={submitReview}>
+      <div className={style.reviewContainer}>
         <input
           type="text"
           className={style.input}
@@ -61,8 +125,10 @@ const LeaveAReview = () => {
           className={style.input}
           placeholder="Your Review..."
         ></textarea>
-        <button className={style.btn}>Submit</button>
-      </form>
+        <button className={style.btn} onClick={submitReview}>
+          Submit
+        </button>
+      </div>
     </div>
   );
 };

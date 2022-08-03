@@ -1,6 +1,6 @@
 import client from '@sanity/client';
 export default client({
-    projectId: 'lt89n26w',
+    projectId: 'p0ifd5ok',
     dataset: 'production',
     useCdn:true
 })

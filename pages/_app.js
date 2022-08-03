@@ -23,7 +23,7 @@ function MyApp({ Component, pageProps }) {
           anchorOrigin={{ vertical: "top", horizontal: "center" }}
         > */}
         {/* <StoreProvider> */}
-        <div className="mt-24">
+        <div className="mt-24 md:mt-2">
           <Component {...pageProps} />
         </div>
         {/* </StoreProvider> */}

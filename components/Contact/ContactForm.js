@@ -1,82 +1,109 @@
-import React,{useState,useEffect} from 'react'
-import useInput from '../../hooks/validateInput'
-
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 const style = {
-    wrapper: '',
-    smallHeading: 'border-b-2 border-stone-200 text-2xl md:text-3xl max-w-fit mx-auto py-2 text-stone-800 my-8 md:my-10',
-    formContainer:'flex flex-col',
-    input:'px-3  md:px-4 py-2 md:py-3 placeholder:text-stone-500 ring-none outline-none bg-[#F5F4F4] my-4 w-[90%] md:w-[85%] mx-auto',
-    btn:'bg-opacity-[0.8] hover:bg-opacity-[0.95] transition duration-[300ms] my-6 bg-red-400 mx-auto px-8 md:px-12 py-2 md:py-3 text-stone-800 font-bold tracking-wide',
-
-}
+  wrapper: "",
+  smallHeading:
+    "border-b-2 border-stone-200 text-2xl md:text-3xl max-w-fit mx-auto py-2 text-stone-800 my-8 md:my-10",
+  formContainer: "flex flex-col",
+  input:
+    "px-3  md:px-4 py-2 md:py-3 placeholder:text-stone-500 ring-none outline-none bg-[#F5F4F4] my-4 w-[90%] md:w-[85%] mx-auto",
+  btn: "bg-opacity-[0.8] hover:bg-opacity-[0.95] transition duration-[300ms] my-6 bg-red-400 mx-auto px-8 md:px-12 py-2 md:py-3 text-stone-800 font-bold tracking-wide",
+};
 
 const ContactForm = () => {
-    const [isError, setError] = useState(false);
-const [formIsValid, setFormIsValid] = useState(false);
-const [isSubmit, setIsSubmit] = useState(false);
-const {
-    value: email,
-    valueIsValid: emailIsValid,
-    hasError: emailHasError,
-    inputChangeHandler: emailChangeHandler,
-    reset: emailReset,
-} = useInput((val) => val.includes("@") && val.includes("."));
-// for name setting
-const {
-    value: name,
-    valueIsValid: nameIsValid,
-    hasError: nameHasError,
-    inputChangeHandler: nameChangeHandler,
-    reset: nameReset,
-} = useInput((val) => val.trim() !== "");
-    const {
-    value: message,
-    valueIsValid: messageIsValid,
-    hasError: messageHasError,
-    inputChangeHandler: messageChangeHandler,
-    reset: messageReset,
-} = useInput((val) => val.trim() !== "");
-    useEffect(() => {
-    if (nameIsValid && emailIsValid && messageIsValid) {
-        setFormIsValid(true);
-    } else {
-        setFormIsValid(false);
-    }
-}, [nameIsValid, emailIsValid, messageIsValid]);
-const submitHandler = (event) => {
+  const [isError, setError] = useState(false);
+  const [formIsValid, setFormIsValid] = useState(false);
+  const [isSubmit, setIsSubmit] = useState(false);
+  const [Name, setName] = useState("");
+  const [Email, setEmail] = useState("");
+  const [Message, setMessage] = useState("");
+  const tokenWithWriteAccess =
+    "skcCBItUtJgAVMB47KUJ1jSlusnFrqwt9B97VntAuRxZFps97GT0xEj0oTgXx1iKN6cDlwX4ZblmntN1MBbSmY2IaeJZwZ4qSL7uvtlR007GUgQE9Fb7V9k8q0kx3mcBiSixAz6Icg6m4lsfIsZo8aTS14P4WH3AdeWWdvW23CtVBtH0Y7wy";
+  const nameChangeHandler = (e) => {
+    setName(e.target.value);
+  };
+  const emailChangeHandler = (e) => {
+    setEmail(e.target.value);
+  };
+  const messageChangeHandler = (e) => {
+    setMessage(e.target.value);
+  };
+
+  const submitHandler = (event) => {
     event.preventDefault();
-    if (!formIsValid) {
-        setError(true);
-        return;
-    }
     const sendData = async () => {
-        // send the data to the database
-        setIsSubmit(true);
-        // to represent the success message
+      setIsSubmit(true);
+      const { data } = await axios.post(
+        `https://p0ifd5ok.api.sanity.io/v2021-06-07/data/mutate/production?returnIds=true`,
+        {
+          mutations: [
+            {
+              create: {
+                _type: "contact",
+                createdAt: new Date().toISOString(),
+                name: Name,
+                email: Email,
+                message: Message,
+              },
+            },
+          ],
+        },
+        {
+          headers: {
+            "Content-type": "application/json",
+            Authorization: `Bearer ${tokenWithWriteAccess}`,
+          },
+        }
+      );
+      // to represent the success message
         const flashTime = setTimeout(() => {
-            setIsSubmit(false);
+          setIsSubmit(false);
         }, 2000);
         return () => {
-            clearTimeout(flashTime);
+          clearTimeout(flashTime);
         };
     };
     sendData();
-    messageReset();
-    emailReset();
-    nameReset();
-    messageReset();
+  };
+  return (
+    <div className={style.wrapper}>
+      <h2
+        className={style.smallHeading}
+        style={{ fontFamily: "Yeseva One, cursive" }}
+      >
+        Send Message
+      </h2>
+      <form
+        className={style.formContainer}
+        onSubmit={submitHandler}
+        style={{ fontFamily: "Poppins, sans-serif" }}
+      >
+        <input
+          type="name"
+          className={style.input}
+          placeholder="Your Name here..."
+          value={Name}
+          onChange={nameChangeHandler}
+        />
+        <input
+          type="email"
+          className={style.input}
+          placeholder="Your Email here... "
+          value={Email}
+          onChange={emailChangeHandler}
+        />
+        <textarea
+          rows="10"
+          col="20"
+          className={style.input}
+          placeholder="Your Message here... "
+          value={Message}
+          onChange={messageChangeHandler}
+        ></textarea>
+        <button className={style.btn}>Send Message</button>
+      </form>
+    </div>
+  );
 };
-    return (
-        <div className={style.wrapper}>
-            <h2 className={style.smallHeading} style={{ fontFamily: 'Yeseva One, cursive' }} >Send Message</h2>
-            <form className={style.formContainer} onSubmit={submitHandler} style={{ fontFamily: 'Poppins, sans-serif' }}>
-                <input type="name" className={style.input} placeholder="Your Name here..." value={name} onChange={nameChangeHandler}/>
-                <input type="email" className={style.input} placeholder="Your Email here... " value={email} onChange={emailChangeHandler}/>
-                <textarea rows="10" col="20" className={style.input} placeholder="Your Message here... " value={message} onChange={messageChangeHandler}></textarea>
-                <button className={style.btn}>Send Message</button>
-            </form>
-        </div>
-    )
-}
 
-export default ContactForm
+export default ContactForm;

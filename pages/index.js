@@ -1,16 +1,15 @@
 // this is the home page of site
-import React from 'react'
+import React from "react";
 
-import Home from './../components/Home/Home';
-const style={
-  
-}
+import Home from "./../components/Home/Home";
+const style = {};
 const App = () => {
+
   return (
     <div>
-      <Home/>
+      <Home />
     </div>
-  )
-}
+  );
+};
 
 export default App;

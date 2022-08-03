@@ -6,7 +6,7 @@ const style = {
     wrapper: 'px-4 py-4',
     headingContainer: 'flex items-center jusitfy-center flex-col my-12',
     smallHeading: ' text-4xl md:text-4xl max-w-fit mx-auto py-2 text-stone-800 ',
-    productsContainer:'flex flex-col md:flex-row w-[80%] md:w-[95%] lg:w-[70%] mx-auto justify-around gap-6',
+    productsContainer:'flex flex-wrap w-[99%] md:w-[95%] lg:w-[70%] gap-2 md:gap-8 mx-auto justify-around sm:justify-center',
 }
 
 
