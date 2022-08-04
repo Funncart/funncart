@@ -6,7 +6,7 @@ const style = {
     "md:my-8 lg:my-12 flex flex-col md:flex-row items-center justify-between mx-auto w-[75%] md:w-[70%] mx-auto",
   suggestion: "md:w-[35%] my-6 text-stone-900 flex flex-col mt-16 items-center",
   center: "md:w-[25%] flex flex-col my-6 ",
-  contact: "md:w-[35%] my-6",
+  contact: "md:w-[50%] my-6",
   ourAddress: "text-stone-800text-sm md:text-sm text-center",
   contactContent: "text-stone-800 text-sm md:text-md text-center",
   info: "text-stone-800 text-sm md:text-md text-center mt-5",
@@ -61,7 +61,7 @@ const MainFooter = () => {
         <h2 className={style.contactContent}>Email Us: funncartstore@gmail.com</h2>
         <h2 className={style.contactContent}>Phone:+923070044177</h2>
       </div>
-      <div className="mx-auto max-w-fit flex items-center justify-center flex-col md:w-[25%] ">
+      <div className="mx-auto max-w-fit flex items-center justify-center flex-col md:w-[40%] mx-auto">
         {/* logo */}
         <Image
           src={`/Funncart.png`}
@@ -74,8 +74,8 @@ const MainFooter = () => {
           the leading marketplace for selling handcrafted products.
         </h2>
       </div>
-      <div className={style.suggestion}>
-        {/* <h2 className={style.heading}>Suggestions</h2> */}
+      {/* <div className={style.suggestion}>
+        <h2 className={style.heading}>Suggestions</h2>
         <input
           name=""
           id=""
@@ -88,7 +88,7 @@ const MainFooter = () => {
         <button className={style.btn} onClick={handleSendSeller}>
           Become a seller
         </button>
-      </div>
+      </div> */}
     </div>
   );
 };
