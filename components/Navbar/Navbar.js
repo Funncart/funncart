@@ -11,10 +11,10 @@ const Navbar = ({ click }) => {
   const style = {
     wrapper:
       "absolute sm:relative text-gray-200 w-[100%] lg:w-[75%] mx-auto py-3 z-10 bg-[#f6f6f6]",
-    list: "block my-4 py-2 pr-4 pl-3 text-stone-600 hover:text-stone-900 hover:mx-3 md:border-0 font-bold md:p-0     transition-all duration-[300ms] border-move-animation",
+    list: "cursor-pointer block my-4 py-2 pr-4 pl-3 text-stone-600 hover:text-stone-900 hover:mx-3 md:border-0 font-bold md:p-0     transition-all duration-[300ms] border-move-animation",
     listHome:
-      "text-stone-600 hover:text-stone-900 block my-4 py-2 pr-4 pl-3 hover:text-stone-900 hover:mx-3  font-bold md:p-0 transition-all duration-[300ms] border-move-animation",
-    cart: `hover:scale-[1.3] px-2 py-2 md:py-2 border-2 border-transparent hover:border-[#c8a165] rounded-full font-bold  transition-all duration-[300ms] cursor-pointer text-2xl ${
+      "cursor-pointer text-stone-600 hover:text-stone-900 block my-4 py-2 pr-4 pl-3 hover:text-stone-900 hover:mx-3  font-bold md:p-0 transition-all duration-[300ms] border-move-animation",
+    cart: `hover:scale-[1.3] px-2 py-2 md:py-2 border-2 border-transparent  rounded-full font-bold  transition-all duration-[300ms] cursor-pointer text-2xl ${
       screenWidth.width < 1024 ? "text-gray-800" : "text-gray-800"
     }`,
   };
@@ -25,20 +25,22 @@ const Navbar = ({ click }) => {
   useEffect(() => {
     !click && setIsMenuOpen(false);
   }, [click]);
-  console.log(click)
+  console.log(click);
   return (
     <div className={style.wrapper}>
       <nav className="px-2 sm:px-4 py-2.5 rounded">
         <div className="container flex justify-between items-center mx-auto flex-wrap">
           {/* adding the logo */}
-          <a href="/" className="flex items-center scale-x-[1.4] scale-y-[1.2] mx-4">
-            <Image
-              src={`/Funncart.png`}
-              alt="Funncart logo"
-              width={70}
-              height={70}
-            />
-          </a>
+          <Link href="/">
+            <div className="flex items-center scale-x-[1.4] scale-y-[1.2] mx-4 cursor-pointer">
+              <Image
+                src={`/Funncart.png`}
+                alt="Funncart logo"
+                width={70}
+                height={70}
+              />
+            </div>
+          </Link>
           <div className="target flex items-center md:order-2">
             <Link href="/cart">
               <div className={style.cart}>
@@ -79,25 +81,27 @@ const Navbar = ({ click }) => {
           >
             <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 text-md md:text-md tracking-wider ">
               <li>
-                <a href="/" className={style.listHome} aria-current="page">
-                  Home
-                </a>
+                <Link href="/">
+                  <p className={style.listHome} aria-current="page">
+                    Home
+                  </p>
+                </Link>
               </li>
-              <li>
-                <a href="/products" className={style.list}>
-                  Products
-                </a>
-              </li>
-              <li>
-                <a href="/about" className={style.list}>
-                  About
-                </a>
-              </li>
-              <li>
-                <a href="/contact" className={style.list}>
-                  Contact
-                </a>
-              </li>
+              <Link href="/products">
+                <li>
+                  <p className={style.list}>Products</p>
+                </li>
+              </Link>
+              <Link href="/about">
+                <li>
+                  <p className={style.list}>About</p>
+                </li>
+              </Link>
+              <Link href="/contact">
+                <li>
+                  <p className={style.list}>Contact</p>
+                </li>
+              </Link>
               {/* FOR LOGIN AND REGISTER OF THE USER */}
               {/* <li>
                                 <a href="/login" className={style.list}>Login</a>

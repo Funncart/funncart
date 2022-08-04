@@ -1,5 +1,6 @@
 import React from 'react'
 import About from '../../components/About/About'
+import Animator from '../../components/UI/Animator'
 
 const style = {
 
@@ -7,9 +8,9 @@ const style = {
 }
 const AboutRoute = () => {
   return (
-    <div>
+    <Animator>
       <About />
-    </div>
+    </Animator>
   )
 }
 

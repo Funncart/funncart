@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ProductDetails from "../../components/ProductDetails/ProductDetails";
 import { useRouter } from "next/router";
+
 import client from "../api/client";
 const style = {
   wrapper: "",
@@ -30,7 +31,9 @@ const index = () => {
   }, [router.isReady]);
   console.log(ProductData);
   return (
-    <div>
+    <>
+      {ProductData.length == 0 && <p className="h-[80vh]"></p>}
+
       {ProductData.length > 0 && (
         <ProductDetails
           productName={ProductData[0].name}
@@ -43,7 +46,7 @@ const index = () => {
           rating={ProductData[0].rating}
         />
       )}
-    </div>
+    </>
   );
 };
 

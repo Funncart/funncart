@@ -6,6 +6,7 @@ import Image from "next/image";
 import Box from "@mui/material/Box";
 import Rating from "@mui/material/Rating";
 import ItemCount from "./ItemCount";
+import Animator from "../../components/UI/Animator";
 
 // import Color from "./Color";
 import Size from "./Size";
@@ -96,73 +97,79 @@ const ProductDetails = ({
   }
 
   return (
-    <div className="" style={{ fontFamily: "Lato,sans-serif" }}>
-      <Header headingText={`${productName}`} />
-      <div className={style.wrapper}>
-        {/* adding the single product details */}
-        <div className={style.detailsContainer}>
-          {/* image side of container */}
-          <div className={style.imageContainer}>
-            <Image src={`${urlForThumbnail(image)}`} height={400} width={350} />
-          </div>
-          {/* content side of the container */}
-          <div className={style.contentContainer}>
-            {IsAdded ? (
-              <p className="bg-green-500 px-4 py-2 text-white rounded max-w-fit my-2">
-                Successfully added to cart
-              </p>
-            ) : (
-              <p className=" px-4 py-1 text-white rounded max-w-fit my-1">
-                {" "}
-                Successfully added to cart
-              </p>
-            )}
-            <div className={style.header1}>
-              <h2 className={style.name}>{productName}</h2>
-              <Box
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                }}
-              >
-                <Rating
-                  name="simple-controlled"
-                  value={average}
-                  precision={0.5}
-                  size={"small"}
-                  readOnly
-                />
-                <p className={style.ratings}>
-                  ({rating && rating.length} Ratings)
-                </p>
-              </Box>
+    <Animator>
+      <div className="" style={{ fontFamily: "Lato,sans-serif" }}>
+        <Header headingText={`${productName}`} />
+        <div className={style.wrapper}>
+          {/* adding the single product details */}
+          <div className={style.detailsContainer}>
+            {/* image side of container */}
+            <div className={style.imageContainer}>
+              <Image
+                src={`${urlForThumbnail(image)}`}
+                height={400}
+                width={350}
+              />
             </div>
-            <p className={style.priceText}>Rs. {price}</p>
-            <p className={style.description}>{description}</p>
-            {/* <Color /> */}
-            <Size size={handleGetSize} />
-            <ItemCount itemCount={handleGetItemCount} />
-            <button className={style.btn} onClick={handleAddToCart}>
-              Add to Cart
-            </button>
-            <div className={style.refImageContainer}>
-              {/* <Image src={''} height={} width={}/>
+            {/* content side of the container */}
+            <div className={style.contentContainer}>
+              {IsAdded ? (
+                <p className="bg-green-500 px-4 py-2 text-white rounded max-w-fit my-2">
+                  Successfully added to cart
+                </p>
+              ) : (
+                <p className=" px-4 py-1 text-white rounded max-w-fit my-1">
+                  {" "}
+                  Successfully added to cart
+                </p>
+              )}
+              <div className={style.header1}>
+                <h2 className={style.name}>{productName}</h2>
+                <Box
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
+                  <Rating
+                    name="simple-controlled"
+                    value={average}
+                    precision={0.5}
+                    size={"small"}
+                    readOnly
+                  />
+                  <p className={style.ratings}>
+                    ({rating && rating.length} Ratings)
+                  </p>
+                </Box>
+              </div>
+              <p className={style.priceText}>Rs. {price}</p>
+              <p className={style.description}>{description}</p>
+              {/* <Color /> */}
+              <Size size={handleGetSize} />
+              <ItemCount itemCount={handleGetItemCount} />
+              <button className={style.btn} onClick={handleAddToCart}>
+                Add to Cart
+              </button>
+              <div className={style.refImageContainer}>
+                {/* <Image src={''} height={} width={}/>
             <Image src={''} height={} width={}/>
             <Image src={''} height={} width={}/> */}
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* ADDING THE MORE DETAILS OF THE PRODUCT OPTION */}
-        <MoreDetails
-          description={description}
-          information={information}
-          reviews={reviews}
-          productName={productName}
-          slug={slugValue}
-        />
+          {/* ADDING THE MORE DETAILS OF THE PRODUCT OPTION */}
+          <MoreDetails
+            description={description}
+            information={information}
+            reviews={reviews}
+            productName={productName}
+            slug={slugValue}
+          />
+        </div>
       </div>
-    </div>
+    </Animator>
   );
 };
 

@@ -32,7 +32,7 @@ const variantsContainer = {
     },
   },
 };
-const Home = ({  }) => {
+const Home = ({}) => {
   return (
     <div className={style.wrapper}>
       <div className={style.main1}>
@@ -45,10 +45,10 @@ const Home = ({  }) => {
           />
         </div>
         {/* right side */}
-        <motion.div
-          variants={variantsContainer}
-          initial="hidden"
-          animate="visible"
+        <div
+          // variants={variantsContainer}
+          // initial="hidden"
+          // animate="visible"
           className={style.right}
         >
           <h2
@@ -78,7 +78,7 @@ const Home = ({  }) => {
               Shop Now
             </button>
           </Link>
-        </motion.div>
+        </div>
       </div>
       {/* adding the features */}
       <Features />
