@@ -58,8 +58,8 @@ const MainFooter = () => {
     >
       <div className={style.contact}>
         <h2 className={style.heading}>Contact Us</h2>
-        <h2 className={style.contactContent}>Email Us: sharique@gmail.com</h2>
-        <h2 className={style.contactContent}>Phone:+92 3174290702</h2>
+        <h2 className={style.contactContent}>Email Us: funncartstore@gmail.com</h2>
+        <h2 className={style.contactContent}>Phone:+923070044177</h2>
       </div>
       <div className="mx-auto max-w-fit flex items-center justify-center flex-col md:w-[25%] ">
         {/* logo */}
