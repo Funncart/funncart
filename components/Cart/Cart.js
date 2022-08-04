@@ -78,7 +78,10 @@ const Cart = () => {
       setIsSubmit(true);
       let orderItems = [];
       for (let i of CartItems) {
-        orderItems = [...orderItems, `Ordered: ${i.slug} Qty:${i.quantity}`];
+        orderItems = [
+          ...orderItems,
+          `Ordered: ${i.slug} Qty:${i.quantity} Size:${i.size && i.size}`,
+        ];
       }
       const { data } = await axios.post(
         `https://p0ifd5ok.api.sanity.io/v2021-06-07/data/mutate/production?returnIds=true`,

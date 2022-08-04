@@ -44,6 +44,7 @@ const index = () => {
           image={ProductData[0].image}
           reviews={ProductData[0].reviews}
           rating={ProductData[0].rating}
+          size={ProductData[0].size}
         />
       )}
     </>

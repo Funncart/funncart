@@ -25,7 +25,6 @@ const Navbar = ({ click }) => {
   useEffect(() => {
     !click && setIsMenuOpen(false);
   }, [click]);
-  console.log(click);
   return (
     <div className={style.wrapper}>
       <nav className="px-2 sm:px-4 py-2.5 rounded">

@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 
-const style = {
-  wrapper: "flex items-center mt-9 md:mt-7 ",
-  para: "text-stone-700 text-md font-bold ",
-  sizeContainer: "flex ml-6",
-};
-
 const Size = (props) => {
-  const [Size, setSize] = useState("M");
+  const style = {
+    wrapper: `flex items-center mt-9 md:mt-7 ${
+      props.show ? "" : "cursor-not-allowed px-2 max-w-fit opacity-[0.2]"
+    }`,
+    para: `text-stone-700 text-md font-bold `,
+    sizeContainer: "flex ml-6",
+  };
+  const [Size, setSize] = useState(props.show ? "M" : "");
   const handleSizeClick = (size) => {
-    setSize(size);
+    if (props.show) {
+      setSize(size);
+    }
   };
   props.size(Size);
   return (
@@ -19,7 +22,9 @@ const Size = (props) => {
         <p
           className={`${
             Size == "S" ? "bg-[#c8a165] text-white" : "text-stone-600 "
-          } mx-4 px-4 py-2 w-[30%] cursor-pointer w-[50%]`}
+          } mx-4 px-4 py-2 w-[30%] cursor-pointer w-[50%] ${
+            props.show ? "" : "cursor-not-allowed "
+          }`}
           onClick={() => handleSizeClick("S")}
         >
           S
@@ -27,7 +32,9 @@ const Size = (props) => {
         <p
           className={`${
             Size == "M" ? "bg-[#c8a165] text-white" : "text-stone-600 "
-          } mx-4 px-4 py-2 w-[30%] cursor-pointer w-[50%]`}
+          } mx-4 px-4 py-2 w-[30%] cursor-pointer w-[50%] ${
+            props.show ? "" : "cursor-not-allowed "
+          }`}
           onClick={() => handleSizeClick("M")}
         >
           M
@@ -35,7 +42,9 @@ const Size = (props) => {
         <p
           className={`${
             Size == "L" ? "bg-[#c8a165] text-white" : "text-stone-600 "
-          } mx-4 px-4 py-2 w-[30%] cursor-pointer w-[50%]`}
+          } mx-4 px-4 py-2 w-[30%] cursor-pointer w-[50%] ${
+            props.show ? "" : "cursor-not-allowed "
+          }`}
           onClick={() => handleSizeClick("L")}
         >
           L
@@ -43,7 +52,9 @@ const Size = (props) => {
         <p
           className={`${
             Size == "XL" ? "bg-[#c8a165] text-white" : "text-stone-600 "
-          } mx-4 px-4 py-2 w-[30%] cursor-pointer w-[50%]`}
+          } mx-4 px-4 py-2 w-[30%] cursor-pointer w-[50%] ${
+            props.show ? "" : "cursor-not-allowed "
+          }`}
           onClick={() => handleSizeClick("XL")}
         >
           XL

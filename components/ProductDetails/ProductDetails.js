@@ -19,6 +19,7 @@ const ProductDetails = ({
   slugValue,
   image,
   rating,
+  size, //it is a boolean
 }) => {
   const style = {
     wrapper:
@@ -77,6 +78,7 @@ const ProductDetails = ({
           image: urlForThumbnail(image),
           total: price * ItemCounts,
           slug: slugValue,
+          size: SizeValue,
         });
       }
       setIsAdded(true);
@@ -95,7 +97,6 @@ const ProductDetails = ({
     }
     average = (sum / rating.length).toFixed(1);
   }
-
   return (
     <Animator>
       <div className="" style={{ fontFamily: "Lato,sans-serif" }}>
@@ -146,7 +147,7 @@ const ProductDetails = ({
               <p className={style.priceText}>Rs. {price}</p>
               <p className={style.description}>{description}</p>
               {/* <Color /> */}
-              <Size size={handleGetSize} />
+              <Size size={handleGetSize} show={size}/>
               <ItemCount itemCount={handleGetItemCount} />
               <button className={style.btn} onClick={handleAddToCart}>
                 Add to Cart
