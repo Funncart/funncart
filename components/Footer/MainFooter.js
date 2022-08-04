@@ -14,7 +14,7 @@ const style = {
     "text-stone-900 text-md md:text-xl text-center my-6 border-b-2 border-stone-700 max-w-fit mx-auto",
 
   input:
-    "border-2 border-stone-600 bg-transparent my-0 px-2 py-3 md:px-2 outline-none border-2 focus:border-[#c8a165] w-[65%] ",
+    "border-2 border-stone-600 bg-transparent my-0 px-2 py-3 md:px-2 outline-none border-2 focus:border-[#c8a165] w-[100`%] ",
   btn: " hover:bg-opacity-[0.9] transition duration-[300ms] my-6 bg-[#c8a165] max-w-fit px-4 md:px-6 py-2 md:py-1 text-stone-100 tracking-wide ",
 };
 
