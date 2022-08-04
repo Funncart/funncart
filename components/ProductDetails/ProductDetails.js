@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import Header from "../Header/Header";
+import { urlForThumbnail } from "../../pages/api/image";
 import MoreDetails from "./MoreDetails/MoreDetails";
 import Image from "next/image";
 import Box from "@mui/material/Box";
 import Rating from "@mui/material/Rating";
 import ItemCount from "./ItemCount";
-import { urlForThumbnail } from "../../pages/api/image";
 
 // import Color from "./Color";
 import Size from "./Size";
@@ -103,7 +103,7 @@ const ProductDetails = ({
         <div className={style.detailsContainer}>
           {/* image side of container */}
           <div className={style.imageContainer}>
-            <Image src={"/img/chair.png"} height={400} width={350} />
+            <Image src={`${urlForThumbnail(image)}`} height={400} width={350} />
           </div>
           {/* content side of the container */}
           <div className={style.contentContainer}>
