@@ -10,16 +10,18 @@ const index = () => {
   const router = useRouter();
   useEffect(() => {
     if (!router.isReady) return;
+    // console.log(router.query.id)
     const getProduct = async () => {
-      // const allProduct = await client.fetch(
-      //   `*[_type=='allProduct' && slug.current =='${router.query.id}']`
-      // );
+      const allProduct = await client.fetch(
+        `*[_type=='allProduct' && slug.current =='${router.query.id}']`
+      );
+      console.log("first");
       const featuredProduct = await client.fetch(
         `*[_type=='featuredProduct' && slug.current =='${router.query.id}']`
       );
-      // if (allProduct && allProduct.length > 0) {
-      //   setProductData(allProduct);
-      // }
+      if (allProduct && allProduct.length > 0) {
+        setProductData(allProduct);
+      }
       if (featuredProduct && featuredProduct.length > 0) {
         setProductData(featuredProduct);
       }
