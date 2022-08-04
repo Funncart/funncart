@@ -10,11 +10,16 @@ const style = {
     "flex flex-wrap w-[99%] md:w-[95%] lg:w-[70%] gap-2 md:gap-8 mx-auto justify-around sm:justify-center",
 };
 
-const FeaturedProducts = ({data}) => {
-  const [product, setProduct] = useState(data);
+const FeaturedProducts = ({ data }) => {
+  const [product, setProduct] = useState([]);
   // sending the request to get the data from the server of sanity
-  useEffect(() => {}, []);
-  console.log(data);
+  useEffect(() => {
+    const getData = async () => {
+      const p = await client.fetch(`*[_type == "featuredProduct"]`);
+      setProduct(p);
+    };
+    getData();
+  }, []);
 
   return (
     <div className={style.wrapper}>
@@ -37,4 +42,3 @@ const FeaturedProducts = ({data}) => {
 };
 
 export default FeaturedProducts;
-

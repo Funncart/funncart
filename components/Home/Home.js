@@ -32,7 +32,7 @@ const variantsContainer = {
     },
   },
 };
-const Home = ({ data }) => {
+const Home = ({  }) => {
   return (
     <div className={style.wrapper}>
       <div className={style.main1}>
@@ -84,7 +84,7 @@ const Home = ({ data }) => {
       <Features />
       {/* adding the featured products */}
 
-      <FeaturedProducts data={data} />
+      <FeaturedProducts />
       {/* adding the call to action to all products page */}
       <ProductsButton />
       <SuggestionsButton />
