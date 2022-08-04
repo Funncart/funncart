@@ -36,6 +36,7 @@ const ProductDetails = ({
   const [RatingValue, setRatingValue] = useState("0");
   const [SizeValue, setSizeValue] = useState("M");
   const [ItemCounts, setItemCounts] = useState(1);
+  const [IsAdded, setIsAdded] = useState(false);
   const handleGetSize = (size) => {
     setSizeValue(size);
   };
@@ -43,8 +44,6 @@ const ProductDetails = ({
     setItemCounts(itemCount);
   };
   const handleAddToCart = () => {
-    // if (ItemCount)
-
     if (typeof window !== "undefined") {
       let data = JSON.parse(localStorage.getItem("cart"));
       if (!data) {
@@ -79,17 +78,21 @@ const ProductDetails = ({
           slug: slugValue,
         });
       }
+      setIsAdded(true);
+      setTimeout(() => {
+        setIsAdded(false);
+      }, 3500);
       localStorage.setItem("cart", JSON.stringify(updatedItems));
     }
   };
-  useEffect(() => {
-    // CALCULATE THE AVERAGE OF ALL THE RATINGS GIVEN TO THE SYSTEM
-    setRatingValue("3.5");
-  }, []);
 
+  let average = 0;
   let sum = 0;
-  for (let r of rating) {
-    sum += +r;
+  if (rating) {
+    for (let r of rating) {
+      sum += +r;
+    }
+    average = (sum / rating.length).toFixed(1);
   }
 
   return (
@@ -104,6 +107,16 @@ const ProductDetails = ({
           </div>
           {/* content side of the container */}
           <div className={style.contentContainer}>
+            {IsAdded ? (
+              <p className="bg-green-500 px-4 py-2 text-white rounded max-w-fit my-2">
+                Successfully added to cart
+              </p>
+            ) : (
+              <p className=" px-4 py-1 text-white rounded max-w-fit my-1">
+                {" "}
+                Successfully added to cart
+              </p>
+            )}
             <div className={style.header1}>
               <h2 className={style.name}>{productName}</h2>
               <Box
@@ -114,12 +127,14 @@ const ProductDetails = ({
               >
                 <Rating
                   name="simple-controlled"
-                  value={(sum / rating.length).toFixed(2)}
-                  precision={0.1}
+                  value={average}
+                  precision={0.5}
                   size={"small"}
                   readOnly
                 />
-                <p className={style.ratings}>({rating.length} Ratings)</p>
+                <p className={style.ratings}>
+                  ({rating && rating.length} Ratings)
+                </p>
               </Box>
             </div>
             <p className={style.priceText}>Rs. {price}</p>

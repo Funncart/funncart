@@ -19,17 +19,17 @@ const Contact = () => {
       <Header headingText="CONTACT" />
       <div className={style.contactContainer}>
         <h2 className={style.smallHeading} style={{ fontFamily: 'Yeseva One, cursive' }} >Contact Details</h2>
-        <div className={style.singleContactContainer} style={{ fontFamily: 'Poppins, sans-serif' }}>
-          <HiOutlineLocationMarker className="text-3xl text-stone-600 bg-stone-300 rounded-full p-1 mx-4"/>
-          <p className={style.para}>28 Green Tower, Street Name,Islamabad, Pakistan</p>
-        </div>
+          {/* <div className={style.singleContactContainer} style={{ fontFamily: 'Poppins, sans-serif' }}>
+            <HiOutlineLocationMarker className="text-3xl text-stone-600 bg-stone-300 rounded-full p-1 mx-4"/>
+            <p className={style.para}>28 Green Tower, Street Name,Islamabad, Pakistan</p>
+          </div> */}
         <div className={style.singleContactContainer}>
           <AiOutlinePhone className="text-3xl text-stone-600 bg-stone-300 rounded-full p-1 mx-4"/>
-          <p className={style.para}>+923174290702</p>
+          <p className={style.para}>+923070044177</p>
         </div>
         <div className={style.singleContactContainer}>
           <AiOutlineMail className="text-3xl text-stone-600 bg-stone-300 rounded-full p-1 mx-4"/>
-          <p className={style.para}>shariqueimam7777@gmail.com</p>
+          <p className={style.para}>funncartstore@gmail.com</p>
        </div>
 {/* contact form */}
 <ContactForm/>

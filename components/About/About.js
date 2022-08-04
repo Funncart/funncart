@@ -1,14 +1,13 @@
 import React from "react";
 import Counter from "./Counter/Counter";
 import Header from "../Header/Header";
-
 const style = {
   about: "w-[95%] md:w-[90%] mx-auto flex flex-col items-center justify-center",
   side1: "w-full md:w-[45%] h-full mx-auto",
-  side2: "w-full md:w-[45%] flex items-center justify-center mx-auto",
+  side2: "w-full md:w-[45%] flex items-center justify-center mx-auto hidden md:flex",
   heading:
     "font-bold text-5xl sm:text-6xl md:text-6xl lg:text-7xl my-8 text-stone-700",
-  details: "p-3 text-stone-600",
+  details: "text-stone-600 py-3 ",
   divider: "border-b-[1px] border-gray-200 p-2",
   coutnerContainer: "",
   signature:
@@ -45,7 +44,7 @@ const About = () => {
             <Counter />
           </div>
           {/* adding the signature */}
-          <div className={style.signature}>
+          {/* <div className={style.signature}>
             <img
               src="https://res.cloudinary.com/shariqcloud/image/upload/v1649881629/Estate1/1649881617380_fsgbp2.png"
               alt=""
@@ -57,7 +56,7 @@ const About = () => {
             >
               _Sharique
             </h2>
-          </div>
+          </div> */}
         </div>
         <div className={style.side2}>
           <img

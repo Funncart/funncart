@@ -15,6 +15,7 @@ const LeaveAReview = ({ slug }) => {
   const [Review, setReview] = useState("");
   const [Name, setName] = useState("");
   const [RatingValue, setRatingValue] = useState("0");
+  const [IsSubmit, setIsSubmit] = useState(false);
   const tokenWithWriteAccess =
     "skcCBItUtJgAVMB47KUJ1jSlusnFrqwt9B97VntAuRxZFps97GT0xEj0oTgXx1iKN6cDlwX4ZblmntN1MBbSmY2IaeJZwZ4qSL7uvtlR007GUgQE9Fb7V9k8q0kx3mcBiSixAz6Icg6m4lsfIsZo8aTS14P4WH3AdeWWdvW23CtVBtH0Y7wy";
   const handleNameChange = (e) => {
@@ -77,13 +78,13 @@ const LeaveAReview = ({ slug }) => {
           },
         }
       );
-      // to represent the success message
-      const flashTime = setTimeout(() => {
-        // setIsSubmit(false);
-      }, 2000);
-      return () => {
-        clearTimeout(flashTime);
-      };
+      setRatingValue("");
+      setName("");
+      setReview("");
+      setIsSubmit(true);
+      setTimeout(() => {
+        setIsSubmit(false);
+      }, 4000);
     };
 
     sendData();
@@ -91,6 +92,12 @@ const LeaveAReview = ({ slug }) => {
   return (
     <div className={style.wrapper} style={{ fontFamily: "Lato,sans-serif" }}>
       <h2 className={style.heading}>Leave a Review</h2>
+      {IsSubmit && (
+        <p className="bg-green-500 px-4 py-2 text-gray-50 rounded max-w-fit my-6">
+          Your review submitted successfully
+        </p>
+      )}
+
       {/* ADDING THE RATING COMPONENT */}
       <p className={style.para}>Your rating</p>
       <Box
@@ -104,7 +111,7 @@ const LeaveAReview = ({ slug }) => {
           onChange={(event, newValue) => {
             setRatingValue(newValue);
           }}
-          precision={0.5}
+          precision={1}
         />
       </Box>
       <div className={style.reviewContainer}>

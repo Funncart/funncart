@@ -18,9 +18,9 @@ const Review = ({ reviews, slug }) => {
       {reviews &&
         reviews.map((r) => (
           <div className={style.reviewContainer}>
-            <h2 className={style.name}>{r.name}</h2>
-            <p className={style.date}>{r.date}</p>
-            <p className={style.review}>{r.review}</p>
+            <h2 className={style.name}>{r.name && r.name}</h2>
+            <p className={style.date}>{r.createdAt && r.createdAt.slice(0, 10)}</p>
+            <p className={style.review}>{r.review && r.review}</p>
           </div>
         ))}
       <LeaveAReview slug={slug} />
