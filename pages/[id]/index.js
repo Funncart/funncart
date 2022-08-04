@@ -11,18 +11,18 @@ const index = () => {
   useEffect(() => {
     if (!router.isReady) return;
     const getProduct = async () => {
-      const allProduct = await client.fetch(
-        `*[_type=='allProduct' && slug.current =='${router.query.id}']`
-      );
-      // const featuredProduct = await client.fetch(
-      //   `*[_type=='featuredProduct' && slug.current =='${router.query.id}']`
+      // const allProduct = await client.fetch(
+      //   `*[_type=='allProduct' && slug.current =='${router.query.id}']`
       // );
-      if (allProduct && allProduct.length > 0) {
-        setProductData(allProduct);
-      }
-      // if (featuredProduct && featuredProduct.length > 0) {
-      //   setProductData(featuredProduct);
+      const featuredProduct = await client.fetch(
+        `*[_type=='featuredProduct' && slug.current =='${router.query.id}']`
+      );
+      // if (allProduct && allProduct.length > 0) {
+      //   setProductData(allProduct);
       // }
+      if (featuredProduct && featuredProduct.length > 0) {
+        setProductData(featuredProduct);
+      }
     };
     getProduct();
   }, [router.isReady]);
