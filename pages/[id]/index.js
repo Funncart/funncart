@@ -5,16 +5,24 @@ import client from "../api/client";
 const style = {
   wrapper: "",
 };
-const index = (props) => {
+const index = () => {
   const [ProductData, setProductData] = useState([]);
   const router = useRouter();
   useEffect(() => {
     if (!router.isReady) return;
     const getProduct = async () => {
-      const featuredProduct = await client.fetch(
+      const allProduct = await client.fetch(
         `*[_type=='allProduct' && slug.current =='${router.query.id}']`
       );
-      setProductData(featuredProduct);
+      // const featuredProduct = await client.fetch(
+      //   `*[_type=='featuredProduct' && slug.current =='${router.query.id}']`
+      // );
+      if (allProduct && allProduct.length > 0) {
+        setProductData(allProduct);
+      }
+      // if (featuredProduct && featuredProduct.length > 0) {
+      //   setProductData(featuredProduct);
+      // }
     };
     getProduct();
   }, [router.isReady]);

@@ -8,7 +8,8 @@ import Image from "next/image";
 import SuggestionsButton from "./SuggestionsButton";
 const style = {
   wrapper: "h-[100vh] w-[100vw] flex flex-col h-[70%]",
-  heading: "text-3xl md:text-7xl text-stone-600 my-6 md:my-8 w-full md:w-[60%] ",
+  heading:
+    "text-3xl md:text-7xl text-stone-600 my-6 md:my-8 w-full md:w-[60%] ",
   smallHeading: "text-2xl md:text-3xl text-stone-800",
   para: "text-stone-900 text-xl md:text-sm my-6 md:my-8",
   btn: "px-4 md:px-5 py-2 md:py-2 border-2 border-stone-800 transition duration-[300ms] hover:bg-stone-300 hover:scale-[0.95] max-w-fit mx-auto md:mx-0",
@@ -31,7 +32,7 @@ const variantsContainer = {
     },
   },
 };
-const Home = () => {
+const Home = ({ data }) => {
   return (
     <div className={style.wrapper}>
       <div className={style.main1}>
@@ -83,7 +84,7 @@ const Home = () => {
       <Features />
       {/* adding the featured products */}
 
-      <FeaturedProducts />
+      <FeaturedProducts data={data} />
       {/* adding the call to action to all products page */}
       <ProductsButton />
       <SuggestionsButton />
