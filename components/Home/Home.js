@@ -87,7 +87,7 @@ const Home = ({}) => {
       <FeaturedProducts />
       {/* adding the call to action to all products page */}
       <ProductsButton />
-      <SuggestionsButton />
+      {/* <SuggestionsButton /> */}
     </div>
   );
 };
