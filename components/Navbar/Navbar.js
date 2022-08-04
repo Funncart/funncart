@@ -1,15 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import useWindowSize from "../../hooks/windowSize";
+import Image from "next/image";
 import DropDownMenu from "./DropDownMenu";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { ImCross } from "react-icons/im";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import Link from "next/link";
-const Navbar = () => {
+const Navbar = ({ click }) => {
   const screenWidth = useWindowSize();
   const style = {
     wrapper:
-      "absolute sm:relative text-gray-200 w-[100%] lg:w-[75%] mx-auto py-3",
+      "absolute sm:relative text-gray-200 w-[100%] lg:w-[75%] mx-auto py-3 z-10 bg-[#f6f6f6]",
     list: "block my-4 py-2 pr-4 pl-3 text-stone-600 hover:text-stone-900 hover:mx-3 md:border-0 font-bold md:p-0     transition-all duration-[300ms] border-move-animation",
     listHome:
       "text-stone-600 hover:text-stone-900 block my-4 py-2 pr-4 pl-3 hover:text-stone-900 hover:mx-3  font-bold md:p-0 transition-all duration-[300ms] border-move-animation",
@@ -21,16 +22,21 @@ const Navbar = () => {
   const handleSmallMenu = () => {
     setIsMenuOpen((prevValue) => !prevValue);
   };
+  useEffect(() => {
+    !click && setIsMenuOpen(false);
+  }, [click]);
+  console.log(click)
   return (
     <div className={style.wrapper}>
       <nav className="px-2 sm:px-4 py-2.5 rounded">
         <div className="container flex justify-between items-center mx-auto flex-wrap">
           {/* adding the logo */}
-          <a href="/" className="flex items-center scale-x-[1.4] scale-y-[1.2]">
-            <img
-              src={`/img/logo.webp`}
-              className="mr-3 h-6 sm:h-9"
-              alt="Flowbite Logo"
+          <a href="/" className="flex items-center scale-x-[1.4] scale-y-[1.2] mx-4">
+            <Image
+              src={`/Funncart.png`}
+              alt="Funncart logo"
+              width={70}
+              height={70}
             />
           </a>
           <div className="target flex items-center md:order-2">
@@ -45,22 +51,24 @@ const Navbar = () => {
               onClick={handleSmallMenu}
               data-collapse-toggle="mobile-menu-2"
               type="button"
-              className=" inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-600 transtion duration-[300ms]"
+              className="bg-[#f6f6f6] inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg md:hidden transtion duration-[300ms]"
               aria-controls="mobile-menu-2"
               aria-expanded="false"
             >
               {isMenuOpen ? (
-                <ImCross className={`${isMenuOpen && "flex"}`} />
+                <ImCross className={`bg-[#f6f6f6] ${isMenuOpen && "flex"}`} />
               ) : (
-                <GiHamburgerMenu className={`${isMenuOpen && "hidden"}`} />
+                <GiHamburgerMenu
+                  className={`bg-[#f6f6f6] ${isMenuOpen && "hidden"}`}
+                />
               )}
             </button>
           </div>
           {/* content for small screens menu open */}
           <div
-            className={`w-full ${
+            className={`w-full bg-[#f6f6f6] py-20 ${
               isMenuOpen ? "flex" : "hidden"
-            } items-center justify-center`}
+            } items-center justify-center z-10`}
           >
             <DropDownMenu />
           </div>

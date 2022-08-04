@@ -1,11 +1,8 @@
-import React, { useContext } from "react";
+import React from "react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { urlForThumbnail } from "../../pages/api/image";
-import axios from "axios";
-import { Store } from "../../store/store";
 import useWindowSize from "../../hooks/windowSize";
 import NextLink from "next/link";
-import Image from "next/image";
 
 const SingleProduct = ({ item }) => {
   const { width } = useWindowSize();

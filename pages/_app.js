@@ -1,12 +1,15 @@
 import "../styles/globals.css";
 import Head from "next/head";
 import screenWidth from "../hooks/windowSize";
-// import { SnackbarProvider } from "notistack";
-// import { StoreProvider } from "../store/Store";
 import Footer from "../components/Footer/Footer";
 import Navbar from "../components/Navbar/Navbar";
+import React, { useState } from "react";
 
 function MyApp({ Component, pageProps }) {
+  const [Click, setClick] = useState(false);
+  const handleClick = () => {
+    setClick(false);
+  };
   return (
     <>
       <Head>
@@ -17,17 +20,11 @@ function MyApp({ Component, pageProps }) {
           content="A website restaurant for online presense"
         />
       </Head>
-      <div className="overflow-x-hidden bg-[#f6f6f6]">
-        <Navbar />
-        {/* <SnackbarProvider
-          anchorOrigin={{ vertical: "top", horizontal: "center" }}
-        > */}
-        {/* <StoreProvider> */}
-        <div className="mt-24 md:mt-2">
+      <div className="overflow-x-hidden bg-[#f6f6f6] z-0">
+        <Navbar click={Click} />
+        <div className="mt-24 md:mt-2 z-0" onClick={handleClick}>
           <Component {...pageProps} />
         </div>
-        {/* </StoreProvider> */}
-        {/* </SnackbarProvider> */}
         <Footer />
       </div>
     </>

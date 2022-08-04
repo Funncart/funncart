@@ -61,9 +61,14 @@ const MainFooter = () => {
         <h2 className={style.contactContent}>Email Us: sharique@gmail.com</h2>
         <h2 className={style.contactContent}>Phone:+92 3174290702</h2>
       </div>
-      <div className={style.center}>
+      <div className="mx-auto max-w-fit flex items-center justify-center flex-col md:w-[25%] ">
         {/* logo */}
-        {/* <Image src="/img/logo.webp" height='70' width="70" alt='logo'/> */}
+        <Image
+          src={`/Funncart.png`}
+          alt="Funncart logo"
+          width={80}
+          height={80}
+        />
         <h2 className={style.info}>
           We have 2+ years of experience of selling products online and we are
           the leading marketplace for selling handcrafted products.

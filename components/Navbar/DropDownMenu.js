@@ -2,8 +2,8 @@ import React from 'react'
 
 
 const style = {
-    wrapper: 'bg-gray-50 flex flex-col text-md md:text-md tracking-wider mx-auto',
-    list: 'mx-auto block my-2 py-2 px-2 text-gray-900 border-b border-gray-100 hover:bg-gray-50  md:border-0  font-bold md hover:text-[#EFC262]  transition duration-[300ms] ',
+    wrapper: 'flex flex-col text-md md:text-md tracking-wider mx-auto z-10 bg-red-300',
+    list: 'mx-auto block my-4 py-2 px-2 border-b-2 border-[#c8a165] font-bold  transition duration-[300ms] text-lg text-stone-600 text-center',
 
 
 }

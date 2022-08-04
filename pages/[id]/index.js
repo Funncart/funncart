@@ -12,7 +12,7 @@ const index = (props) => {
     if (!router.isReady) return;
     const getProduct = async () => {
       const featuredProduct = await client.fetch(
-        `*[_type == "featuredProduct" && slug.current =='${router.query.id}']`
+        `*[_type=='allProduct' && slug.current =='${router.query.id}']`
       );
       setProductData(featuredProduct);
     };
