@@ -117,6 +117,7 @@ const Cart = () => {
       };
     };
     sendData();
+    localStorage.setItem("cart", JSON.stringify([]));
   };
   return (
     <div className={style.wrapper}>
