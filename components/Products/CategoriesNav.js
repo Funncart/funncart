@@ -14,7 +14,7 @@ const CategoriesNav = (props) => {
   return (
     <ul className={style.wrapper} style={{ fontFamily: "Poppins, sans-serif" }}>
       <li
-        className={`text-stone-500 border-move-animation-products cursor-pointer mx-4 ${
+        className={`text-stone-500 border-move-animation-products cursor-pointer mx-4 my-2 ${
           Click == "allproducts" && " font-bold "
         }`}
         onClick={() => handleNavClick("allproducts")}
@@ -22,7 +22,7 @@ const CategoriesNav = (props) => {
         All Products
       </li>
       <li
-        className={`text-stone-500 border-move-animation-products cursor-pointer mx-4 ${
+        className={`text-stone-500 border-move-animation-products cursor-pointer mx-4 my-2 ${
           Click == "clothes" && " font-bold "
         }`}
         onClick={() => handleNavClick("clothes")}
@@ -30,7 +30,7 @@ const CategoriesNav = (props) => {
         Clothes
       </li>
       <li
-        className={`text-stone-500 border-move-animation-products cursor-pointer mx-4 ${
+        className={`text-stone-500 border-move-animation-products cursor-pointer mx-4 my-2 ${
           Click == "watches" && " font-bold "
         }`}
         onClick={() => handleNavClick("watches")}
@@ -38,7 +38,7 @@ const CategoriesNav = (props) => {
         Watches
       </li>
       <li
-        className={`text-stone-500 border-move-animation-products cursor-pointer mx-4 ${
+        className={`text-stone-500 border-move-animation-products cursor-pointer mx-4 my-2 ${
           Click == "shoes" && " font-bold "
         }`}
         onClick={() => handleNavClick("shoes")}
@@ -46,7 +46,7 @@ const CategoriesNav = (props) => {
         Shoes
       </li>
       <li
-        className={`text-stone-500 border-move-animation-products cursor-pointer mx-4 ${
+        className={`text-stone-500 border-move-animation-products cursor-pointer mx-4 my-2 ${
           Click == "electronics" && " font-bold "
         }`}
         onClick={() => handleNavClick("electronics")}
@@ -54,7 +54,7 @@ const CategoriesNav = (props) => {
         Electronics
       </li>
       <li
-        className={`text-stone-500 border-move-animation-products cursor-pointer mx-4 ${
+        className={`text-stone-500 border-move-animation-products cursor-pointer mx-4 my-2 ${
           Click == "books" && " font-bold "
         }`}
         onClick={() => handleNavClick("books")}

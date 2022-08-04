@@ -4,7 +4,7 @@ import NoProductFound from "./NoProductFound";
 
 const style = {
   wrapper:
-    "flex flex-col md:flex-row w-[80%] md:w-[95%] lg:w-[70%] mx-auto justify-around gap-6 flex-wrap my-6",
+    "flex flex-wrap w-[99%] md:w-[95%] lg:w-[70%] gap-2 md:gap-8 mx-auto justify-around sm:justify-center",
 };
 
 const CategoriesGrid = ({ category, data }) => {

@@ -14,8 +14,9 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title key={"title"}>Ecommerce Store</title>
+        <title key={"title"}>Funncart | Market place for handcrafted products</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <link rel="shortcut icon" href="/Funncart.png" type="image/x-icon" />
         <meta
           name="description"
           content="A website restaurant for online presense"
