@@ -17,7 +17,8 @@ const Navbar = ({ click }) => {
     cart: `hover:scale-[1.3] px-2 py-2 md:py-2 border-2 border-transparent  rounded-full font-bold  transition-all duration-[300ms] cursor-pointer text-2xl ${
       screenWidth.width < 1024 ? "text-gray-800" : "text-gray-800"
     }`,
-    seller:'text-[#ffffff] bg-[#c8a165] px-4 py-1 md:px-8 md:py-2  cursor-pointer hover:bg-opacity-[0.9] mx-4'
+    seller:
+      "text-xs md:text-md text-[#ffffff] bg-[#c8a165] px-4 py-1 md:px-8 md:py-2  cursor-pointer hover:bg-opacity-[0.9] mx-4",
   };
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const handleSmallMenu = () => {
