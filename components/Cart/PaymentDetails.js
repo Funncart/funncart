@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const style = {
-  wrapper: "flex flex-col",
+  wrapper: "flex flex-col py-4",
   smallHeading:
     "border-b-2 border-stone-200 text-2xl md:text-3xl max-w-fit mx-auto py-2 text-stone-800 ",
   btn: "bg-opacity-[0.8] hover:bg-opacity-[0.95] transition duration-[300ms] my-6 bg-red-400 mx-auto px-8 md:px-12 py-2 md:py-3 text-stone-50 font-bold tracking-wide",

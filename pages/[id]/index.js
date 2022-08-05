@@ -29,7 +29,6 @@ const index = () => {
     };
     getProduct();
   }, [router.isReady]);
-  console.log(ProductData);
   return (
     <>
       {ProductData.length == 0 && <p className="h-[80vh]"></p>}
@@ -45,6 +44,7 @@ const index = () => {
           reviews={ProductData[0].reviews}
           rating={ProductData[0].rating}
           size={ProductData[0].size}
+          color={ProductData[0].color}
         />
       )}
     </>

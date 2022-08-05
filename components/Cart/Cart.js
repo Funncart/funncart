@@ -23,7 +23,7 @@ const Cart = () => {
   const [CartItems, setCartItems] = useState([]);
   const [Total, setTotal] = useState(0);
   const [Apply, setApply] = useState(false);
-  const [isSubmit, setIsSubmit] = useState(false);
+  const [IsSubmit, setIsSubmit] = useState(false);
   const [CheckoutData, setCheckoutData] = useState([]);
   const tokenWithWriteAccess =
     "skcCBItUtJgAVMB47KUJ1jSlusnFrqwt9B97VntAuRxZFps97GT0xEj0oTgXx1iKN6cDlwX4ZblmntN1MBbSmY2IaeJZwZ4qSL7uvtlR007GUgQE9Fb7V9k8q0kx3mcBiSixAz6Icg6m4lsfIsZo8aTS14P4WH3AdeWWdvW23CtVBtH0Y7wy";
@@ -80,7 +80,9 @@ const Cart = () => {
       for (let i of CartItems) {
         orderItems = [
           ...orderItems,
-          `Ordered: ${i.slug} Qty:${i.quantity} Size:${i.size && i.size}`,
+          `Ordered: ${i.slug} Qty:${i.quantity} Size:${
+            i.size && i.size
+          } Color : ${i.color && i.color}`,
         ];
       }
       const { data } = await axios.post(
@@ -179,6 +181,12 @@ const Cart = () => {
       ) : (
         <Checkout checkoutData={handleCheckoutData} />
       )}
+      {IsSubmit && (
+        <p className="bg-[#c8a165] px-4 py-2 text-gray-50 rounded max-w-fit my-6 mx-auto">
+          Your Order is placed successfully
+        </p>
+      )}
+
       {menu == "checkout" && (
         <div className={style.paymentDetails}>
           <PaymentDetails

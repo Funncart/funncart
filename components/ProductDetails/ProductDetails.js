@@ -7,9 +7,9 @@ import Box from "@mui/material/Box";
 import Rating from "@mui/material/Rating";
 import ItemCount from "./ItemCount";
 import Animator from "../../components/UI/Animator";
-
-// import Color from "./Color";
+import Color from "./Color";
 import Size from "./Size";
+
 const ProductDetails = ({
   productName,
   price,
@@ -20,6 +20,7 @@ const ProductDetails = ({
   image,
   rating,
   size, //it is a boolean
+  color,
 }) => {
   const style = {
     wrapper:
@@ -37,10 +38,14 @@ const ProductDetails = ({
   };
   const [RatingValue, setRatingValue] = useState("0");
   const [SizeValue, setSizeValue] = useState("M");
+  const [ColorValue, setColorValue] = useState("#000000");
   const [ItemCounts, setItemCounts] = useState(1);
   const [IsAdded, setIsAdded] = useState(false);
   const handleGetSize = (size) => {
     setSizeValue(size);
+  };
+  const handleGetColor = (color) => {
+    setColorValue(color);
   };
   const handleGetItemCount = (itemCount) => {
     setItemCounts(itemCount);
@@ -79,6 +84,7 @@ const ProductDetails = ({
           total: price * ItemCounts,
           slug: slugValue,
           size: SizeValue,
+          color: ColorValue,
         });
       }
       setIsAdded(true);
@@ -146,8 +152,8 @@ const ProductDetails = ({
               </div>
               <p className={style.priceText}>Rs. {price}</p>
               <p className={style.description}>{description}</p>
-              {/* <Color /> */}
-              <Size size={handleGetSize} show={size}/>
+              <Color color={color} getColor={handleGetColor} />
+              <Size size={handleGetSize} show={size} />
               <ItemCount itemCount={handleGetItemCount} />
               <button className={style.btn} onClick={handleAddToCart}>
                 Add to Cart

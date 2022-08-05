@@ -93,7 +93,7 @@ const LeaveAReview = ({ slug }) => {
     <div className={style.wrapper} style={{ fontFamily: "Lato,sans-serif" }}>
       <h2 className={style.heading}>Leave a Review</h2>
       {IsSubmit && (
-        <p className="bg-green-500 px-4 py-2 text-gray-50 rounded max-w-fit my-6">
+        <p className="bg-[#c8a165]px-4 py-2 text-gray-50 rounded max-w-fit my-6">
           Your review submitted successfully
         </p>
       )}
