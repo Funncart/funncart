@@ -33,7 +33,7 @@ const Navbar = ({ click }) => {
         <div className="container flex justify-between items-center mx-auto flex-wrap">
           {/* adding the logo */}
           <Link href="/">
-            <div className="flex items-center scale-x-[1.4] scale-y-[1.2] mx-4 cursor-pointer">
+            <div className="flex items-center scale-x-[1.4] scale-y-[1.2] mx-4 cursor-pointer mx-3 md:mx-16">
               <Image
                 src={`/Funncart.png`}
                 alt="Funncart logo"
