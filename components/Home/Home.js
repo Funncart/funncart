@@ -83,7 +83,6 @@ const Home = ({}) => {
       {/* adding the features */}
       <Features />
       {/* adding the featured products */}
-
       <FeaturedProducts />
       {/* adding the call to action to all products page */}
       <ProductsButton />

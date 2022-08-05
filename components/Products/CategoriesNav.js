@@ -23,6 +23,14 @@ const CategoriesNav = (props) => {
       </li>
       <li
         className={`text-stone-500 border-move-animation-products cursor-pointer mx-4 my-2 ${
+          Click == "vintage" && " font-bold "
+        }`}
+        onClick={() => handleNavClick("vintage")}
+      >
+        Vintage
+      </li>
+      <li
+        className={`text-stone-500 border-move-animation-products cursor-pointer mx-4 my-2 ${
           Click == "clothes" && " font-bold "
         }`}
         onClick={() => handleNavClick("clothes")}
