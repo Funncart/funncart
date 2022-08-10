@@ -15,9 +15,8 @@ const Color = (props) => {
   // color is an array of colors with hex codes
   const handleClick = (color) => {
     setColor(color);
+    props.getColor(Color);
   };
-  props.getColor(Color);
-  console.log(Color);
   return (
     <div className={style.wrapper}>
       <p className={style.heading}>Color</p>

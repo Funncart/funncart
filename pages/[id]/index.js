@@ -45,6 +45,10 @@ const index = () => {
           rating={ProductData[0].rating}
           size={ProductData[0].size}
           color={ProductData[0].color}
+          categoryMainTitle={ProductData[0].categoryMainTitle}
+          customCategoryData={ProductData[0].customCategory}
+          categoryMainTitle1={ProductData[0].categoryMainTitle1}
+          customCategoryData1={ProductData[0].customCategory1}
         />
       )}
     </>

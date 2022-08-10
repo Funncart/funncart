@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../Header/Header";
 import { urlForThumbnail } from "../../pages/api/image";
 import MoreDetails from "./MoreDetails/MoreDetails";
@@ -9,7 +9,7 @@ import ItemCount from "./ItemCount";
 import Animator from "../../components/UI/Animator";
 import Color from "./Color";
 import Size from "./Size";
-
+import CustomCategory from "./CustomCategory";
 const ProductDetails = ({
   productName,
   price,
@@ -21,13 +21,17 @@ const ProductDetails = ({
   rating,
   size, //it is a boolean
   color,
+  categoryMainTitle,
+  customCategoryData,
+  categoryMainTitle1,
+  customCategoryData1,
 }) => {
   const style = {
     wrapper:
       "w-[95%] md:w-[80%] lg:w-[65%] mx-auto py-12 sm:py-16 md:py-24 lg:py-32 flex flex-col",
     detailsContainer:
       "px-5 sm:px-6 md:px-8 lg:px-12  py-5 sm:py-6 md:py-8 lg:py-12 bg-white flex flex-col md:flex-row",
-    imageContainer: "w-[100%] md:w-[40%]",
+    imageContainer: " mr-12 overflow-hidden",
     contentContainer: "w-[100%] md:w-[60%] flex flex-col",
     header1: "flex items-center justify-center mt-4",
     name: "text-2xl md:text-3xl font-semibold text-stone-700 flex-1",
@@ -37,7 +41,10 @@ const ProductDetails = ({
     ratings: "text-xs text-stone-500",
   };
   const [RatingValue, setRatingValue] = useState("0");
+  const [PriceValue, setPriceValue] = useState(price);
   const [SizeValue, setSizeValue] = useState("M");
+  const [SelectedCategory, setSelectedCategory] = useState("");
+  const [SelectedCategory1, setSelectedCategory1] = useState("");
   const [ColorValue, setColorValue] = useState("#000000");
   const [ItemCounts, setItemCounts] = useState(1);
   const [IsAdded, setIsAdded] = useState(false);
@@ -50,6 +57,21 @@ const ProductDetails = ({
   const handleGetItemCount = (itemCount) => {
     setItemCounts(itemCount);
   };
+  const handleSelectedCategory = (selectedCategory) => {
+    setSelectedCategory(selectedCategory);
+  };
+  const handleSelectedCategory1 = (selectedCategory) => {
+    setSelectedCategory1(selectedCategory);
+  };
+  // setting the condition for custom category
+  useEffect(() => {
+    if (SelectedCategory && SelectedCategory.length > 0) {
+      setPriceValue(SelectedCategory[0].categoryPrice);
+    }
+    if (SelectedCategory1 && SelectedCategory1.length > 0) {
+      setPriceValue(SelectedCategory1[0].categoryPrice);
+    }
+  }, [SelectedCategory, SelectedCategory1]);
   const handleAddToCart = () => {
     if (typeof window !== "undefined") {
       let data = JSON.parse(localStorage.getItem("cart"));
@@ -78,10 +100,10 @@ const ProductDetails = ({
       } else {
         updatedItems = data.concat({
           name: productName,
-          price: price,
+          price: PriceValue,
           quantity: ItemCounts,
           image: urlForThumbnail(image),
-          total: price * ItemCounts,
+          total: PriceValue * ItemCounts,
           slug: slugValue,
           size: SizeValue,
           color: ColorValue,
@@ -112,11 +134,14 @@ const ProductDetails = ({
           <div className={style.detailsContainer}>
             {/* image side of container */}
             <div className={style.imageContainer}>
-              <Image
-                src={`${urlForThumbnail(image)}`}
-                height={400}
-                width={350}
-              />
+              <div className="hover:scale-[1.2] transition duration-[800ms] overflow-hidden">
+                <Image
+                  src={`${urlForThumbnail(image)}`}
+                  height={400}
+                  width={380}
+                  // className="hover:scale-[1.5] transition duration-[800ms] overflow-"
+                />
+              </div>
             </div>
             {/* content side of the container */}
             <div className={style.contentContainer}>
@@ -150,10 +175,21 @@ const ProductDetails = ({
                   </p>
                 </Box>
               </div>
-              <p className={style.priceText}>Rs. {price}</p>
+              <p className={style.priceText}>Rs. {PriceValue}</p>
               <p className={style.description}>{description}</p>
               <Color color={color} getColor={handleGetColor} />
-              <Size size={handleGetSize} show={size} />
+              {/* <Size size={handleGetSize} show={size} /> */}
+
+              <CustomCategory
+                customCategoryData={customCategoryData}
+                categoryMainTitle={categoryMainTitle}
+                selectedCategory={handleSelectedCategory}
+              />
+              <CustomCategory
+                customCategoryData={customCategoryData1}
+                categoryMainTitle={categoryMainTitle1}
+                selectedCategory={handleSelectedCategory1}
+              />
               <ItemCount itemCount={handleGetItemCount} />
               <button className={style.btn} onClick={handleAddToCart}>
                 Add to Cart

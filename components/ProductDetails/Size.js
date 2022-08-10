@@ -12,9 +12,10 @@ const Size = (props) => {
   const handleSizeClick = (size) => {
     if (props.show) {
       setSize(size);
+      props.size(Size);
     }
+    props.size(Size);
   };
-  props.size(Size);
   return (
     <div className={style.wrapper} style={{ fontFamily: "Lato,sans-serif" }}>
       <p className={style.para}>Size</p>
