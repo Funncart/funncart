@@ -11,7 +11,7 @@ const style = {
 const ItemCount = (props) => {
   const [Value, setValue] = useState(1);
   const handleDecrement = () => {
-    Value > 0 && setValue((prev) => prev - 1);
+    Value > 1 && setValue((prev) => prev - 1);
   };
   const handleIncrement = () => {
     Value < 3 && setValue((prev) => prev + 1);
