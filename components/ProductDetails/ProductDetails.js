@@ -68,10 +68,12 @@ const ProductDetails = ({
     if (SelectedCategory && SelectedCategory.length > 0) {
       setPriceValue(SelectedCategory[0].categoryPrice);
     }
+  }, [SelectedCategory]);
+  useEffect(() => {
     if (SelectedCategory1 && SelectedCategory1.length > 0) {
       setPriceValue(SelectedCategory1[0].categoryPrice);
     }
-  }, [SelectedCategory, SelectedCategory1]);
+  }, [SelectedCategory1]);
   const handleAddToCart = () => {
     if (typeof window !== "undefined") {
       let data = JSON.parse(localStorage.getItem("cart"));
