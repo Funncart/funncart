@@ -73,6 +73,7 @@ const Cart = () => {
   const handleCheckoutData = (data) => {
     setCheckoutData(data);
   };
+  // console.log(CartItems);
   const handlePlaceOrder = () => {
     const sendData = async () => {
       setIsSubmit(true);
@@ -80,9 +81,11 @@ const Cart = () => {
       for (let i of CartItems) {
         orderItems = [
           ...orderItems,
-          `Ordered: ${i.slug} Qty:${i.quantity} Size:${
-            i.size && i.size
-          } Color : ${i.color && i.color}`,
+          `Ordered: ${i.slug} Qty:${i.quantity} Color : ${i.color && i.color} ${
+            i.categoryMainTitle && i.categoryMainTitle
+          } : ${i.category && i.category[0].categoryTitle}  AND ${
+            i.categoryMainTitle1 && i.categoryMainTitle1
+          } : ${i.category1 && i.category1[0].categoryTitle} `,
         ];
       }
       const { data } = await axios.post(

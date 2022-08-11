@@ -23,7 +23,7 @@ const CustomCategory = (props) => {
       });
     props.selectedCategory(result);
   }, [SelectedCategory]);
-  console.log(props.customCategoryData)
+  // console.log(props.customCategoryData)
   return (
     <div className={style.wrapper} style={{ fontFamily: "Lato,sans-serif" }}>
       <p className={style.para}>{props.categoryMainTitle}</p>

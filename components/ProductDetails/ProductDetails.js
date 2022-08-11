@@ -109,6 +109,10 @@ const ProductDetails = ({
           slug: slugValue,
           size: SizeValue,
           color: ColorValue,
+          category: SelectedCategory,
+          category1: SelectedCategory1,
+          categoryMainTitle: categoryMainTitle && categoryMainTitle,
+          categoryMainTitle1: categoryMainTitle1 && categoryMainTitle1,
         });
       }
       setIsAdded(true);
@@ -118,7 +122,6 @@ const ProductDetails = ({
       localStorage.setItem("cart", JSON.stringify(updatedItems));
     }
   };
-
   let average = 0;
   let sum = 0;
   if (rating) {
