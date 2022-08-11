@@ -4,18 +4,18 @@ import axios from "axios";
 const style = {
   wrapper:
     "md:my-8 lg:my-12 flex flex-col md:flex-row items-center justify-between mx-auto w-[75%] md:w-[70%] mx-auto",
-  suggestion: "md:w-[35%] my-6 text-stone-900 flex flex-col mt-16 items-center",
+  suggestion: "md:w-[35%] my-6 text-green-900 flex flex-col mt-16 items-center",
   center: "md:w-[25%] flex flex-col my-6 ",
   contact: "md:w-[50%] my-6",
-  ourAddress: "text-stone-800text-sm md:text-sm text-center",
-  contactContent: "text-stone-800 text-sm md:text-md text-center",
-  info: "text-stone-800 text-sm md:text-md text-center mt-5",
+  ourAddress: "text-green-800 text-sm md:text-sm text-center",
+  contactContent: "text-green-900 text-sm md:text-md text-center",
+  info: "text-green-900 text-sm md:text-md text-center mt-5",
   heading:
-    "text-stone-900 text-md md:text-xl text-center my-6 border-b-2 border-stone-700 max-w-fit mx-auto",
+    "text-green-900 text-md md:text-xl text-center my-6 border-b-2 border-green-700 max-w-fit mx-auto",
 
   input:
-    "border-2 border-stone-600 bg-transparent my-0 px-2 py-3 md:px-2 outline-none border-2 focus:border-[#c8a165] w-[100%] md:w-[65%] ",
-  btn: " hover:bg-opacity-[0.9] transition duration-[300ms] my-6 bg-[#c8a165] max-w-fit px-4 md:px-6 py-2 md:py-1 text-stone-100 tracking-wide ",
+    "border-2 border-green-600 bg-transparent my-0 px-2 py-3 md:px-2 outline-none border-2 focus:border-[#c8a165] w-[100%] md:w-[65%] ",
+  btn: " hover:bg-opacity-[0.9] transition duration-[300ms] my-6 bg-[#c8a165] max-w-fit px-4 md:px-6 py-2 md:py-1 text-green-100 tracking-wide ",
 };
 
 const MainFooter = () => {

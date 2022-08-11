@@ -19,17 +19,17 @@ const MoreDetails = ({
     navContainer: "flex justify-between bg-white px-1 sm:px-6 md:px-8 lg:px-12",
     button1: `hover:bg-opacity-[0.9] transition duration-[200ms] ${
       WhichNav == "description"
-        ? "bg-[#c8a165] text-gray-50"
+        ? "bg-green-700 text-gray-50"
         : "bg-[#ffffff] text-stone-600"
     }   px-4 sm:px-16 md:px-24 lg:px-36 py-2 md:py-4 lg:px-32 text-lg cursor-pointer my-7 md:my-6`,
     button2: `hover:bg-opacity-[0.9] transition duration-[200ms] ${
       WhichNav == "reviews"
-        ? "bg-[#c8a165] text-gray-50"
+        ? "bg-green-700 text-gray-50"
         : "bg-[#ffffff] text-stone-600"
     }    px-4 sm:px-16 md:px-24 lg:px-36 py-2 md:py-4 lg:px-32 text-lg cursor-pointer my-7 md:my-6`,
     button3: `hover:bg-opacity-[0.9] transition duration-[200ms] ${
       WhichNav == "information"
-        ? "bg-[#c8a165] text-gray-50"
+        ? "bg-green-700 text-gray-50"
         : "bg-[#ffffff] text-stone-600"
     }    px-4 sm:px-16 md:px-24 lg:px-36 py-2 md:py-4 lg:px-32 text-lg cursor-pointer my-7 md:my-6`,
   };

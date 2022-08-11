@@ -9,12 +9,12 @@ const SingleProduct = ({ item }) => {
   const style = {
     wrapper: "px-2 md:px-4 py-4 md:py-4 bg-white flex flex-col items-start ",
     img: "mb-4",
-    name: "font-semibold my-2 md:my-3 text-xs md:text-lg",
-    price: "my-1 md:my-3 text-xs md:text-lg",
+    name: "font-semibold my-2 md:my-3 text-xs md:text-lg text-green-900",
+    price: "my-1 md:my-3 text-xs md:text-lg text-green-900",
     buttonContainer:
-      " transition-all duration-[350ms] cursor-pointer flex items-center justify-center bg-[#c8a165] hover:bg-opacity-[0.8] px-2 md:px-8 py-1 md:py-3 max-w-fit md:max-w-none md:w-[100%]",
-    btn: "flex-1 tracking-wide text-stone-100 text-xs md:text-sm",
-    hoverButton: "font-bold px-3 py-6 bg-[#c8a165] rounded-full cursor-pointer",
+      " transition-all duration-[350ms] cursor-pointer flex items-center justify-center bg-green-700 hover:bg-opacity-[0.8] px-2 md:px-8 py-1 md:py-3 max-w-fit md:max-w-none md:w-[100%]",
+    btn: "flex-1 tracking-wide text-white text-xs md:text-sm",
+    hoverButton: "font-bold px-3 py-6 bg-green-700 rounded-full cursor-pointer text-white",
   };
   return (
     <NextLink href={`/${item.slug.current}`} passHref>

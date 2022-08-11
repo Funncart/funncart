@@ -4,8 +4,8 @@ const style = {
   wrapper:
     "flex bg-[#f6f6f6] max-w-fit px-3 py-3 my-5 items-center justify-center mt-9 md:mt-7 mx-auto md:mx-0",
   value:
-    "border-l-[1px] border-r-[1px] border-stone-700 px-5 md:px-10 cursor-pointer text-stone-500 font-bold",
-  value1: "px-5 px-10 cursor-pointer text-lg text-stone-600 font-bold",
+    "border-l-[1px] border-r-[1px] border-green-700 px-5 md:px-10 cursor-pointer text-green-800 font-bold",
+  value1: "px-5 px-10 cursor-pointer text-lg text-green-800 font-bold",
 };
 
 const ItemCount = (props) => {
