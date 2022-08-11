@@ -30,7 +30,7 @@ const ProductDetails = ({
     wrapper:
       "w-[95%] md:w-[80%] lg:w-[65%] mx-auto py-12 sm:py-16 md:py-24 lg:py-32 flex flex-col",
     detailsContainer:
-      "px-5 sm:px-6 md:px-8 lg:px-12  py-5 sm:py-6 md:py-8 lg:py-12 bg-white flex flex-col md:flex-row",
+      "px-5 sm:px-6 md:px-8 lg:px-12  py-5 sm:py-6 md:py-8 lg:py-12 bg-white flex flex-col md:flex-row items-center",
     imageContainer: " mr-12 overflow-hidden",
     contentContainer: "w-[100%] md:w-[60%] flex flex-col",
     header1: "flex items-center justify-center mt-4",
@@ -142,8 +142,8 @@ const ProductDetails = ({
               <div className="hover:scale-[1.2] transition duration-[800ms] overflow-hidden">
                 <Image
                   src={`${urlForThumbnail(image)}`}
-                  height={400}
-                  width={380}
+                  height={260}
+                  width={260}
                   // className="hover:scale-[1.5] transition duration-[800ms] overflow-"
                 />
               </div>
