@@ -20,7 +20,7 @@ const Products = () => {
   // sending the request to get the data from the server of sanity
   useEffect(() => {
     const fetchData = async () => {
-      const p = await client.fetch(`*[_type == "allProduct"]`);
+      const p = await client.fetch(`*[_type == "featuredProduct"]`);
       setProduct(p);
     };
     fetchData();

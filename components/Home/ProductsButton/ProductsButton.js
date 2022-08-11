@@ -10,12 +10,12 @@ const style = {
 const ProductsButton = () => {
     return (
         <div className={style.wrapper}>
-            <div className={style.headingContainer}>
+            {/* <div className={style.headingContainer}>
                 <h2 className={style.smallHeading} style={{ fontFamily: 'Yeseva One, cursive' }} >Shop Online On Okeere</h2>
-            </div>
+            </div> */}
             <Link href="/products" >
                 <button className={style.btn} style={{ fontFamily: 'Poppins, sans-serif' }}>
-                    View All Products
+                    View Featured Products
                 </button></Link>
 
         </div>

@@ -15,7 +15,7 @@ const FeaturedProducts = ({ data }) => {
   // sending the request to get the data from the server of sanity
   useEffect(() => {
     const getData = async () => {
-      const p = await client.fetch(`*[_type == "featuredProduct"]`);
+      const p = await client.fetch(`*[_type == "allProduct"]`);
       setProduct(p);
     };
     getData();
