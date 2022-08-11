@@ -11,14 +11,14 @@ const Navbar = ({ click }) => {
   const style = {
     wrapper:
       "absolute sm:relative text-gray-200 w-[100%] lg:w-[75%] mx-auto py-3 z-10 bg-[#f6f6f6]",
-    list: "cursor-pointer block my-4 py-2 pr-4 pl-3 text-stone-600 hover:text-stone-900 hover:mx-3 md:border-0 font-bold md:p-0     transition-all duration-[300ms] border-move-animation",
+    list: "cursor-pointer block my-4 py-2 pr-4 pl-3 text-green-700 hover:text-green-800 hover:mx-3 md:border-0 font-bold md:p-0     transition-all duration-[300ms] border-move-animation",
     listHome:
-      "cursor-pointer text-stone-600 hover:text-stone-900 block my-4 py-2 pr-4 pl-3 hover:text-stone-900 hover:mx-3  font-bold md:p-0 transition-all duration-[300ms] border-move-animation",
+      "cursor-pointer text-green-700 hover:text-green-800 block my-4 py-2 pr-4 pl-3 hover:text-stone-900 hover:mx-3  font-bold md:p-0 transition-all duration-[300ms] border-move-animation",
     cart: `hover:scale-[1.3] px-2 py-2 md:py-2 border-2 border-transparent  rounded-full font-bold  transition-all duration-[300ms] cursor-pointer text-2xl ${
       screenWidth.width < 1024 ? "text-gray-800" : "text-gray-800"
     }`,
     seller:
-      "text-xs md:text-md text-[#ffffff] bg-[#c8a165] px-4 py-1 md:px-8 md:py-2  cursor-pointer hover:bg-opacity-[0.9] mx-4",
+      "text-xs md:text-md text-[#ffffff] bg-green-700 px-4 py-1 md:px-8 md:py-2  cursor-pointer hover:bg-opacity-[0.9] mx-4",
   };
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const handleSmallMenu = () => {
@@ -35,10 +35,10 @@ const Navbar = ({ click }) => {
           <Link href="/">
             <div className="flex items-center scale-x-[1.4] scale-y-[1.2] mx-4 cursor-pointer mx-3 md:mx-16">
               <Image
-                src={`/Funncart.png`}
+                src={`/urdulogo.png`}
                 alt="Funncart logo"
-                width={70}
-                height={70}
+                width={60}
+                height={45}
               />
             </div>
           </Link>
