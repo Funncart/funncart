@@ -3,17 +3,17 @@ import React, { useState } from "react";
 const style = {
   wrapper: "flex flex-col py-4",
   smallHeading:
-    "border-b-2 border-stone-200 text-2xl md:text-3xl max-w-fit mx-auto py-2 text-stone-800 ",
-  btn: "bg-opacity-[0.8] hover:bg-opacity-[0.95] transition duration-[300ms] my-6 bg-red-400 mx-auto px-8 md:px-12 py-2 md:py-3 text-stone-50 font-bold tracking-wide",
-  subtotal: " text-stone-400 flex w-[75%] md:w-[50%] mx-auto my-6 ",
+    "border-b-2 border-green-900 text-2xl md:text-3xl max-w-fit mx-auto py-2 text-green-900 ",
+  btn: "bg-opacity-[1] hover:bg-opacity-[0.95] transition duration-[300ms] my-6 bg-green-800 mx-auto px-8 md:px-12 py-2 md:py-3 text-stone-50 font-bold tracking-wide",
+  subtotal: " text-green-800 flex w-[75%] md:w-[50%] mx-auto my-6 ",
   para: "  flex-1",
   amount: "",
   orderTotal:
-    "text-red-400 w-[75%] md:w-[50%] mx-auto my-6 font-normal flex border-t-[2px] border-stone-400 py-3",
+    "text-red-400 w-[75%] md:w-[50%] mx-auto my-6 font-normal flex border-t-[2px] border-green-900 py-3",
   input:
-    "border-b-2 border-stone-400 outline-none ring-none w-[30%] placeholder:text-xs",
+    "border-b-2 border-green-900 outline-none ring-none w-[30%] placeholder:text-xs",
   promoContainer:
-    "flex items-center justify-between w-[75%] md:w-[50%] mx-auto my-6 text-stone-400 ",
+    "flex items-center justify-between w-[75%] md:w-[50%] mx-auto my-6 text-black ",
 };
 const PaymentDetails = (props) => {
   const [Promo, setPromo] = useState("");
@@ -68,7 +68,7 @@ const PaymentDetails = (props) => {
         />
         <button
           onClick={handleApplyPromo}
-          className="px-4 py-2 bg-[#c8a165] bg-opacity-[1] hover:bg-opacity-[0.9] text-white text-xs"
+          className="px-4 py-2 bg-green-800 bg-opacity-[1] hover:bg-opacity-[0.9] text-white text-xs"
         >
           ADD
         </button>

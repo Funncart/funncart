@@ -8,11 +8,11 @@ import { useRouter } from "next/router";
 const style = {
   wrapper: "bg-[#F5F4F4] pb-8",
   cartNav: "flex w-[98%] md:w-[70%] lg:w-[55%] mx-auto justify-around",
-  nav1: "px-6 md:px-12 py-4 md:py-6 bg-[#c8a165] text-stone-50 font-bold tracking-wide w-[45%] flex items-center justify-center cursor-pointer hover:bg-opacity-[0.85] transition-all duration-[350ms] my-8 text-xs md:text-sm",
+  nav1: "px-6 md:px-12 py-4 md:py-6 bg-green-700 text-stone-50 font-bold tracking-wide w-[45%] flex items-center justify-center cursor-pointer hover:bg-opacity-[0.85] transition-all duration-[350ms] my-8 text-xs md:text-sm",
   itemsContainer:
     "bg-white px-4 md:px-6 py-6 md:py-8 w-[95%] lg:w-[85%] mx-auto",
   itemsNav:
-    " bg-[#F5F4F4] flex text-stone-700 py-2 items-center justify-around",
+    " bg-[#F5F4F4] flex text-green-900 py-2 items-center justify-around",
   para: " text-center w-[20%] text-xs md:text-sm",
   singleItemListContainer: "flex flex-col",
   paymentDetails: "my-12 bg-white w-[90%] md:w-[50%] lg:w-[40%] mx-auto",
@@ -177,7 +177,7 @@ const Cart = () => {
                 );
               })
             ) : (
-              <div className="text-stone-400 text-xl md:text-2xl text-center my-24">
+              <div className=" text-xl md:text-2xl text-center my-24 text-green-800 font-bold">
                 Cart Empty
               </div>
             )}

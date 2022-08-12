@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 const style = {
   wrapper: " bg-white my-12  w-[90%] md:w-[50%] lg:w-[40%] mx-auto py-4",
   smallHeading:
-    "border-b-2 border-stone-200 text-2xl md:text-3xl max-w-fit mx-auto py-2 text-stone-800 ",
+    "border-b-2 border-green-900 text-2xl md:text-3xl max-w-fit mx-auto py-2 text-green-900 ",
   form: "flex flex-col my-6",
   input:
-    "px-3  md:px-4 py-2 md:py-3 placeholder:text-stone-500 ring-none outline-none bg-[#F5F4F4] my-4 w-[90%] md:w-[85%] mx-auto",
+    "px-3  md:px-4 py-2 md:py-3 placeholder:text-black ring-none outline-none bg-[#F5F4F4] my-4 w-[90%] md:w-[85%] mx-auto",
   btn: "bg-opacity-[0.8] hover:bg-opacity-[0.95] transition duration-[300ms] my-6 bg-red-400 mx-auto px-8 md:px-12 py-2 md:py-3 text-stone-800 font-bold tracking-wide",
 };
 const Checkout = (props) => {

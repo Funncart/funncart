@@ -8,7 +8,7 @@ const style = {
   catergoriesContainer: "flex flex-col items-center justify-center my-8",
   productsGrid: "flex flex-col items-center justify-center py-12",
   smallHeading:
-    "my-4 border-b-2 border-stone-200 text-2xl md:text-3xl max-w-fit mx-auto py-2 text-stone-800 ",
+    "my-4 border-b-2 border-stone-200 text-2xl md:text-3xl max-w-fit mx-auto py-2 text-green-900 ",
 };
 
 const Products = () => {
@@ -25,7 +25,7 @@ const Products = () => {
     };
     fetchData();
   }, []);
-  
+  console.log(product)
   return (
     <div className={style.wrapper}>
       <Header headingText="ALL PRODUCTS" />
