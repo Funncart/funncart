@@ -5,7 +5,7 @@ import VisibilitySensor from "react-visibility-sensor";
 const SingleCounter = (props) => {
 	const [completed,setCompleted] = React.useState(false)
 	return (
-		<div className="text-stone-700 text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold" >
+		<div className="text-green-900 text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold" >
 			<CountUp
 				start={props.start}
 				end={props.end}
