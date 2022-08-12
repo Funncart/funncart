@@ -6,6 +6,7 @@ const style = {
   btn:'bg-green-800 px-8 md:px-12 py-3 md:py-3 text-white mx-auto my-12 hover:bg-opacity-[0.9] transition duration-[300ms]'
 };
 const Thanks = () => {
+    // asd
   return (
     <div className={style.wrapper}>
       <Header1 headingText="Thanks for Shopping" />
