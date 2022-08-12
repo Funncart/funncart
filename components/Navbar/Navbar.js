@@ -15,7 +15,7 @@ const Navbar = ({ click }) => {
     listHome:
       "cursor-pointer text-green-700 hover:text-green-800 block my-4 py-2 pr-4 pl-3 hover:text-stone-900 hover:mx-3  font-bold md:p-0 transition-all duration-[300ms] border-move-animation",
     cart: `hover:scale-[1.3] px-2 py-2 md:py-2 border-2 border-transparent  rounded-full font-bold  transition-all duration-[300ms] cursor-pointer text-2xl ${
-      screenWidth.width < 1024 ? "text-gray-800" : "text-gray-800"
+      screenWidth.width < 1024 ? "text-green-900" : "text-green-900"
     }`,
     seller:
       "text-xs md:text-md text-[#ffffff] bg-green-700 px-4 py-1 md:px-8 md:py-2  cursor-pointer hover:bg-opacity-[0.9] mx-4",

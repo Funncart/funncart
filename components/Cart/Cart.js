@@ -4,6 +4,7 @@ import SingleCartItem from "./SingleCartItem";
 import PaymentDetails from "./PaymentDetails";
 import Checkout from "./Checkout";
 import axios from "axios";
+import { useRouter } from "next/router";
 const style = {
   wrapper: "bg-[#F5F4F4] pb-8",
   cartNav: "flex w-[98%] md:w-[70%] lg:w-[55%] mx-auto justify-around",
@@ -19,6 +20,7 @@ const style = {
 };
 
 const Cart = () => {
+  const router = useRouter();
   const [menu, setMenu] = useState("shoppingcart");
   const [CartItems, setCartItems] = useState([]);
   const [Total, setTotal] = useState(0);
@@ -114,6 +116,7 @@ const Cart = () => {
           },
         }
       );
+      router.push("/thanks");
       const flashTime = setTimeout(() => {
         setIsSubmit(false);
       }, 2000);

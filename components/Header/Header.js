@@ -14,7 +14,7 @@ const Header = ({ headingText }) => {
       className={style.wrapper}
       style={{
         background:
-          'radial-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),url("/img/header.webp")',
+          'radial-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),url("/img/header.webp")',
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         backgroundPosition: "center",

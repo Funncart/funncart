@@ -3,11 +3,11 @@ import axios from "axios";
 const style = {
   wrapper: "",
   smallHeading:
-    "border-b-2 border-stone-200 text-2xl md:text-3xl max-w-fit mx-auto py-2 text-stone-800 my-8 md:my-10",
+    "border-b-2 border-green-900 text-2xl md:text-3xl max-w-fit mx-auto py-2 text-green-900 my-8 md:my-10",
   formContainer: "flex flex-col",
   input:
-    "px-3  md:px-4 py-2 md:py-3 placeholder:text-stone-500 ring-none outline-none bg-[#F5F4F4] my-4 w-[90%] md:w-[85%] mx-auto",
-  btn: "text-white bg-opacity-[0.8] hover:bg-opacity-[0.95] transition duration-[300ms] my-6 bg-red-400 mx-auto px-8 md:px-12 py-2 md:py-3 font-bold tracking-wide",
+    "px-3  md:px-4 py-2 md:py-3 placeholder:text-gray-900 ring-none outline-none bg-[#F5F4F4] my-4 w-[90%] md:w-[85%] mx-auto",
+  btn: "text-white bg-opacity-[0.8] hover:bg-opacity-[0.95] transition duration-[300ms] my-6 bg-green-700 mx-auto px-8 md:px-12 py-2 md:py-3 font-bold tracking-wide",
 };
 
 const ContactForm = () => {
