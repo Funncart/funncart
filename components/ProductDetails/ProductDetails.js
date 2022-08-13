@@ -10,6 +10,7 @@ import Animator from "../../components/UI/Animator";
 import Color from "./Color";
 import Size from "./Size";
 import CustomCategory from "./CustomCategory";
+import useWindowSize from "../../hooks/windowSize";
 const ProductDetails = ({
   productName,
   price,
@@ -31,7 +32,8 @@ const ProductDetails = ({
       "w-[95%] md:w-[80%] lg:w-[65%] mx-auto py-12 sm:py-16 md:py-24 lg:py-32 flex flex-col",
     detailsContainer:
       "px-5 sm:px-6 md:px-8 lg:px-12  py-5 sm:py-6 md:py-8 lg:py-12 bg-white flex flex-col md:flex-row items-center",
-    imageContainer: " md:mr-12 overflow-hidden flex items-center justify-center",
+    imageContainer:
+      " md:mr-12 overflow-hidden flex items-center justify-center",
     contentContainer: "w-[100%] md:w-[60%] flex flex-col",
     header1: "flex items-center justify-center mt-4",
     name: "text-2xl md:text-3xl font-semibold text-green-700 flex-1",
@@ -130,6 +132,7 @@ const ProductDetails = ({
     }
     average = (sum / rating.length).toFixed(1);
   }
+  const { width } = useWindowSize();
   return (
     <Animator>
       <div className="" style={{ fontFamily: "Lato,sans-serif" }}>
@@ -142,8 +145,8 @@ const ProductDetails = ({
               <div className="hover:scale-[1.2] transition duration-[800ms] overflow-hidden">
                 <Image
                   src={`${urlForThumbnail(image)}`}
-                  height={190}
-                  width={280}
+                  height={width<700?190:260}
+                  width={width<700?280:340}
                   // className="hover:scale-[1.5] transition duration-[800ms] overflow-"
                 />
               </div>
