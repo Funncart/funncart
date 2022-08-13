@@ -30,7 +30,7 @@ const Contact = () => {
           </div> */}
         <div className={style.singleContactContainer}>
           <AiOutlinePhone className="text-3xl text-green-600 bg-white rounded-full p-1 mx-4" />
-          <p className={style.para}>+923070044177</p>
+          <p className={style.para}>+923343866227</p>
         </div>
         <div className={style.singleContactContainer}>
           <AiOutlineMail className="text-3xl text-green-600 bg-white rounded-full p-1 mx-4" />
