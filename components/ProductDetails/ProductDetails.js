@@ -142,8 +142,8 @@ const ProductDetails = ({
               <div className="hover:scale-[1.2] transition duration-[800ms] overflow-hidden">
                 <Image
                   src={`${urlForThumbnail(image)}`}
-                  height={200}
-                  width={260}
+                  height={190}
+                  width={280}
                   // className="hover:scale-[1.5] transition duration-[800ms] overflow-"
                 />
               </div>
