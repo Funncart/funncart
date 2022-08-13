@@ -91,11 +91,11 @@ const Navbar = ({ click }) => {
                   </p>
                 </Link>
               </li>
-              <Link href="/products">
+              {/* <Link href="/products">
                 <li>
                   <p className={style.list}>Products</p>
                 </li>
-              </Link>
+              </Link> */}
               <Link href="/about">
                 <li>
                   <p className={style.list}>About</p>

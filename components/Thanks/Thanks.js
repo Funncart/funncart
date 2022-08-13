@@ -10,11 +10,11 @@ const Thanks = () => {
   return (
     <div className={style.wrapper}>
       <Header1 headingText="Thanks for Shopping" />
-      {/* order details */}\
+      {/* order details */}
       <Link href="/products">
         <div className="flex flex-col items-center justify-center">
           <p className="text-green-900 text-center text-lg  my-4">
-            Your order has been placed. Out team will contact you soon.
+            Your order has been placed. Our team will contact you soon.
           </p>
           <button className={style.btn}>Continue Shopping</button>
         </div>

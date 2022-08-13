@@ -3,7 +3,7 @@ import React from 'react'
 
 const style = {
     wrapper: 'flex flex-col text-md md:text-md tracking-wider mx-auto z-10 bg-red-300',
-    list: 'mx-auto block my-4 py-2 px-2 border-b-2 border-[#c8a165] font-bold  transition duration-[300ms] text-lg text-stone-600 text-center',
+    list: 'mx-auto block my-4 py-2 px-2 border-b-2 border-green-800 font-bold  transition duration-[300ms] text-lg text-green-800 text-center',
 
 
 }
@@ -16,9 +16,9 @@ const DropDownMenu = () => {
                 <li>
                     <a href="/about" className={style.list}>About</a>
                 </li>
-                <li>
+                {/* <li>
                     <a href="/products" className={style.list}>Products</a>
-                </li>
+                </li> */}
                 <li>
                     <a href="/contact" className={style.list}>Contact</a>
                 </li>
