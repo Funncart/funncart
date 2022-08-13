@@ -28,7 +28,7 @@ const Products = () => {
   console.log(product)
   return (
     <div className={style.wrapper}>
-      <Header headingText="ALL PRODUCTS" />
+      <Header headingText="FEATURED PRODUCTS" />
       {/* adding the categories */}
 
       <div className={style.catergoriesContainer}>
