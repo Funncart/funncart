@@ -4,7 +4,7 @@ import SingleCounter from "./SingleCounter";
 const style = {
   wrapper: 'h-[60%] flex justify-around my-6 flex-wrap',
   singleCounter: 'flex flex-col items-center justify-center w-[45%] p-4',
-  details: 'text-gray-500 text-lg sm:text-lg md:text-md',
+  details: 'text-green-900 text-lg sm:text-lg md:text-md',
 }
 const Counter = () => {
   return (

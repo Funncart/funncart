@@ -90,33 +90,35 @@ const Cart = () => {
           } : ${i.category1 && i.category1[0].categoryTitle} `,
         ];
       }
-      const { data } = await axios.post(
-        `https://p0ifd5ok.api.sanity.io/v2021-06-07/data/mutate/production?returnIds=true`,
-        {
-          mutations: [
-            {
-              create: {
-                _type: "order",
-                createdAt: new Date().toISOString(),
-                name: CheckoutData.Name,
-                email: CheckoutData.Email,
-                phoneNumber: CheckoutData.PhoneNumber,
-                city: CheckoutData.City,
-                address: CheckoutData.Address,
-                order: [...orderItems],
-                total: `${Total} + Rs150 (Shipping Fee)`,
+      if (CartItems.length > 0) {
+        const { data } = await axios.post(
+          `https://p0ifd5ok.api.sanity.io/v2021-06-07/data/mutate/production?returnIds=true`,
+          {
+            mutations: [
+              {
+                create: {
+                  _type: "order",
+                  createdAt: new Date().toISOString(),
+                  name: CheckoutData.Name,
+                  email: CheckoutData.Email,
+                  phoneNumber: CheckoutData.PhoneNumber,
+                  city: CheckoutData.City,
+                  address: CheckoutData.Address,
+                  order: [...orderItems],
+                  total: `${Total} + Rs150 (Shipping Fee)`,
+                },
               },
-            },
-          ],
-        },
-        {
-          headers: {
-            "Content-type": "application/json",
-            Authorization: `Bearer ${tokenWithWriteAccess}`,
+            ],
           },
-        }
-      );
-      router.push("/thanks");
+          {
+            headers: {
+              "Content-type": "application/json",
+              Authorization: `Bearer ${tokenWithWriteAccess}`,
+            },
+          }
+        );
+        router.push("/thanks");
+      }
       const flashTime = setTimeout(() => {
         setIsSubmit(false);
       }, 2000);
@@ -187,11 +189,11 @@ const Cart = () => {
       ) : (
         <Checkout checkoutData={handleCheckoutData} />
       )}
-      {IsSubmit && (
+      {/* {IsSubmit && (
         <p className="bg-[#c8a165] px-4 py-2 text-gray-50 rounded max-w-fit my-6 mx-auto">
           Your Order is placed successfully
         </p>
-      )}
+      )} */}
 
       {menu == "checkout" && (
         <div className={style.paymentDetails}>

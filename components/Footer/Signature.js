@@ -23,11 +23,11 @@ const Signature = () => {
             Home
           </a>
         </li>
-        <li>
+        {/* <li>
           <a aria-label="Services" href="/products" className={style.list}>
             Products
           </a>
-        </li>
+        </li> */}
         <li>
           <a aria-label="About" href="/about" className={style.list}>
             About

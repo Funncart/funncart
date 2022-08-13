@@ -5,7 +5,7 @@ import client from "../../../pages/api/client.js";
 const style = {
   wrapper: "px-4 py-4",
   headingContainer: "flex items-center jusitfy-center flex-col my-12",
-  smallHeading: " text-4xl md:text-4xl max-w-fit mx-auto py-2 text-stone-800 ",
+  smallHeading: " text-4xl md:text-4xl max-w-fit mx-auto py-2 text-green-900 ",
   productsContainer:
     "flex flex-wrap w-[99%] md:w-[95%] lg:w-[70%] gap-2 md:gap-8 mx-auto justify-around sm:justify-center",
 };
@@ -28,9 +28,9 @@ const FeaturedProducts = ({ data }) => {
           className={style.smallHeading}
           style={{ fontFamily: "Yeseva One, cursive" }}
         >
-          Featured Products
+          Our Products
         </h2>
-        <MdOutlineFeaturedPlayList className="text-3xl " />
+        <MdOutlineFeaturedPlayList className="text-3xl text-green-900" />
       </div>
 
       <div className={style.productsContainer}>
