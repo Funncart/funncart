@@ -122,7 +122,7 @@ const ProductDetails = ({
       setIsAdded(true);
       setTimeout(() => {
         setIsAdded(false);
-      }, 3500);
+      }, 3000);
       localStorage.setItem("cart", JSON.stringify(updatedItems));
     }
   };
@@ -186,7 +186,7 @@ const ProductDetails = ({
             {/* content side of the container */}
             <div className={style.contentContainer}>
               {IsAdded ? (
-                <p className="bg-green-500 px-4 py-2 text-white rounded max-w-fit my-2">
+                <p className="bg-green-700 px-4 py-2 text-white rounded max-w-fit my-2">
                   Successfully added to cart
                 </p>
               ) : (

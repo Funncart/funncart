@@ -23,7 +23,7 @@ const SingleProduct = ({ item }) => {
           <div class="content-overlay"></div>
           <div className="content-image">
             <img
-              src={`${urlForThumbnail(item.image)}`}
+              src={`${urlForThumbnail(item.images[0])}`}
               alt="Image for product"
               width={`${width < 700 ? 140 : 230}`}
               height={`${width < 700 ? 140 : 230}`}
