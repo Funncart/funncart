@@ -7,7 +7,7 @@ const CustomCategory = (props) => {
         ? ""
         : "cursor-not-allowed px-2 max-w-fit opacity-[0.2]"
     }`,
-    para: `text-stone-700 text-md font-bold `,
+    para: `text-green-800 text-md font-bold `,
     sizeContainer: "flex ml-6",
   };
   const [SelectedCategory, setSelectedCategory] = useState("");
@@ -32,10 +32,10 @@ const CustomCategory = (props) => {
           props.customCategoryData.map((singleCategory) => {
             return (
               <p
-                className={`${
+                className={ ` ${
                   singleCategory.categoryTitle == SelectedCategory
-                    ? "bg-[#c8a165] text-white"
-                    : "text-stone-600 "
+                    ? "bg-green-700 text-white"
+                    : "text-green-900"
                 } mx-4 px-4 py-2 w-[30%] cursor-pointer w-[50%] ${
                   props.categoryMainTitle ? "" : "cursor-not-allowed "
                 }`}

@@ -26,6 +26,7 @@ const ProductDetails = ({
   customCategoryData,
   categoryMainTitle1,
   customCategoryData1,
+  images, // it will contain the array of images for multiple
 }) => {
   const style = {
     wrapper:
@@ -33,7 +34,7 @@ const ProductDetails = ({
     detailsContainer:
       "px-5 sm:px-6 md:px-8 lg:px-12  py-5 sm:py-6 md:py-8 lg:py-12 bg-white flex flex-col md:flex-row items-center",
     imageContainer:
-      " md:mr-12 overflow-hidden flex items-center justify-center",
+      " md:mr-12 overflow-hidden flex items-center justify-center flex-col",
     contentContainer: "w-[100%] md:w-[60%] flex flex-col",
     header1: "flex items-center justify-center mt-4",
     name: "text-2xl md:text-3xl font-semibold text-green-700 flex-1",
@@ -50,6 +51,7 @@ const ProductDetails = ({
   const [ColorValue, setColorValue] = useState("#000000");
   const [ItemCounts, setItemCounts] = useState(1);
   const [IsAdded, setIsAdded] = useState(false);
+  const [ImgKey, setImgKey] = useState(images[0]._key);
   const handleGetSize = (size) => {
     setSizeValue(size);
   };
@@ -106,7 +108,7 @@ const ProductDetails = ({
           name: productName,
           price: PriceValue,
           quantity: ItemCounts,
-          image: urlForThumbnail(image),
+          image: urlForThumbnail(images[0]),
           total: PriceValue * ItemCounts,
           slug: slugValue,
           size: SizeValue,
@@ -133,6 +135,16 @@ const ProductDetails = ({
     average = (sum / rating.length).toFixed(1);
   }
   const { width } = useWindowSize();
+  const handleImageClick = (imageKey) => {
+    setImgKey(imageKey);
+  };
+  let index;
+  let obj = images.find((o, i) => {
+    if (o._key === ImgKey) {
+      index = i;
+      return true;
+    }
+  });
   return (
     <Animator>
       <div className="" style={{ fontFamily: "Lato,sans-serif" }}>
@@ -144,11 +156,31 @@ const ProductDetails = ({
             <div className={style.imageContainer}>
               <div className="hover:scale-[1.2] transition duration-[800ms] overflow-hidden">
                 <Image
-                  src={`${urlForThumbnail(image)}`}
-                  height={width<700?130:250}
-                  width={width<700?200:330}
+                  src={`${urlForThumbnail(images[index])}`}
+                  height={width < 700 ? 130 : 200}
+                  width={width < 700 ? 200 : 280}
                   // className="hover:scale-[1.5] transition duration-[800ms] overflow-"
                 />
+              </div>
+              {/* FOR ARRAY OF MULTIPLE IMAGES */}
+              <div className="flex gap-3 md:gap-4 mt-6 md:mt-8">
+                {images.map((it) => {
+                  return (
+                    <div
+                      onClick={() => handleImageClick(it._key)}
+                      className={`cursor-pointer ${
+                        ImgKey == it._key && "border-b-4  border-green-800 "
+                      }`}
+                    >
+                      <Image
+                        src={`${urlForThumbnail(it)}`}
+                        height={width < 700 ? 60 : 70}
+                        width={width < 700 ? 60 : 82}
+                        // className="hover:scale-[1.5] transition duration-[800ms] overflow-"
+                      />
+                    </div>
+                  );
+                })}
               </div>
             </div>
             {/* content side of the container */}
