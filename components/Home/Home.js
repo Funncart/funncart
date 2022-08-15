@@ -41,7 +41,7 @@ const Home = ({}) => {
   return (
     <div className={style.wrapper}>
       {/* ------------------------------------------------ */}
-      <div className="flex items-center justify-center mx-auto w-[100%] md:w-[80%] h-[80vh] md:h-auto">
+      <div className="flex items-center justify-center mx-auto w-[100%] md:w-[80%] h-[100vh] md:h-auto">
         <Swiper
           // effect="fade"
           spaceBetween={0}

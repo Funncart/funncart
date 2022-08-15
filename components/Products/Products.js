@@ -20,15 +20,15 @@ const Products = () => {
   // sending the request to get the data from the server of sanity
   useEffect(() => {
     const fetchData = async () => {
-      const p = await client.fetch(`*[_type == "featuredProduct"]`);
+      const p = await client.fetch(`*[_type == "allProduct"]`);
       setProduct(p);
     };
     fetchData();
   }, []);
-  console.log(product)
+  // console.log(product);
   return (
     <div className={style.wrapper}>
-      <Header headingText="FEATURED PRODUCTS" />
+      <Header headingText="ALL PRODUCTS" />
       {/* adding the categories */}
 
       <div className={style.catergoriesContainer}>
