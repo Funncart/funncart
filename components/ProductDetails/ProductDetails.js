@@ -155,12 +155,22 @@ const ProductDetails = ({
             {/* image side of container */}
             <div className={style.imageContainer}>
               <div className="hover:scale-[1.2] transition duration-[800ms] overflow-hidden">
-                <Image
+                <img
+                  src={`${urlForThumbnail(images[index])}`}
+                  // height={width < 700 ? 130 : 200}
+                  // width={width < 700 ? 200 : 280}
+                  // height={}
+                  // width={}
+                  // className="hover:scale-[1.5] transition duration-[800ms] overflow-"
+                />
+                {/* <Image
                   src={`${urlForThumbnail(images[index])}`}
                   height={width < 700 ? 130 : 200}
                   width={width < 700 ? 200 : 280}
+                  // height={}
+                  // width={}
                   // className="hover:scale-[1.5] transition duration-[800ms] overflow-"
-                />
+                /> */}
               </div>
               {/* FOR ARRAY OF MULTIPLE IMAGES */}
               <div className="flex gap-3 md:gap-4 mt-6 md:mt-8">
@@ -168,11 +178,14 @@ const ProductDetails = ({
                   return (
                     <div
                       onClick={() => handleImageClick(it._key)}
-                      className={`cursor-pointer ${
-                        ImgKey == it._key && "border-b-4  border-green-800 "
-                      }`}
+                      // className={`cursor-pointer ${
+                      //   ImgKey == it._key && "border-b-4  border-green-800 "
+                      // }`}
                     >
-                      <Image
+                      <img
+                      className={`cursor-pointer pb-1 ${
+                        ImgKey == it._key && "border-b-2 border-green-800 "
+                      }`}
                         src={`${urlForThumbnail(it)}`}
                         height={width < 700 ? 60 : 70}
                         width={width < 700 ? 60 : 82}
