@@ -7,7 +7,7 @@ import Box from "@mui/material/Box";
 import Rating from "@mui/material/Rating";
 import ItemCount from "./ItemCount";
 import Animator from "../../components/UI/Animator";
-import Color from "./Color";
+import Colors from "./Colors";
 import Size from "./Size";
 import CustomCategory from "./CustomCategory";
 import useWindowSize from "../../hooks/windowSize";
@@ -20,7 +20,7 @@ const ProductDetails = ({
   slugValue,
   image,
   rating,
-  size, //it is a boolean
+  size,
   color,
   categoryMainTitle,
   customCategoryData,
@@ -57,6 +57,12 @@ const ProductDetails = ({
   const handleGetSize = (size) => {
     setSizeValue(size);
   };
+  const handleGetPrice = (price) => {
+    if (price.length > 0) {
+      setPriceValue(price);
+    }
+  };
+
   const handleGetColor = (color) => {
     setColorValue(color);
   };
@@ -70,12 +76,17 @@ const ProductDetails = ({
     setSelectedCategory1(selectedCategory);
   };
   // setting the condition for custom category
+  // console.log(SelectedCategory && SelectedCategory[0].categorySizeContainer);
   useEffect(() => {
     if (SelectedCategory && SelectedCategory.length > 0) {
       if (SelectedCategory[0].categoryPrice) {
         setPriceValue(SelectedCategory[0].categoryPrice);
-      } else {
-        setPriceValue((prev) => prev);
+      }
+      // if (SelectedCategory && SelectedCategory.length > 0) {
+      //   setPriceValue(SelectedCategory[0].categoryPrice);
+      // }
+      else {
+        setPriceValue(price);
       }
     }
   }, [SelectedCategory]);
@@ -244,7 +255,7 @@ const ProductDetails = ({
                 categoryMainTitle={categoryMainTitle}
                 selectedCategory={handleSelectedCategory}
               />
-              <Color
+              <Colors
                 color={color}
                 getColor={handleGetColor}
                 categoryColors={
@@ -253,6 +264,8 @@ const ProductDetails = ({
               />
               <Size
                 getSize={handleGetSize}
+                getPrice={handleGetPrice}
+                sizeData={size}
                 categoryData={
                   SelectedCategory && SelectedCategory[0].categorySizeContainer
                 }

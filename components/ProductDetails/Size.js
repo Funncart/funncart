@@ -7,20 +7,29 @@ const Size = (props) => {
     para: `text-green-800 text-md font-bold `,
     sizeContainer: "flex ml-6",
   };
-  const [Size, setSize] = useState("");
+  const [Size, setSize] = useState(
+    props.categoryData
+      ? props.categoryData[0].categorySizeTitle
+      : props.sizeData && props.sizeData[0].singleSize
+  );
+  const [Price, setPrice] = useState("");
   // color is an array of colors with hex codes
-  const handleClick = (size) => {
-    setSize(size);
+  const handleClick = (arr) => {
+    setSize(arr[0]);
+    setPrice(arr[1]);
   };
   useEffect(() => {
     props.getSize(Size);
+    props.getPrice(Price);
   }, [Size]);
-  // console.log(Size);
+
   return (
     <div className={style.wrapper} style={{ fontFamily: "Lato,sans-serif" }}>
-      <p className={style.para}>Size</p>
+      {(props.categoryData || props.sizeData) && (
+        <p className={style.para}>Size</p>
+      )}
       <div className={style.sizeContainer}>
-        {props.categoryData && props.categoryData.length > 1
+        {props.categoryData && props.categoryData.length > 0
           ? props.categoryData.map((i) => {
               return (
                 <p
@@ -28,13 +37,29 @@ const Size = (props) => {
                     Size == i.categorySizeTitle &&
                     "flex items-center justify-center bg-green-700 text-white "
                   } mx-4 px-4 py-2 w-[30%] cursor-pointer w-[50%] text-green-800`}
-                  onClick={() => handleClick(i.categorySizeTitle)}
+                  onClick={() =>
+                    handleClick([i.categorySizeTitle, i.categorySizePrice])
+                  }
                 >
                   {i.categorySizeTitle}
                 </p>
               );
             })
-          : ""}
+          : props.sizeData &&
+            // props.sizeData.length > 0 &&
+            props.sizeData.map((i) => {
+              return (
+                <p
+                  className={`${
+                    Size == i.singleSize &&
+                    "flex items-center justify-center bg-green-700 text-white "
+                  } mx-4 px-4 py-2 w-[30%] cursor-pointer w-[50%] text-green-800`}
+                  onClick={() => handleClick([i.singleSize, i.singlePrice])}
+                >
+                  {i.singleSize}
+                </p>
+              );
+            })}
       </div>
     </div>
   );

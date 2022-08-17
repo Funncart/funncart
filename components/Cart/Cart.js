@@ -81,13 +81,19 @@ const Cart = () => {
       setIsSubmit(true);
       let orderItems = [];
       for (let i of CartItems) {
+        // orderItems = [
+        //   ...orderItems,
+        //   `Ordered: ${i.slug} Qty:${i.quantity} Color : ${i.color && i.color} ${
+        //     i.categoryMainTitle && i.categoryMainTitle
+        //   } : ${i.category && i.category[0].categoryTitle}  AND ${
+        //     i.categoryMainTitle1 && i.categoryMainTitle1
+        //   } : ${i.category1 && i.category1[0].categoryTitle} `,
+        // ];
         orderItems = [
           ...orderItems,
           `Ordered: ${i.slug} Qty:${i.quantity} Color : ${i.color && i.color} ${
             i.categoryMainTitle && i.categoryMainTitle
-          } : ${i.category && i.category[0].categoryTitle}  AND ${
-            i.categoryMainTitle1 && i.categoryMainTitle1
-          } : ${i.category1 && i.category1[0].categoryTitle} `,
+          } : ${i.category && i.category[0].categoryTitle}  AND Size : ${i.size} `,
         ];
       }
       if (CartItems.length > 0) {
