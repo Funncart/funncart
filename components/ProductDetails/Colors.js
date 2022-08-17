@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 
 const style = {
-  wrapper: `mx-2 flex items-center mt-4 text-green-800`,
+  wrapper: `mx-2 flex items-center mt-6 text-green-800`,
+  para: `text-green-800 text-md font-bold `,
 
   heading: `text-green-800 text-md font-bold `,
   sizeContainer: "flex ml-6",
 };
 const Colors = (props) => {
-  const [Color, setColor] = useState(props.categoryColors[0]);
+  const [Color, setColor] = useState("");
 
   const handleClick = (color) => {
     setColor(color);

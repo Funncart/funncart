@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 const Size = (props) => {
   // props.categoryData WILL CONTAIN THE ARRAY OF OBJECTS
   const style = {
-    wrapper: `flex items-center mt-9 md:mt-7 ${"px-2 max-w-fit "}`,
+    wrapper: `flex items-center mt-9 md:mt-9 ${"px-2 max-w-fit "}`,
     para: `text-green-800 text-md font-bold `,
     sizeContainer: "flex ml-6",
   };
