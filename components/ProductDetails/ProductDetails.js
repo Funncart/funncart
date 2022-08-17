@@ -27,12 +27,14 @@ const ProductDetails = ({
   categoryMainTitle1,
   customCategoryData1,
   images, // it will contain the array of images for multiple
+  stock,
+  categoryColors, //array of colors for every category
 }) => {
   const style = {
     wrapper:
       "w-[95%] md:w-[80%] lg:w-[65%] mx-auto py-12 sm:py-16 md:py-24 lg:py-32 flex flex-col",
     detailsContainer:
-      "px-5 sm:px-6 md:px-8 lg:px-12  py-5 sm:py-6 md:py-8 lg:py-12 bg-white flex flex-col md:flex-row items-center",
+      "px-0 sm:px-6 md:px-8 lg:px-12  py-5 sm:py-6 md:py-8 lg:py-12 bg-white flex flex-col md:flex-row items-center",
     imageContainer:
       " md:mr-12 overflow-hidden flex items-center justify-center flex-col",
     contentContainer: "w-[100%] md:w-[60%] flex flex-col",
@@ -70,12 +72,20 @@ const ProductDetails = ({
   // setting the condition for custom category
   useEffect(() => {
     if (SelectedCategory && SelectedCategory.length > 0) {
-      setPriceValue(SelectedCategory[0].categoryPrice);
+      if (SelectedCategory[0].categoryPrice) {
+        setPriceValue(SelectedCategory[0].categoryPrice);
+      } else {
+        setPriceValue((prev) => prev);
+      }
     }
   }, [SelectedCategory]);
   useEffect(() => {
     if (SelectedCategory1 && SelectedCategory1.length > 0) {
-      setPriceValue(SelectedCategory1[0].categoryPrice);
+      if (SelectedCategory1[0].categoryPrice) {
+        setPriceValue(SelectedCategory1[0].categoryPrice);
+      } else {
+        setPriceValue((prev) => prev);
+      }
     }
   }, [SelectedCategory1]);
   const handleAddToCart = () => {
@@ -145,6 +155,7 @@ const ProductDetails = ({
       return true;
     }
   });
+  // console.log(SelectedCategory && SelectedCategory[0].categoryColors);
   return (
     <Animator>
       <div className="" style={{ fontFamily: "Lato,sans-serif" }}>
@@ -163,14 +174,6 @@ const ProductDetails = ({
                   // width={}
                   // className="hover:scale-[1.5] transition duration-[800ms] overflow-"
                 />
-                {/* <Image
-                  src={`${urlForThumbnail(images[index])}`}
-                  height={width < 700 ? 130 : 200}
-                  width={width < 700 ? 200 : 280}
-                  // height={}
-                  // width={}
-                  // className="hover:scale-[1.5] transition duration-[800ms] overflow-"
-                /> */}
               </div>
               {/* FOR ARRAY OF MULTIPLE IMAGES */}
               <div className="flex gap-3 md:gap-4 mt-6 md:mt-8">
@@ -183,12 +186,12 @@ const ProductDetails = ({
                       // }`}
                     >
                       <img
-                      className={`cursor-pointer pb-1 ${
-                        ImgKey == it._key && "border-b-2 border-green-800 "
-                      }`}
+                        className={`cursor-pointer pb-1 ${
+                          ImgKey == it._key && "border-b-2 border-green-800 "
+                        }`}
                         src={`${urlForThumbnail(it)}`}
                         height={width < 700 ? 60 : 70}
-                        width={width < 700 ? 60 : 82}
+                        width={width < 700 ? 60 : 90}
                         // className="hover:scale-[1.5] transition duration-[800ms] overflow-"
                       />
                     </div>
@@ -228,21 +231,37 @@ const ProductDetails = ({
                   </p>
                 </Box>
               </div>
-              <p className={style.priceText}>Rs. {PriceValue}</p>
+              <div className="flex items-center justify-between">
+                <p className={style.priceText}>Rs. {PriceValue}</p>
+                {stock && (
+                  <p className="text-red-700 font-bold">Out of Stock</p>
+                )}
+              </div>
               <p className={style.description}>{description}</p>
-              <Color color={color} getColor={handleGetColor} />
-              {/* <Size size={handleGetSize} show={size} /> */}
 
               <CustomCategory
                 customCategoryData={customCategoryData}
                 categoryMainTitle={categoryMainTitle}
                 selectedCategory={handleSelectedCategory}
               />
-              <CustomCategory
+              <Color
+                color={color}
+                getColor={handleGetColor}
+                categoryColors={
+                  SelectedCategory && SelectedCategory[0].categoryColors
+                }
+              />
+              <Size
+                getSize={handleGetSize}
+                categoryData={
+                  SelectedCategory && SelectedCategory[0].categorySizeContainer
+                }
+              />
+              {/* <CustomCategory
                 customCategoryData={customCategoryData1}
                 categoryMainTitle={categoryMainTitle1}
                 selectedCategory={handleSelectedCategory1}
-              />
+              /> */}
               <ItemCount itemCount={handleGetItemCount} />
               <button className={style.btn} onClick={handleAddToCart}>
                 Add to Cart

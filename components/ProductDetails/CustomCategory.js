@@ -10,7 +10,9 @@ const CustomCategory = (props) => {
     para: `text-green-800 text-md font-bold `,
     sizeContainer: "flex ml-6",
   };
-  const [SelectedCategory, setSelectedCategory] = useState("");
+  const [SelectedCategory, setSelectedCategory] = useState(
+    props.customCategoryData && props.customCategoryData[0].categoryTitle
+  );
 
   const handleCategoryClick = (data) => {
     setSelectedCategory(data);
@@ -32,11 +34,11 @@ const CustomCategory = (props) => {
           props.customCategoryData.map((singleCategory) => {
             return (
               <p
-                className={ ` ${
+                className={` ${
                   singleCategory.categoryTitle == SelectedCategory
                     ? "bg-green-700 text-white"
                     : "text-green-900"
-                } mx-4 px-4 py-2 w-[30%] cursor-pointer w-[50%] ${
+                } mx-0 md:mx-3 px-4 py-2 w-[30%] cursor-pointer w-[50%] ${
                   props.categoryMainTitle ? "" : "cursor-not-allowed "
                 }`}
                 onClick={() =>

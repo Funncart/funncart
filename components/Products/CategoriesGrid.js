@@ -20,7 +20,7 @@ const CategoriesGrid = ({ category, data }) => {
   return (
     // receive the category from the previous function and show the data accordingly
     <div className={style.wrapper}>
-      {filteredData.length > 0 ? (
+      {data.length > 0 ? (
         filteredData.map((item) => {
           console.log(item);
           return <SingleProduct item={item} />;

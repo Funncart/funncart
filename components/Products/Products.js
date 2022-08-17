@@ -38,7 +38,7 @@ const Products = () => {
         >
           Categories
         </h2>
-        <CategoriesNav clickedCategory={handleClickedCategory} />
+        {/* <CategoriesNav clickedCategory={handleClickedCategory} /> */}
       </div>
       {/* add the products rendering function */}
       <div className={style.productsGrid}>

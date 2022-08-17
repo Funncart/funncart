@@ -29,11 +29,10 @@ const index = () => {
     };
     getProduct();
   }, [router.isReady]);
-  console.log(ProductData[0]);
+  // console.log(ProductData[0]);
   return (
     <>
       {ProductData.length == 0 && <p className="h-[80vh]"></p>}
-
       {ProductData.length > 0 && (
         <ProductDetails
           productName={ProductData[0].name}
@@ -51,6 +50,8 @@ const index = () => {
           categoryMainTitle1={ProductData[0].categoryMainTitle1}
           customCategoryData1={ProductData[0].customCategory1}
           images={ProductData[0].images}
+          stock={ProductData[0].stock}
+          // categoryColors={ProductData[0].categoryColors}
         />
       )}
     </>
