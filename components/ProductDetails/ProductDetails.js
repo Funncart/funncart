@@ -169,7 +169,11 @@ const ProductDetails = ({
   });
   let imageURL;
   useEffect(() => {
-    if (SelectedCategory && SelectedCategory.length > 0) {
+    if (
+      SelectedCategory &&
+      SelectedCategory.length > 0 &&
+      SelectedCategory[0].categoryImage
+    ) {
       setImageURL(SelectedCategory[0].categoryImage);
     } else if (images) {
       setImageURL(images[0]);
