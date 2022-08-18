@@ -18,7 +18,7 @@ const Colors = (props) => {
   }, [Color]);
   // console.log(props.categoryColors[0]);
   // console.log(props.categoryColors[0] && props.categoryColors[0]);
-  console.log(Color);
+  // console.log(Color);
   useEffect(() => {
     if (props.categoryColors) {
       setColor(props.categoryColors[0]);

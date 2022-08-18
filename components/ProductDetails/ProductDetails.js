@@ -54,6 +54,7 @@ const ProductDetails = ({
   const [ItemCounts, setItemCounts] = useState(1);
   const [IsAdded, setIsAdded] = useState(false);
   const [ImgKey, setImgKey] = useState(images[0]._key);
+  const [ImageURL, setImageURL] = useState(images[0]);
   const handleGetSize = (size) => {
     setSizeValue(size);
   };
@@ -166,6 +167,15 @@ const ProductDetails = ({
       return true;
     }
   });
+  let imageURL;
+  useEffect(() => {
+    if (SelectedCategory && SelectedCategory.length > 0) {
+      setImageURL(SelectedCategory[0].categoryImage);
+    } else if (images) {
+      setImageURL(images[0]);
+    }
+  }, [SelectedCategory, images]);
+  // console.log(SelectedCategory && SelectedCategory[0].categoryImage);
   // console.log(SelectedCategory && SelectedCategory[0].categoryColors);
   return (
     <Animator>
@@ -178,7 +188,7 @@ const ProductDetails = ({
             <div className={style.imageContainer}>
               <div className="hover:scale-[1.2] transition duration-[800ms] overflow-hidden">
                 <img
-                  src={`${urlForThumbnail(images[index])}`}
+                  src={`${urlForThumbnail(ImageURL)}`}
                   // height={width < 700 ? 130 : 200}
                   // width={width < 700 ? 200 : 280}
                   // height={}
@@ -187,7 +197,7 @@ const ProductDetails = ({
                 />
               </div>
               {/* FOR ARRAY OF MULTIPLE IMAGES */}
-              <div className="flex gap-3 md:gap-4 mt-6 md:mt-8">
+              {/* <div className="flex gap-3 md:gap-4 mt-6 md:mt-8">
                 {images.map((it) => {
                   return (
                     <div
@@ -208,7 +218,7 @@ const ProductDetails = ({
                     </div>
                   );
                 })}
-              </div>
+              </div> */}
             </div>
             {/* content side of the container */}
             <div className={style.contentContainer}>
