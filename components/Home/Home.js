@@ -166,8 +166,37 @@ const Home = ({}) => {
                 </div>
               </div>
             </SwiperSlide>
-            <div className="h-[130vh] md:h-auto">
-    
+            <div className="h-[130vh] md:h-auto flex items-center justify-center flex-col border-2">
+              <SwiperSlide>
+                <h2
+                  className="text-4xl md:text-6xl text-green-800 text-center mt-24"
+                  style={{ fontFamily: "Playfair Display, serif" }}
+                >
+                  What defines us?
+                </h2>
+                <h1
+                  className="text-6xl md:text-8xl text-green-800 text-center my-7"
+                  style={{ fontFamily: "Playfair Display, serif" }}
+                >
+                  Competitive prices
+                </h1>
+                <h2
+                  className="text-4xl md:text-6xl text-green-800 text-center my-7 w-[60%] mx-auto"
+                  style={{ fontFamily: "Playfair Display, serif" }}
+                >
+                  and proudly promoting
+                </h2>
+                <h2
+                  className="text-6xl md:text-8xl text-green-800 text-center my-7"
+                  style={{ fontFamily: "Imperial Script, cursive" }}
+                >
+                  Made in Pakistan
+                </h2>
+                {/* <img src="/1.png" alt="" /> */}
+                <div className="text-3xl md:text-4xl flex items-center justify-center md:justify-end">
+                  <img src="/urdulogo.png" alt="logo for funncart" className="scale-[0.6]"/>
+                </div>
+              </SwiperSlide>
             </div>
           </div>
         </Swiper>
