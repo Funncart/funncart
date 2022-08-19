@@ -7,8 +7,8 @@ const style ={
 const Social = () => {
   return (
     <div className={style.wrapper}>
-      <a aria-label="link to facebook account facebook" className={style.social} target='_black' href="https://www.facebook.com"><BsFacebook/></a>
-      <a aria-label="link to facebook account instagram" className={style.social} target='_black' href="https://www.instagram.com"><BsInstagram/></a>
+      <a aria-label="link to facebook account facebook" className={style.social} target='_black' href="https://www.facebook.com/Funncart-101414449340758"><BsFacebook/></a>
+      <a aria-label="link to facebook account instagram" className={style.social} target='_black' href="https://www.instagram.com/funncartstore"><BsInstagram/></a>
       <a aria-label="link to facebook account twitter" className={style.social} target='_black' href="https://www.twitter.com"><BsTwitter/></a>
     </div>
   )

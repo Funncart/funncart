@@ -105,11 +105,11 @@ const Home = ({}) => {
             <SwiperSlide>
               <div className={style.main1}>
                 <div className={style.left1}>
-                  <Image
+                  <img
                     src="/pakistan.png"
                     alt="image of the home "
-                    width={300}
-                    height={400}
+                    // width={300}
+                    // height={400}
                   />
                 </div>
                 {/* right side */}
@@ -166,6 +166,9 @@ const Home = ({}) => {
                 </div>
               </div>
             </SwiperSlide>
+            <div className="h-[130vh] md:h-auto">
+    
+            </div>
           </div>
         </Swiper>
       </div>
