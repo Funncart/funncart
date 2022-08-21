@@ -53,6 +53,108 @@ const Home = ({}) => {
           autoplay={true}
           className="flex items-center justify-center mx-auto h-[100vh] md:h-auto"
         >
+          <div className="h-[130vh] md:h-auto">
+            <SwiperSlide>
+              <div className={style.main1}>
+                <div className={style.left1}>
+                  <img
+                    src="/pakistan.png"
+                    alt="image of the home "
+                    // width={300}
+                    // height={400}
+                  />
+                </div>
+                {/* right side */}
+                <div
+                  // variants={variantsContainer}
+                  // initial="hidden"
+                  // animate="visible"
+                  className={style.right}
+                >
+                  <h2
+                    className={style.smallHeading}
+                    style={{ fontFamily: "Poppins, sans-serif" }}
+                  >
+                    Welcome To Funncart
+                  </h2>
+                  <h2
+                    className={style.heading1}
+                    style={{ fontFamily: "Yeseva One, cursive" }}
+                  >
+                    We are a Marketplace for handcrafted products
+                  </h2>
+                  {/* <h2
+                    className={style.para1}
+                    style={{ fontFamily: "Poppins, sans-serif" }}
+                  >
+                    Funncart connect costumers to workmanship of highly capable
+                    crafters, where they can appreciate the art of handcrafted
+                    items.
+                  </h2> */}
+                  <h2
+                    className={style.para2}
+                    style={{ fontFamily: "Poppins, sans-serif" }}
+                  >
+                    We are offering flat 20% discount on our Products.
+                    {/* <span className="px-2 md:px-4 py-1 md:py-2 bg-green-800 text-white text-md">
+                      NEW20
+                    </span> */}
+                  </h2>
+                  <h2
+                    className={style.para3}
+                    style={{ fontFamily: "Poppins, sans-serif" }}
+                  >
+                    *Offer valid from 14th August to 6th September
+                  </h2>
+                  <Link href="/products">
+                    <button
+                      style={{ fontFamily: "Poppins, sans-serif" }}
+                      className={style.btn}
+                    >
+                      Shop Now
+                    </button>
+                  </Link>
+                </div>
+              </div>
+            </SwiperSlide>
+          </div>
+
+          <div className="h-[130vh] md:h-auto flex items-center justify-center flex-col border-2">
+            <SwiperSlide>
+              <h2
+                className="text-4xl md:text-6xl text-green-800 text-center mt-24"
+                style={{ fontFamily: "Playfair Display, serif" }}
+              >
+                What defines us?
+              </h2>
+              <h1
+                className="text-6xl md:text-8xl text-green-800 text-center my-7"
+                style={{ fontFamily: "Playfair Display, serif" }}
+              >
+                Competitive prices
+              </h1>
+              <h2
+                className="text-4xl md:text-6xl text-green-800 text-center my-7 w-[60%] mx-auto"
+                style={{ fontFamily: "Playfair Display, serif" }}
+              >
+                and proudly promoting
+              </h2>
+              <h2
+                className="text-6xl md:text-8xl text-green-800 text-center my-7"
+                style={{ fontFamily: "Imperial Script, cursive" }}
+              >
+                Made in Pakistan
+              </h2>
+              {/* <img src="/1.png" alt="" /> */}
+              <div className="text-3xl md:text-4xl flex items-center justify-center md:justify-end">
+                <img
+                  src="/urdulogo.png"
+                  alt="logo for funncart"
+                  className="scale-[0.6]"
+                />
+              </div>
+            </SwiperSlide>
+          </div>
           <div className="h-[80vh] md:h-auto">
             <SwiperSlide>
               <div className={style.main1}>
@@ -100,104 +202,6 @@ const Home = ({}) => {
                 </div>
               </div>
             </SwiperSlide>
-          </div>
-          <div className="h-[130vh] md:h-auto">
-            <SwiperSlide>
-              <div className={style.main1}>
-                <div className={style.left1}>
-                  <img
-                    src="/pakistan.png"
-                    alt="image of the home "
-                    // width={300}
-                    // height={400}
-                  />
-                </div>
-                {/* right side */}
-                <div
-                  // variants={variantsContainer}
-                  // initial="hidden"
-                  // animate="visible"
-                  className={style.right}
-                >
-                  <h2
-                    className={style.smallHeading}
-                    style={{ fontFamily: "Poppins, sans-serif" }}
-                  >
-                    Welcome To Funncart
-                  </h2>
-                  <h2
-                    className={style.heading1}
-                    style={{ fontFamily: "Yeseva One, cursive" }}
-                  >
-                    We are a Marketplace for handcrafted products
-                  </h2>
-                  {/* <h2
-                    className={style.para1}
-                    style={{ fontFamily: "Poppins, sans-serif" }}
-                  >
-                    Funncart connect costumers to workmanship of highly capable
-                    crafters, where they can appreciate the art of handcrafted
-                    items.
-                  </h2> */}
-                  <h2
-                    className={style.para2}
-                    style={{ fontFamily: "Poppins, sans-serif" }}
-                  >
-                    We are offering flat 20% discount on our Products. Use Promo
-                    Code{" "}
-                    <span className="px-2 md:px-4 py-1 md:py-2 bg-green-800 text-white text-md">
-                      NEW20
-                    </span>
-                  </h2>
-                  <h2
-                    className={style.para3}
-                    style={{ fontFamily: "Poppins, sans-serif" }}
-                  >
-                    *Offer valid from 14th August to 25 August
-                  </h2>
-                  <Link href="/products">
-                    <button
-                      style={{ fontFamily: "Poppins, sans-serif" }}
-                      className={style.btn}
-                    >
-                      Shop Now
-                    </button>
-                  </Link>
-                </div>
-              </div>
-            </SwiperSlide>
-            <div className="h-[130vh] md:h-auto flex items-center justify-center flex-col border-2">
-              <SwiperSlide>
-                <h2
-                  className="text-4xl md:text-6xl text-green-800 text-center mt-24"
-                  style={{ fontFamily: "Playfair Display, serif" }}
-                >
-                  What defines us?
-                </h2>
-                <h1
-                  className="text-6xl md:text-8xl text-green-800 text-center my-7"
-                  style={{ fontFamily: "Playfair Display, serif" }}
-                >
-                  Competitive prices
-                </h1>
-                <h2
-                  className="text-4xl md:text-6xl text-green-800 text-center my-7 w-[60%] mx-auto"
-                  style={{ fontFamily: "Playfair Display, serif" }}
-                >
-                  and proudly promoting
-                </h2>
-                <h2
-                  className="text-6xl md:text-8xl text-green-800 text-center my-7"
-                  style={{ fontFamily: "Imperial Script, cursive" }}
-                >
-                  Made in Pakistan
-                </h2>
-                {/* <img src="/1.png" alt="" /> */}
-                <div className="text-3xl md:text-4xl flex items-center justify-center md:justify-end">
-                  <img src="/urdulogo.png" alt="logo for funncart" className="scale-[0.6]"/>
-                </div>
-              </SwiperSlide>
-            </div>
           </div>
         </Swiper>
       </div>
