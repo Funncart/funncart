@@ -70,8 +70,7 @@ const MainFooter = () => {
           height={80}
         />
         <h2 className={style.info}>
-          We have 2+ years of experience of selling products online and we are
-          the leading marketplace for selling handcrafted products.
+        We provide marketplace for handmade products.The products can be proudly declared as Pakistani made.
         </h2>
       </div>
       {/* <div className={style.suggestion}>

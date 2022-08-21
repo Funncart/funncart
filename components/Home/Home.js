@@ -50,7 +50,9 @@ const Home = ({}) => {
           modules={[Navigation, Scrollbar, A11y, Autoplay]}
           slidesPerView={1}
           pagination={{ clickable: width < 700 ? false : true }}
-          autoplay={true}
+          autoplay={{
+            delay: 2500,
+          }}
           className="flex items-center justify-center mx-auto h-[100vh] md:h-auto"
         >
           <div className="h-[130vh] md:h-auto">

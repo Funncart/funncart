@@ -10,7 +10,7 @@ const MoreDetails = ({
   productName,
   slug,
 }) => {
-  const [WhichNav, setWhichNav] = useState("reviews");
+  const [WhichNav, setWhichNav] = useState("information");
   const handleNavClick = (value) => {
     setWhichNav(value);
   };
