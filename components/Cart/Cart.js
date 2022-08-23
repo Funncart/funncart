@@ -123,6 +123,17 @@ const Cart = () => {
             },
           }
         );
+        let mailContent = [orderItems,CheckoutData.Name]
+        fetch('/api/email', {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json, text/plain, */*',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(mailContent)
+        }).then(()=>{
+          console.log('EMAIL sent')
+        })
         router.push("/thanks");
       }
       const flashTime = setTimeout(() => {

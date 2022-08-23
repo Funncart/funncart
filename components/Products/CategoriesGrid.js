@@ -16,13 +16,11 @@ const CategoriesGrid = ({ category, data }) => {
   } else {
     filteredData = data;
   }
-  console.log(filteredData);
   return (
     // receive the category from the previous function and show the data accordingly
     <div className={style.wrapper}>
       {data.length > 0 ? (
         filteredData.map((item) => {
-          console.log(item);
           return <SingleProduct item={item} />;
         })
       ) : (
