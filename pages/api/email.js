@@ -4,18 +4,18 @@ export default function (req, res) {
           port: 465,
           host: "smtp.gmail.com",
           auth: {
-            user: 'shariqueimam7777@gmail.com',
-            pass: 'stawgkfqizdhqyex',
+            user: 'aandh.firm@gmail.com',
+            pass: 'reguqlkyqgoeyekx',
           },
           secure: true,
         })
         console.log(req.body)
         const mailData = {
-          from: 'shariqueimam7777@gmail.com',
-          to: 'shariquei061@gmail.com',
+          from: 'aandh.firm@gmail.com',
+          to: 'funncartstore@gmail.com',
           subject: `Message From Funncart Order Bot`,
           text: req.body[0][0],
-          html: `<div>${req.body[0][0]} Ordered By ${req.body[1]}</div>`
+          html: `<div>${req.body[0][0]} Ordered By ${req.body[1]} ( ${req.body[2]})</div>`
         }
         transporter.sendMail(mailData, function (err, info) {
           if(err)

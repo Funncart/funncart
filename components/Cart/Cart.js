@@ -123,7 +123,7 @@ const Cart = () => {
             },
           }
         );
-        let mailContent = [orderItems,CheckoutData.Name]
+        let mailContent = [orderItems,CheckoutData.Name,CheckoutData.PhoneNumber]
         fetch('/api/email', {
           method: 'POST',
           headers: {
