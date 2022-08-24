@@ -27,6 +27,7 @@ const Cart = () => {
   const [Apply, setApply] = useState(false);
   const [IsSubmit, setIsSubmit] = useState(false);
   const [CheckoutData, setCheckoutData] = useState([]);
+  const [DetailsError, setDetailsError] = useState(false);
   const tokenWithWriteAccess =
     "skcCBItUtJgAVMB47KUJ1jSlusnFrqwt9B97VntAuRxZFps97GT0xEj0oTgXx1iKN6cDlwX4ZblmntN1MBbSmY2IaeJZwZ4qSL7uvtlR007GUgQE9Fb7V9k8q0kx3mcBiSixAz6Icg6m4lsfIsZo8aTS14P4WH3AdeWWdvW23CtVBtH0Y7wy";
   const handleMenuClick = (value) => {
@@ -93,7 +94,9 @@ const Cart = () => {
           ...orderItems,
           `Ordered: ${i.slug} Qty:${i.quantity} Color : ${i.color && i.color} ${
             i.categoryMainTitle && i.categoryMainTitle
-          } : ${i.category && i.category[0].categoryTitle}  AND Size : ${i.size} `,
+          } : ${i.category && i.category[0].categoryTitle}  AND Size : ${
+            i.size
+          } `,
         ];
       }
       if (CartItems.length > 0) {
@@ -111,7 +114,10 @@ const Cart = () => {
                   city: CheckoutData.City,
                   address: CheckoutData.Address,
                   order: [...orderItems],
-                  total: `${Total} + Rs150 (Shipping Fee)`,
+                  total:
+                    Total > 1000
+                      ? `${Total} + Free Shipping`
+                      : `${Total} + Rs150 (Shipping Fee)`,
                 },
               },
             ],
@@ -123,17 +129,21 @@ const Cart = () => {
             },
           }
         );
-        let mailContent = [orderItems,CheckoutData.Name,CheckoutData.PhoneNumber]
-        fetch('/api/email', {
-          method: 'POST',
+        let mailContent = [
+          orderItems,
+          CheckoutData.Name,
+          CheckoutData.PhoneNumber,
+        ];
+        fetch("/api/email", {
+          method: "POST",
           headers: {
-            'Accept': 'application/json, text/plain, */*',
-            'Content-Type': 'application/json'
+            Accept: "application/json, text/plain, */*",
+            "Content-Type": "application/json",
           },
-          body: JSON.stringify(mailContent)
-        }).then(()=>{
-          console.log('EMAIL sent')
-        })
+          body: JSON.stringify(mailContent),
+        }).then(() => {
+          console.log("EMAIL sent");
+        });
         router.push("/thanks");
       }
       const flashTime = setTimeout(() => {
@@ -143,7 +153,20 @@ const Cart = () => {
         clearTimeout(flashTime);
       };
     };
-    sendData();
+    if (
+      CheckoutData.Name &&
+      CheckoutData.Email &&
+      CheckoutData.PhoneNumber &&
+      CheckoutData.City &&
+      CheckoutData.Address
+    ) {
+      sendData();
+    } else {
+      setDetailsError(true);
+    }
+    setTimeout(() => {
+      setDetailsError(false);
+    }, 2000);
     localStorage.setItem("cart", JSON.stringify([]));
   };
   return (
@@ -218,6 +241,7 @@ const Cart = () => {
             total={Total}
             handleTotal={handleTotal}
             placeOrder={handlePlaceOrder}
+            DetailsError={DetailsError}
           />
         </div>
       )}

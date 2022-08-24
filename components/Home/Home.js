@@ -51,7 +51,7 @@ const Home = ({}) => {
           slidesPerView={1}
           pagination={{ clickable: width < 700 ? false : true }}
           autoplay={{
-            delay: 2500,
+            delay: 4000,
           }}
           className="flex items-center justify-center mx-auto h-[100vh] md:h-auto"
         >
@@ -97,7 +97,7 @@ const Home = ({}) => {
                     className={style.para2}
                     style={{ fontFamily: "Poppins, sans-serif" }}
                   >
-                    We are offering flat 20% discount on our Products.
+                    We are offering flat 20% discount on our Products. Free shipping for orders above Rs. 1000
                     {/* <span className="px-2 md:px-4 py-1 md:py-2 bg-green-800 text-white text-md">
                       NEW20
                     </span> */}

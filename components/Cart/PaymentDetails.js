@@ -37,7 +37,10 @@ const PaymentDetails = (props) => {
     }
   };
   return (
-    <div className={style.wrapper}>
+    <div
+      className={style.wrapper}
+      style={{ fontFamily: "Poppins, sans-serif" }}
+    >
       <h2
         className={style.smallHeading}
         style={{ fontFamily: "Yeseva One, cursive" }}
@@ -53,7 +56,9 @@ const PaymentDetails = (props) => {
       </div>
       <div className={style.subtotal}>
         <p className={style.para}>Shipping Fee</p>
-        <p className={style.amount}>+ Rs 150</p>
+        <p className={style.amount}>
+          {props.total > 1000 ? "Free Delivery" : "+ Rs 150"}
+        </p>
       </div>
       <form
         className={style.promoContainer}
@@ -79,10 +84,26 @@ const PaymentDetails = (props) => {
       >
         <p className={style.para}>Order Total </p>
         <p className={style.amount}>
-          Rs. {props.total == 0 ? 0 : Math.round(props.total + 150)}
+          Rs.{" "}
+          {props.total == 0
+            ? 0
+            : props.total > 0 && props.total < 1000
+            ? Math.round(props.total + 150)
+            : Math.round(props.total)}
         </p>
       </div>
-      <button className={style.btn} onClick={props.placeOrder}>Place Order</button>
+      {props.DetailsError && (
+        <p
+          style={{ fontFamily: "Poppins, sans-serif" }}
+          className="w-[75%] md:w-[50%] mx-auto bg-red-600 text-white px-3 py-1 tracking-wide rounded"
+        >
+          *Please fill billing details
+        </p>
+      )}
+
+      <button className={style.btn} onClick={props.placeOrder}>
+        Place Order
+      </button>
     </div>
   );
 };
