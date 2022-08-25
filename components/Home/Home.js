@@ -190,8 +190,7 @@ const Home = ({}) => {
                     className={style.para}
                     style={{ fontFamily: "Poppins, sans-serif" }}
                   >
-                    Our shop includes all kind of handcrafted products from your
-                    personal use to Gifts
+                    Our shop includes all kind of handcrafted and miniature products for personal use and gifts.
                   </h2>
                   <Link href="/products">
                     <button
