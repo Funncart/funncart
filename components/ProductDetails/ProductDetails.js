@@ -169,7 +169,6 @@ const ProductDetails = ({
       return true;
     }
   });
-  let imageURL;
   useEffect(() => {
     if (
       SelectedCategory &&
@@ -193,38 +192,35 @@ const ProductDetails = ({
             {/* image side of container */}
             <div className={style.imageContainer}>
               <div className="hover:scale-[1.2] transition duration-[800ms] overflow-hidden">
-                <img
-                  src={`${urlForThumbnail(ImageURL)}`}
-                  // height={width < 700 ? 130 : 200}
-                  // width={width < 700 ? 200 : 280}
-                  // height={}
-                  // width={}
-                  // className="hover:scale-[1.5] transition duration-[800ms] overflow-"
-                />
+                {SelectedCategory ? (
+                  <img src={`${urlForThumbnail(ImageURL)}`} />
+                ) : (
+                  <img src={`${urlForThumbnail(images[index])}`} />
+                )}
               </div>
               {/* FOR ARRAY OF MULTIPLE IMAGES */}
-              {/* <div className="flex gap-3 md:gap-4 mt-6 md:mt-8">
-                {images.map((it) => {
-                  return (
-                    <div
-                      onClick={() => handleImageClick(it._key)}
-                      // className={`cursor-pointer ${
-                      //   ImgKey == it._key && "border-b-4  border-green-800 "
-                      // }`}
-                    >
-                      <img
-                        className={`cursor-pointer pb-1 ${
-                          ImgKey == it._key && "border-b-2 border-green-800 "
-                        }`}
-                        src={`${urlForThumbnail(it)}`}
-                        height={width < 700 ? 60 : 70}
-                        width={width < 700 ? 60 : 90}
-                        // className="hover:scale-[1.5] transition duration-[800ms] overflow-"
-                      />
-                    </div>
-                  );
-                })}
-              </div> */}
+              {!SelectedCategory && (
+                <div className="flex gap-3 md:gap-4 mt-6 md:mt-8">
+                  {images.map((it) => {
+                    return (
+                      <div
+                        onClick={() => handleImageClick(it._key)}
+                        className={`cursor-pointer ${ImgKey == it._key && ""}`}
+                      >
+                        <img
+                          className={`cursor-pointer pb-1 ${
+                            ImgKey == it._key && "border-b-2 border-green-800 "
+                          }`}
+                          src={`${urlForThumbnail(it)}`}
+                          height={width < 700 ? 60 : 70}
+                          width={width < 700 ? 60 : 90}
+                          // className="hover:scale-[1.5] transition duration-[800ms] overflow-"
+                        />
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
             </div>
             {/* content side of the container */}
             <div className={style.contentContainer}>
