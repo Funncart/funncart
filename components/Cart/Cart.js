@@ -114,10 +114,7 @@ const Cart = () => {
                   city: CheckoutData.City,
                   address: CheckoutData.Address,
                   order: [...orderItems],
-                  total:
-                    Total > 1000
-                      ? `${Total} + Free Shipping`
-                      : `${Total} + Rs150 (Shipping Fee)`,
+                  total: `${Total} + Rs150 (Shipping Fee)`,
                 },
               },
             ],

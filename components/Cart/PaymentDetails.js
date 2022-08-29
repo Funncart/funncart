@@ -56,9 +56,7 @@ const PaymentDetails = (props) => {
       </div>
       <div className={style.subtotal}>
         <p className={style.para}>Shipping Fee</p>
-        <p className={style.amount}>
-          {props.total > 1000 ? "Free Delivery" : "+ Rs 150"}
-        </p>
+        <p className={style.amount}>+ Rs 150</p>
       </div>
       <form
         className={style.promoContainer}
@@ -83,14 +81,7 @@ const PaymentDetails = (props) => {
         style={{ fontFamily: "Poppins, sans-serif" }}
       >
         <p className={style.para}>Order Total </p>
-        <p className={style.amount}>
-          Rs.{" "}
-          {props.total == 0
-            ? 0
-            : props.total > 0 && props.total < 1000
-            ? Math.round(props.total + 150)
-            : Math.round(props.total)}
-        </p>
+        <p className={style.amount}>Rs. {Math.round(props.total + 150)}</p>
       </div>
       {props.DetailsError && (
         <p

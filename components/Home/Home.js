@@ -97,7 +97,7 @@ const Home = ({}) => {
                     className={style.para2}
                     style={{ fontFamily: "Poppins, sans-serif" }}
                   >
-                    We are offering flat 20% discount on our Products. Free shipping for orders above Rs. 1000
+                    We are offering flat 20% discount on our Products. 
                     {/* <span className="px-2 md:px-4 py-1 md:py-2 bg-green-800 text-white text-md">
                       NEW20
                     </span> */}
