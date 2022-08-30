@@ -33,7 +33,7 @@ const LeaveAReview = ({ slug }) => {
           mutations: [
             {
               patch: {
-                query: `*[_type == 'featuredProduct' && slug.current == '${slug}']`,
+                query: `*[_type == 'allProduct' && slug.current == '${slug}']`,
                 insert: {
                   after: "reviews[-1]",
                   items: [
