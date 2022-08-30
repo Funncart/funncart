@@ -34,11 +34,11 @@ const Navbar = ({ click }) => {
           {/* adding the logo */}
           <Link href="/">
             <div className="flex items-center scale-x-[1.4] scale-y-[1.2] mx-4 cursor-pointer mx-3 md:mx-16">
-              <Image
+              <img
                 src={`/urdulogo.png`}
                 alt="Funncart logo"
-                width={60}
-                height={45}
+                width={100}
+                height={50}
               />
             </div>
           </Link>

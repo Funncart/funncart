@@ -68,11 +68,11 @@ const MainFooter = () => {
       </div>
       <div className="mx-auto max-w-fit flex items-center justify-center flex-col md:w-[40%] mx-auto">
         {/* logo */}
-        <Image
+        <img
           src={`/urdulogo.png`}
           alt="Funncart logo"
-          width={100}
-          height={80}
+          width={130}
+          height={90}
         />
         <h2 className={style.info}>
           We provide marketplace for handmade products.The products can be
