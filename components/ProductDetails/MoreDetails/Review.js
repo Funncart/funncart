@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import LeaveAReview from "./LeaveAReview";
 const style = {
   wrapper:
@@ -11,6 +11,13 @@ const style = {
 };
 // WE ARE GETTING THE ARRAY OF REVIEWS FROM SANITY
 const Review = ({ reviews, slug }) => {
+  // const [ValidReviews, setValidReviews] = useState([]);
+  // useEffect(() => {
+  //   reviews.pop();
+  //   setValidReviews(reviews);
+  // }, []);
+  // reviews.pop();
+  // console.log("reviews");
   return (
     <div className={style.wrapper}>
       <h2 className={style.heading}>Customer Review</h2>
@@ -19,7 +26,9 @@ const Review = ({ reviews, slug }) => {
         reviews.map((r) => (
           <div className={style.reviewContainer}>
             <h2 className={style.name}>{r.name && r.name}</h2>
-            <p className={style.date}>{r.createdAt && r.createdAt.slice(0, 10)}</p>
+            <p className={style.date}>
+              {r.createdAt && r.createdAt.slice(0, 10)}
+            </p>
             <p className={style.review}>{r.review && r.review}</p>
           </div>
         ))}

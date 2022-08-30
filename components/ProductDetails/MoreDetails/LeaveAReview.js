@@ -35,7 +35,7 @@ const LeaveAReview = ({ slug }) => {
               patch: {
                 query: `*[_type == 'allProduct' && slug.current == '${slug}']`,
                 insert: {
-                  after: "reviews[-1]",
+                  before: "reviews[-1]",
                   items: [
                     {
                       name: Name,
@@ -62,7 +62,7 @@ const LeaveAReview = ({ slug }) => {
           mutations: [
             {
               patch: {
-                query: `*[_type == 'featuredProduct' && slug.current == '${slug}']`,
+                query: `*[_type == 'allProduct' && slug.current == '${slug}']`,
                 insert: {
                   after: "rating[-1]",
                   items: [`${RatingValue}`],

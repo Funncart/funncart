@@ -5,7 +5,7 @@ const Size = (props) => {
   const style = {
     wrapper: `flex items-center mt-9 md:mt-9 ${"px-2 max-w-fit "}`,
     para: `text-green-800 text-md font-bold `,
-    sizeContainer: "flex ml-6",
+    sizeContainer: "flex ml-6 flex-wrap",
   };
   const [Size, setSize] = useState(
     props.categoryData
@@ -25,7 +25,7 @@ const Size = (props) => {
 
   return (
     <div className={style.wrapper} style={{ fontFamily: "Lato,sans-serif" }}>
-      {(props.categoryData || props.sizeData) && (
+      {( props.sizeData) && (
         <p className={style.para}>Size</p>
       )}
       <div className={style.sizeContainer}>
@@ -36,7 +36,7 @@ const Size = (props) => {
                   className={`${
                     Size == i.categorySizeTitle &&
                     "flex items-center justify-center bg-green-700 text-white "
-                  } mx-4 px-4 py-2 w-[30%] cursor-pointer w-[50%] text-green-800`}
+                  } mx-3 px-4 py-2 cursor-pointer text-green-800 my-2 w-[20%] md:w-auto text-center`}
                   onClick={() =>
                     handleClick([i.categorySizeTitle, i.categorySizePrice])
                   }
@@ -53,7 +53,7 @@ const Size = (props) => {
                   className={`${
                     Size == i.singleSize &&
                     "flex items-center justify-center bg-green-700 text-white "
-                  } mx-4 px-4 py-2 w-[30%] cursor-pointer w-[50%] text-green-800`}
+                  } mx-3 px-4 py-2 cursor-pointer text-green-800 my-2 w-[20%] md:w-auto text-center`}
                   onClick={() => handleClick([i.singleSize, i.singlePrice])}
                 >
                   {i.singleSize}

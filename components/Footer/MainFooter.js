@@ -58,8 +58,13 @@ const MainFooter = () => {
     >
       <div className={style.contact}>
         <h2 className={style.heading}>Contact Us</h2>
-        <h2 className={style.contactContent}>Email Us: funncartstore@gmail.com</h2>
-        <h2 className={style.contactContent}>Phone:+923343866227</h2>
+        <h2 className={style.contactContent}>
+          Email Us: funncartstore@gmail.com
+        </h2>
+        <div className="flex items-end justify-end flex-col w-[80%] md:w-[65%] lg:w-[60%]">
+          <h2 className={style.contactContent}>Phone: 0334 - 3866227</h2>
+          <h2 className={style.contactContent}>(funncart)</h2>
+        </div>
       </div>
       <div className="mx-auto max-w-fit flex items-center justify-center flex-col md:w-[40%] mx-auto">
         {/* logo */}
@@ -70,7 +75,8 @@ const MainFooter = () => {
           height={80}
         />
         <h2 className={style.info}>
-        We provide marketplace for handmade products.The products can be proudly declared as Pakistani made.
+          We provide marketplace for handmade products.The products can be
+          proudly declared as Pakistani made.
         </h2>
       </div>
       {/* <div className={style.suggestion}>

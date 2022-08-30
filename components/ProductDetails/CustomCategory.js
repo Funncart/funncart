@@ -8,7 +8,7 @@ const CustomCategory = (props) => {
         : "cursor-not-allowed px-2 max-w-fit opacity-[0.2]"
     }`,
     para: `text-green-800 text-md font-bold `,
-    sizeContainer: "flex ml-6",
+    sizeContainer: "flex ml-6 flex-wrap" ,
   };
   const [SelectedCategory, setSelectedCategory] = useState(
     props.customCategoryData && props.customCategoryData[0].categoryTitle
