@@ -38,7 +38,7 @@ const CustomCategory = (props) => {
                   singleCategory.categoryTitle == SelectedCategory
                     ? "bg-green-700 text-white"
                     : "text-green-900"
-                } mx-0 md:mx-3 px-4 py-2 w-[30%] cursor-pointer w-[50%] ${
+                } mx-0 md:mx-3 px-4 py-2 cursor-pointer ${
                   props.categoryMainTitle ? "" : "cursor-not-allowed "
                 }`}
                 onClick={() =>
