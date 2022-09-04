@@ -45,6 +45,9 @@ const ProductDetails = ({
     priceText: "text-green-800 font-bold text-xl md:text-2xl my-3 mx-4",
     description: "text-sm text-green-900",
     btn: "hover:bg-opacity-[0.9] transition duration-[200ms] my-6 bg-green-700 max-w-fit px-8 md:px-12 py-2 md:py-3 text-white font-bold tracking-wide mx-auto md:mx-0",
+    outOfStockBtn:
+      "transition duration-[200ms] my-6 bg-green-900 bg-opacity-[0.7] max-w-fit px-8 md:px-12 py-2 md:py-3 text-white font-bold tracking-wide mx-auto md:mx-0 cursor-not-allowed",
+
     ratings: "text-xs text-stone-500",
   };
   const [RatingValue, setRatingValue] = useState("0");
@@ -261,7 +264,9 @@ const ProductDetails = ({
                 </div>
 
                 {stock && (
-                  <p className="text-red-700 font-bold">Out of Stock</p>
+                  <p className="text-red-700 font-bold text-md md:text-xl">
+                    Out of Stock
+                  </p>
                 )}
               </div>
               <p className={style.description}>{description}</p>
@@ -292,9 +297,17 @@ const ProductDetails = ({
                 selectedCategory={handleSelectedCategory1}
               /> */}
               <ItemCount itemCount={handleGetItemCount} />
-              <button className={style.btn} onClick={handleAddToCart}>
-                Add to Cart
-              </button>
+              {stock ? (
+                <div className="flex items-center">
+                  <button className={style.outOfStockBtn}>Add to Cart</button>
+                  <p className="mx-4 text-green-900">Available Soon!</p>
+                </div>
+              ) : (
+                <button className={style.btn} onClick={handleAddToCart}>
+                  Add to Cart
+                </button>
+              )}
+
               <div className={style.refImageContainer}>
                 {/* <Image src={''} height={} width={}/>
             <Image src={''} height={} width={}/>
