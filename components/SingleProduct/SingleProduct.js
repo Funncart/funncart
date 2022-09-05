@@ -10,7 +10,7 @@ const SingleProduct = ({ item }) => {
     wrapper: "px-2 md:px-4 py-4 md:py-4 bg-white flex flex-col items-start w-[45%] md:w-[20%]",
     img: "mb-4",
     name: "font-semibold my-2 md:my-3 text-xs md:text-lg text-green-900 mx-auto text-center md:text-left h-[20%] flex items-center justify-center  ",
-    price: "line-through my-1 md:my-3 text-xs md:text-lg text-green-900",
+    price: "font-bold my-1 md:my-3 text-xs md:text-lg text-green-900",
     buttonContainer:
       " transition-all duration-[350ms] cursor-pointer flex items-center justify-center bg-green-700 hover:bg-opacity-[0.8] px-2 md:px-8 py-1 md:py-3 max-w-fit md:max-w-none md:w-[100%]",
     btn: "flex-1 tracking-wide text-white text-xs md:text-sm",
@@ -39,7 +39,7 @@ const SingleProduct = ({ item }) => {
         {/* adding the discounted price */}
         <div className="flex items-center justify-center mx-auto md:mx-0 my-1">
           <h2 className={style.price}>Rs.{item.price}</h2>
-          <h2 className={style.discoutnedPrice}>Rs.{item.price * 0.8}</h2>
+          {/* <h2 className={style.discoutnedPrice}>Rs.{item.price * 0.8}</h2> */}
         </div>
         <div className={style.buttonContainer}>
           <button className={style.btn}>View Details</button>

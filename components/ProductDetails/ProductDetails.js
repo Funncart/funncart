@@ -41,7 +41,7 @@ const ProductDetails = ({
     header1: "flex items-center justify-center mt-4",
     name: "text-2xl md:text-3xl font-semibold text-green-700 flex-1",
     priceTextCut:
-      "text-green-800 font-bold text-xl md:text-2xl my-3 line-through decoration-green-700",
+      "text-green-800 font-bold text-xl md:text-2xl my-3 decoration-green-700",
     priceText: "text-green-800 font-bold text-xl md:text-2xl my-3 mx-4",
     description: "text-sm text-green-900",
     btn: "hover:bg-opacity-[0.9] transition duration-[200ms] my-6 bg-green-700 max-w-fit px-8 md:px-12 py-2 md:py-3 text-white font-bold tracking-wide mx-auto md:mx-0",
@@ -138,10 +138,12 @@ const ProductDetails = ({
       } else {
         updatedItems = data.concat({
           name: productName,
-          price: PriceValue * 0.8,
+          price: PriceValue,
+          // price: PriceValue * 0.8,
           quantity: ItemCounts,
           image: urlForThumbnail(images[0]),
-          total: PriceValue * ItemCounts * 0.8,
+          total: PriceValue * ItemCounts,
+          // total: PriceValue * ItemCounts * 0.8,
           slug: slugValue,
           size: SizeValue,
           color: ColorValue,
@@ -265,7 +267,7 @@ const ProductDetails = ({
               <div className="flex items-center justify-between">
                 <div className="flex">
                   <p className={style.priceTextCut}>Rs. {PriceValue}</p>
-                  <p className={style.priceText}>Rs. {PriceValue * 0.8}</p>
+                  {/* <p className={style.priceText}>Rs. {PriceValue * 0.8}</p> */}
                 </div>
 
                 {stock && (
