@@ -93,21 +93,21 @@ const Home = ({}) => {
                     crafters, where they can appreciate the art of handcrafted
                     items.
                   </h2> */}
-                  <h2
+                  {/* <h2
                     className={style.para2}
                     style={{ fontFamily: "Poppins, sans-serif" }}
                   >
                     We are offering flat 20% discount on our Products. 
-                    {/* <span className="px-2 md:px-4 py-1 md:py-2 bg-green-800 text-white text-md">
+                    <span className="px-2 md:px-4 py-1 md:py-2 bg-green-800 text-white text-md">
                       NEW20
-                    </span> */}
+                    </span>
                   </h2>
                   <h2
                     className={style.para3}
                     style={{ fontFamily: "Poppins, sans-serif" }}
                   >
                     *Offer valid from 14th August to 6th September
-                  </h2>
+                  </h2> */}
                   <Link href="/products">
                     <button
                       style={{ fontFamily: "Poppins, sans-serif" }}
