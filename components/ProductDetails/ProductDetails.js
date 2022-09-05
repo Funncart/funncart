@@ -121,12 +121,17 @@ const ProductDetails = ({
         existingCartItem = data[existingCartItemIndex];
       }
       if (existingCartItem) {
+        let q =
+          existingCartItem.quantity + ItemCounts <= 3
+            ? existingCartItem.quantity + ItemCounts
+            : existingCartItem.quantity;
         const newUpdatedItem = {
           ...existingCartItem,
           quantity:
             existingCartItem.quantity + ItemCounts <= 3
               ? existingCartItem.quantity + ItemCounts
               : existingCartItem.quantity,
+          total: existingCartItem.price * q,
         };
         updatedItems = [...data];
         updatedItems[existingCartItemIndex] = newUpdatedItem;
