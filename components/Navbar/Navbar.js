@@ -48,7 +48,7 @@ const Navbar = ({ click }) => {
                 <AiOutlineShoppingCart />
               </div>
             </Link>
-            <Link href="/contact">
+            <Link href="/seller">
               <div className={style.seller}>Become a seller</div>
             </Link>
             {/* the hamburger button */}
@@ -96,6 +96,11 @@ const Navbar = ({ click }) => {
                   <p className={style.list}>Products</p>
                 </li>
               </Link>
+              <Link href="/categories">
+                <li>
+                  <p className={style.list}>Categories</p>
+                </li>
+              </Link>
               <Link href="/about">
                 <li>
                   <p className={style.list}>About</p>
@@ -106,7 +111,6 @@ const Navbar = ({ click }) => {
                   <p className={style.list}>Contact</p>
                 </li>
               </Link>
-
               {/* FOR LOGIN AND REGISTER OF THE USER */}
             </ul>
           </div>

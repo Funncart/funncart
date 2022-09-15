@@ -20,6 +20,9 @@ const DropDownMenu = () => {
                     <a href="/products" className={style.list}>Products</a>
                 </li>
                 <li>
+                    <a href="/categories" className={style.list}>Categories</a>
+                </li>
+                <li>
                     <a href="/contact" className={style.list}>Contact</a>
                 </li>
                 {/* for REGISTER AND LOGIN PART */}
