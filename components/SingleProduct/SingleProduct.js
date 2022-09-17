@@ -12,7 +12,7 @@ const SingleProduct = ({ item }) => {
     name: "font-semibold my-2 md:my-3 text-xs md:text-lg text-green-900 mx-auto text-center md:text-left h-[20%] flex items-center justify-center  ",
     price: "font-bold my-1 md:my-3 text-xs md:text-lg text-green-900",
     buttonContainer:
-      " transition-all duration-[350ms] cursor-pointer flex items-center justify-center bg-green-700 hover:bg-opacity-[0.8] px-2 md:px-8 py-1 md:py-3 max-w-fit md:max-w-none md:w-[100%]",
+      "mx-auto transition-all duration-[350ms] cursor-pointer flex items-center justify-center bg-green-700 hover:bg-opacity-[0.8] px-2 md:px-8 py-1 md:py-3 max-w-fit md:max-w-none md:w-[100%]",
     btn: "flex-1 tracking-wide text-white text-xs md:text-sm",
     hoverButton:
       "font-bold px-3 py-6 bg-green-700 rounded-full cursor-pointer text-white",

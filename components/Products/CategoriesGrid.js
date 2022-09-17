@@ -9,9 +9,9 @@ const style = {
 
 const CategoriesGrid = ({ category, data }) => {
   let filteredData = [];
-  if (category !== "allproducts") {
+  if (category !== "allproducts" && data) {
     filteredData = data.filter(
-      (item) => item.category.toUpperCase() === category.toUpperCase()
+      (item) => item.category === category
     );
   } else {
     filteredData = data;
@@ -19,7 +19,7 @@ const CategoriesGrid = ({ category, data }) => {
   return (
     // receive the category from the previous function and show the data accordingly
     <div className={style.wrapper}>
-      {data.length > 0 ? (
+      {filteredData.length > 0 ? (
         filteredData.map((item) => {
           return <SingleProduct item={item} />;
         })

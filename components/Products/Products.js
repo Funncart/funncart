@@ -5,7 +5,8 @@ import CategoriesGrid from "./CategoriesGrid";
 import client from "../../pages/api/client";
 const style = {
   wrapper: "bg-[#F5F4F4] ",
-  catergoriesContainer: "flex flex-col items-center justify-center my-3 md:my-8",
+  catergoriesContainer:
+    "flex flex-col items-center justify-center my-3 md:my-8",
   productsGrid: "flex flex-col items-center justify-center py-4 md:py-12",
   smallHeading:
     "my-4 border-b-2 border-stone-200 text-2xl md:text-3xl max-w-fit mx-auto py-2 text-green-900 ",
@@ -38,7 +39,7 @@ const Products = () => {
         >
           Categories
         </h2>
-        {/* <CategoriesNav clickedCategory={handleClickedCategory} /> */}
+        <CategoriesNav clickedCategory={handleClickedCategory} />
       </div>
       {/* add the products rendering function */}
       <div className={style.productsGrid}>

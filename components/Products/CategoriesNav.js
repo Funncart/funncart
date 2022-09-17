@@ -23,6 +23,14 @@ const CategoriesNav = (props) => {
       </li>
       <li
         className={`text-green-900 border-move-animation-products cursor-pointer mx-4 my-2 ${
+          Click == "tabletop" && " font-bold "
+        }`}
+        onClick={() => handleNavClick("tabletop")}
+      >
+        Table Top
+      </li>
+      <li
+        className={`text-green-900 border-move-animation-products cursor-pointer mx-4 my-2 ${
           Click == "vintage" && " font-bold "
         }`}
         onClick={() => handleNavClick("vintage")}
@@ -31,43 +39,27 @@ const CategoriesNav = (props) => {
       </li>
       <li
         className={`text-green-900 border-move-animation-products cursor-pointer mx-4 my-2 ${
-          Click == "clothes" && " font-bold "
+          Click == "lightsandlamps" && " font-bold "
         }`}
-        onClick={() => handleNavClick("clothes")}
+        onClick={() => handleNavClick("lightsandlamps")}
       >
-        Clothes
+        Lights and Lamp
       </li>
       <li
         className={`text-green-900 border-move-animation-products cursor-pointer mx-4 my-2 ${
-          Click == "watches" && " font-bold "
+          Click == "hourglass" && " font-bold "
         }`}
-        onClick={() => handleNavClick("watches")}
+        onClick={() => handleNavClick("hourglass")}
       >
-        Watches
+        Hourglass
       </li>
       <li
         className={`text-green-900 border-move-animation-products cursor-pointer mx-4 my-2 ${
-          Click == "shoes" && " font-bold "
+          Click == "mirrorcomb" && " font-bold "
         }`}
-        onClick={() => handleNavClick("shoes")}
+        onClick={() => handleNavClick("mirrorcomb")}
       >
-        Shoes
-      </li>
-      <li
-        className={`text-green-900 border-move-animation-products cursor-pointer mx-4 my-2 ${
-          Click == "electronics" && " font-bold "
-        }`}
-        onClick={() => handleNavClick("electronics")}
-      >
-        Electronics
-      </li>
-      <li
-        className={`text-green-900 border-move-animation-products cursor-pointer mx-4 my-2 ${
-          Click == "books" && " font-bold "
-        }`}
-        onClick={() => handleNavClick("books")}
-      >
-        Books
+        Mirror Comb
       </li>
     </ul>
   );
