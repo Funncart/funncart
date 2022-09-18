@@ -124,25 +124,25 @@ const Home = ({}) => {
           <div className="h-[130vh] md:h-auto flex items-center justify-center flex-col border-2">
             <SwiperSlide>
               <h2
-                className="text-4xl md:text-6xl text-green-800 text-center mt-24"
+                className="text-3xl md:text-6xl text-green-800 text-center mt-24"
                 style={{ fontFamily: "Playfair Display, serif" }}
               >
                 What defines us?
               </h2>
               <h1
-                className="text-6xl md:text-8xl text-green-800 text-center my-7"
+                className="text-5xl md:text-8xl text-green-800 text-center my-7"
                 style={{ fontFamily: "Playfair Display, serif" }}
               >
                 Competitive prices
               </h1>
               <h2
-                className="text-4xl md:text-6xl text-green-800 text-center my-7 w-[60%] mx-auto"
+                className="text-3xl md:text-6xl text-green-800 text-center my-7 w-[60%] mx-auto"
                 style={{ fontFamily: "Playfair Display, serif" }}
               >
                 and proudly promoting
               </h2>
               <h2
-                className="text-6xl md:text-8xl text-green-800 text-center my-7"
+                className="text-5xl md:text-8xl text-green-800 text-center my-7"
                 style={{ fontFamily: "Imperial Script, cursive" }}
               >
                 Made in Pakistan
@@ -152,7 +152,7 @@ const Home = ({}) => {
                 <img
                   src="/urdulogo.png"
                   alt="logo for funncart"
-                  className="scale-[0.6]"
+                  className="scale-[0.5]"
                 />
               </div>
             </SwiperSlide>
