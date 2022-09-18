@@ -27,21 +27,21 @@ const index = () => {
           className={style.sellerPara}
           style={{ fontFamily: "Poppins, sans-serif" }}
         >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit
-          eligendi aliquid quis similique nihil. Repellendus nihil sequi beatae,
-          ipsam adipisci rerum numquam molestias, laboriosam fuga modi nesciunt
-          laborum voluptatibus quaerat.
+          Do you want to be a part of something grand? Are you an artist and
+          looking for recognition and want to target a wider range of audience?
+          Here we promote local producers. We provide with the best marketing
+          that your product needs at agreeable terms. 
         </p>
         <p
           className={style.sellerPara}
           style={{ fontFamily: "Poppins, sans-serif" }}
         >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit
-          eligendi aliquid quis similique nihil. Repellendus nihil sequi beatae,
-          ipsam adipisci rerum numquam molestias, laboriosam fuga modi nesciunt
-          laborum voluptatibus quaerat.
+          We have 5000+ monthly
+          potential customers, who are waiting to be pleased by your art. Fill
+          the form below. Please fill the form below and we will reach you.
         </p>
       </div>
+
       {/* adding the seller form */}
       <div className={style.sellerFormContainer}>
         <SellerForm />
