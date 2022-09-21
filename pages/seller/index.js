@@ -37,8 +37,7 @@ const index = () => {
           style={{ fontFamily: "Poppins, sans-serif" }}
         >
           We have 5000+ monthly
-          potential customers, who are waiting to be pleased by your art. Fill
-          the form below. Please fill the form below and we will reach you.
+          potential customers, who are waiting to be pleased by your art.  Please fill the form below and we will reach you.
         </p>
       </div>
 

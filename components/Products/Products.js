@@ -9,7 +9,7 @@ const style = {
     "flex flex-col items-center justify-center my-3 md:my-8",
   productsGrid: "flex flex-col items-center justify-center py-4 md:py-12",
   smallHeading:
-    "my-4 border-b-2 border-stone-200 text-2xl md:text-3xl max-w-fit mx-auto py-2 text-green-900 ",
+    "mb-8 border-b-2 border-stone-200 text-xl md:text-2xl max-w-fit mx-auto py-2 text-green-900 ",
 };
 
 const Products = () => {
@@ -47,7 +47,7 @@ const Products = () => {
           className={style.smallHeading}
           style={{ fontFamily: "Yeseva One, cursive" }}
         >
-          Products
+          {category.toUpperCase()}
         </h2>
 
         <CategoriesGrid category={category} data={product} />

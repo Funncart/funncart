@@ -91,11 +91,7 @@ const Navbar = ({ click }) => {
                   </p>
                 </Link>
               </li>
-              <Link href="/products">
-                <li>
-                  <p className={style.list}>Products</p>
-                </li>
-              </Link>
+            
               <Link href="/categories">
                 <li>
                   <p className={style.list}>Categories</p>
