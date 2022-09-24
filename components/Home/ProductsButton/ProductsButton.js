@@ -13,9 +13,9 @@ const ProductsButton = () => {
             {/* <div className={style.headingContainer}>
                 <h2 className={style.smallHeading} style={{ fontFamily: 'Yeseva One, cursive' }} >Shop Online On Okeere</h2>
             </div> */}
-            <Link href="/products" >
+            <Link href="/categories" >
                 <button className={style.btn} style={{ fontFamily: 'Poppins, sans-serif' }}>
-                    View Featured Products
+                    View All Categories
                 </button></Link>
 
         </div>

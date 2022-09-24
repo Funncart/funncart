@@ -41,8 +41,9 @@ const Home = ({}) => {
   return (
     <div className={style.wrapper}>
       {/* ------------------------------------------------ */}
-      <div className="flex items-center justify-center mx-auto w-[100%] md:w-[80%] h-[100vh] md:h-auto">
-        <Swiper
+      {/* <div className="flex items-center justify-center mx-auto w-[100%] md:w-[80%] h-[100vh] md:h-auto"> */}
+      <div className="flex items-center justify-center mx-auto w-[100%] md:w-[80%] flex-col">
+        {/* <Swiper
           // effect="fade"
           spaceBetween={0}
           onSlideChange={() => console.log("slide change")}
@@ -53,10 +54,11 @@ const Home = ({}) => {
           autoplay={{
             delay: 4000,
           }}
-          className="flex items-center justify-center mx-auto h-[100vh] md:h-auto"
-        >
-          <div className="h-[130vh] md:h-auto">
-            <SwiperSlide>
+          className="flex flex-col items-center justify-center mx-auto"
+        > */}
+          {/* <div className="h-[130vh] md:h-auto"> */}
+          <div className="h-[100] md:h-[70vh]">
+            {/* <SwiperSlide> */}
               <div className={style.main1}>
                 <div className={style.left1}>
                   <img
@@ -118,11 +120,12 @@ const Home = ({}) => {
                   </Link>
                 </div>
               </div>
-            </SwiperSlide>
+            {/* </SwiperSlide> */}
           </div>
 
-          <div className="h-[130vh] md:h-auto flex items-center justify-center flex-col border-2">
-            <SwiperSlide>
+          {/* <div className="h-[130vh] md:h-auto flex items-center justify-center flex-col "> */}
+          <div className="flex items-center justify-center flex-col ">
+            {/* <SwiperSlide> */}
               <h2
                 className="text-3xl md:text-6xl text-green-800 text-center mt-24"
                 style={{ fontFamily: "Playfair Display, serif" }}
@@ -155,10 +158,11 @@ const Home = ({}) => {
                   className="scale-[0.5]"
                 />
               </div>
-            </SwiperSlide>
+            {/* </SwiperSlide> */}
           </div>
-          <div className="h-[80vh] md:h-auto">
-            <SwiperSlide>
+          {/* <div className="h-[80vh] md:h-auto"> */}
+          <div className="">
+            {/* <SwiperSlide> */}
               <div className={style.main1}>
                 <div className={style.left}>
                   <Image
@@ -202,15 +206,15 @@ const Home = ({}) => {
                   </Link>
                 </div>
               </div>
-            </SwiperSlide>
+            {/* </SwiperSlide> */}
           </div>
-        </Swiper>
+        {/* </Swiper> */}
       </div>
       {/* ------------------------------------------------ */}
       {/* adding the features */}
-      <Features />
+      {/* <Features /> */}
       {/* adding the featured products */}
-      <FeaturedProducts />
+      {/* <FeaturedProducts /> */}
       {/* adding the call to action to all products page */}
       <ProductsButton />
       {/* <SuggestionsButton /> */}
