@@ -27,6 +27,27 @@ const Products = () => {
     fetchData();
   }, []);
   // console.log(product);
+  let categoryHeading;
+  if ((category == "allproducts")) {
+    categoryHeading = "All Products";
+  }
+  if ((category == "tabletop")) {
+    categoryHeading = "Table Top";
+  }
+  if ((category == "vintage")) {
+    categoryHeading = "Vintage";
+  }
+  console.log(category)
+  if ((category == "lightsandlamps")) {
+    categoryHeading = "Lights and Lamps";
+  }
+  if ((category == "hourglass")) {
+    categoryHeading = "Hour Glass";
+  }
+  if ((category == "mirrorcomb")) {
+    categoryHeading = "Mirror Comb";
+  }
+
   return (
     <div className={style.wrapper}>
       <Header headingText="OUR CATEGORIES" />
@@ -47,7 +68,7 @@ const Products = () => {
           className={style.smallHeading}
           style={{ fontFamily: "Yeseva One, cursive" }}
         >
-          {category.toUpperCase()}
+          {categoryHeading}
         </h2>
 
         <CategoriesGrid category={category} data={product} />
