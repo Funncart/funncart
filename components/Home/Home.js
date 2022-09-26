@@ -110,7 +110,7 @@ const Home = ({}) => {
                   >
                     *Offer valid from 14th August to 6th September
                   </h2> */}
-                  <Link href="/products">
+                  <Link href="/categories">
                     <button
                       style={{ fontFamily: "Poppins, sans-serif" }}
                       className={style.btn}
@@ -196,7 +196,7 @@ const Home = ({}) => {
                   >
                     Our shop includes all kind of handcrafted and miniature products for personal use and gifts.
                   </h2>
-                  <Link href="/products">
+                  <Link href="/categories">
                     <button
                       style={{ fontFamily: "Poppins, sans-serif" }}
                       className={style.btn}
