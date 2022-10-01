@@ -140,11 +140,15 @@ const ProductDetails = ({
       } else {
         updatedItems = data.concat({
           name: productName,
-          price: PriceValue,
+          price: !discount
+            ? PriceValue
+            : (PriceValue - (PriceValue * discount) / 100).toFixed(0),
           // price: PriceValue * 0.8,
           quantity: ItemCounts,
           image: urlForThumbnail(images[0]),
-          total: PriceValue * ItemCounts,
+          total: !discount
+            ? PriceValue * ItemCounts
+            : (PriceValue - (PriceValue * discount) / 100).toFixed(0),
           // total: PriceValue * ItemCounts * 0.8,
           slug: slugValue,
           size: SizeValue,
@@ -272,9 +276,14 @@ const ProductDetails = ({
                   {discount && (
                     <div className="flex items-center justify-center">
                       <p className={style.priceText}>
-                        Rs. {(PriceValue - (PriceValue * discount) / 100).toFixed(0)}
+                        Rs.{" "}
+                        {(PriceValue - (PriceValue * discount) / 100).toFixed(
+                          0
+                        )}
                       </p>
-                      <p className="text-sm text-green-900">( {discount}% off )</p>
+                      <p className="text-sm text-green-900">
+                        ( {discount}% off )
+                      </p>
                     </div>
                   )}
                 </div>
