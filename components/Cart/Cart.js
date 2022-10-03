@@ -35,13 +35,13 @@ const Cart = () => {
   };
   useEffect(() => {
     if (typeof window !== "undefined") {
-      console.log(localStorage.getItem("cart"))
-      console.log(Total)
+      console.log(localStorage.getItem("cart"));
+      console.log(Total);
       if (localStorage.getItem("cart")) {
         const data = JSON.parse(localStorage.getItem("cart"));
         let sum = 0;
         for (let r of data) {
-          sum += r.total;
+          sum += +r.total;
         }
         setTotal(sum);
       }
