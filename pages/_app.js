@@ -21,7 +21,7 @@ function MyApp({ Component, pageProps }) {
         <link rel="shortcut icon" href="/urdulogo.png" type="image/x-icon" />
         <meta
           name="description"
-          content="A website restaurant for online presense"
+          content="A marketplace for handmade products"
         />
       </Head>
       <div className="overflow-x-hidden bg-[#f6f6f6] z-0">
