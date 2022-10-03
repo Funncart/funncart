@@ -25,7 +25,7 @@ function MyApp({ Component, pageProps }) {
         />
       </Head>
       <div className="overflow-x-hidden bg-[#f6f6f6] z-0">
-        <p className="bg-green-800 text-white text-center text-xs py-1">FREE SHIPPING ON ALL ORDERS RS. 3999 & ABOVE</p>
+        <p className="bg-green-800 text-white text-center text-xs py-1">FREE SHIPPING ON ALL ORDERS RS. 1999 & ABOVE</p>
         <Navbar click={Click} />
         <AnimatePresence exitBeforeEnter>
           <div key={asPath} className="mt-24 md:mt-2 z-0" onClick={handleClick}>
