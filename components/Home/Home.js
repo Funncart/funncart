@@ -15,11 +15,11 @@ import Image from "next/image";
 const style = {
   wrapper: "h-[100vh] w-[100vw] flex flex-col h-[70%]",
   heading:
-    "text-3xl md:text-7xl text-green-700 my-2 md:my-8 w-full md:w-[60%] text-center md:text-left",
+    "text-2xl md:text-7xl text-green-700 my-2 md:my-8 w-full md:w-[60%] text-center md:text-left",
   heading1:
-    "text-3xl md:text-5xl text-green-700 my-3 md:my-8 w-full md:w-[85%] text-center md:text-left",
-  smallHeading: "text-2xl md:text-3xl text-green-800 text-center md:text-left",
-  para: "text-green-900 text-xl md:text-sm my-3 md:my-8 text-center md:text-left",
+    "text-2xl md:text-5xl text-green-700 my-3 md:my-8 w-full md:w-[85%] text-center md:text-left",
+  smallHeading: "text-md md:text-3xl text-green-800 text-center md:text-left",
+  para: "text-green-900 text-md md:text-sm my-3 md:my-8 text-center md:text-left",
   para1:
     "text-green-900 text-sm md:text-lg my-3 md:my-4 w-[70%] text-center md:text-left",
   para2:
@@ -62,7 +62,7 @@ const Home = ({}) => {
               <div className={style.main1}>
                 <div className={style.left1}>
                   <img
-                    src="/pakistan.png"
+                    src="/test.png"
                     alt="image of the home "
                     // width={300}
                     // height={400}
@@ -127,19 +127,19 @@ const Home = ({}) => {
           <div className="flex items-center justify-center flex-col ">
             {/* <SwiperSlide> */}
               <h2
-                className="text-3xl md:text-6xl text-green-800 text-center mt-24"
+                className="text-xl md:text-6xl text-green-800 text-center mt-24"
                 style={{ fontFamily: "Playfair Display, serif" }}
               >
                 What defines us?
               </h2>
               <h1
-                className="text-5xl md:text-8xl text-green-800 text-center my-7"
+                className="text-3xl md:text-8xl text-green-800 text-center my-7"
                 style={{ fontFamily: "Playfair Display, serif" }}
               >
                 Competitive prices
               </h1>
               <h2
-                className="text-3xl md:text-6xl text-green-800 text-center my-7 w-[60%] mx-auto"
+                className="text-xl md:text-6xl text-green-800 text-center my-7 w-[60%] mx-auto"
                 style={{ fontFamily: "Playfair Display, serif" }}
               >
                 and proudly promoting
@@ -168,8 +168,8 @@ const Home = ({}) => {
                   <Image
                     src="/img/home.webp"
                     alt="image of the home "
-                    width={600}
-                    height={600}
+                    width={300}
+                    height={350}
                   />
                 </div>
                 <div
