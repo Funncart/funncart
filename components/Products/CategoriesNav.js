@@ -61,6 +61,14 @@ const CategoriesNav = (props) => {
       >
         Mirror Comb
       </li>
+      <li
+        className={`text-green-900 border-move-animation-products cursor-pointer mx-4 my-2 ${
+          Click == "woodenartifacts" && " font-bold "
+        }`}
+        onClick={() => handleNavClick("woodenartifacts")}
+      >
+        Wooden Artifacts
+      </li>
     </ul>
   );
 };

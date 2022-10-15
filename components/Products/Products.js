@@ -47,6 +47,9 @@ const Products = () => {
   if ((category == "mirrorcomb")) {
     categoryHeading = "Mirror Comb";
   }
+  if ((category == "woodenartifacts")) {
+    categoryHeading = "Wooden Artifacts";
+  }
 
   return (
     <div className={style.wrapper}>

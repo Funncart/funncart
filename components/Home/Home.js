@@ -100,7 +100,7 @@ const Home = ({}) => {
                     style={{ fontFamily: "Poppins, sans-serif" }}
                   >
                     We are offering flat 20% discount on our Products. 
-                    <span className="px-2 md:px-4 py-1 md:py-2 bg-green-800 text-white text-md">
+                    <span className="px-2 py-1 text-white bg-green-800 md:px-4 md:py-2 text-md">
                       NEW20
                     </span>
                   </h2>
@@ -124,16 +124,16 @@ const Home = ({}) => {
           </div>
 
           {/* <div className="h-[130vh] md:h-auto flex items-center justify-center flex-col "> */}
-          <div className="flex items-center justify-center flex-col ">
+          <div className="flex flex-col items-center justify-center ">
             {/* <SwiperSlide> */}
               <h2
-                className="text-xl md:text-6xl text-green-800 text-center mt-24"
+                className="mt-24 text-xl text-center text-green-800 md:text-6xl"
                 style={{ fontFamily: "Playfair Display, serif" }}
               >
                 What defines us?
               </h2>
               <h1
-                className="text-3xl md:text-8xl text-green-800 text-center my-7"
+                className="text-3xl text-center text-green-800 md:text-8xl my-7"
                 style={{ fontFamily: "Playfair Display, serif" }}
               >
                 Competitive prices
@@ -145,13 +145,13 @@ const Home = ({}) => {
                 and proudly promoting
               </h2>
               <h2
-                className="text-5xl md:text-8xl text-green-800 text-center my-7"
+                className="text-5xl text-center text-green-800 md:text-8xl my-7"
                 style={{ fontFamily: "Imperial Script, cursive" }}
               >
                 Made in Pakistan
               </h2>
               {/* <img src="/1.png" alt="" /> */}
-              <div className="text-3xl md:text-4xl flex items-center justify-center md:justify-end">
+              <div className="flex items-center justify-center text-3xl md:text-4xl md:justify-end">
                 <img
                   src="/urdulogo.png"
                   alt="logo for funncart"
@@ -167,7 +167,7 @@ const Home = ({}) => {
                 <div className={style.left}>
                   <Image
                     src="/img/home.webp"
-                    alt="image of the home "
+                    alt="image of the home"
                     width={300}
                     height={350}
                   />
