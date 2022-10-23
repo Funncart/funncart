@@ -5,6 +5,8 @@ import Navbar from "../components/Navbar/Navbar";
 import React, { useState } from "react";
 import { useRouter } from "next/router";
 import { AnimatePresence } from "framer-motion";
+import { BsWhatsapp } from "react-icons/bs";
+
 function MyApp({ Component, pageProps }) {
   const { asPath } = useRouter();
   const [Click, setClick] = useState(false);
@@ -25,13 +27,19 @@ function MyApp({ Component, pageProps }) {
         />
       </Head>
       <div className="overflow-x-hidden bg-[#f6f6f6] z-0">
-        <p className="bg-green-800 text-white text-center text-xs py-1">FREE SHIPPING ON ALL ORDERS RS. 1999 & ABOVE</p>
+        <p className="py-1 text-xs text-center text-white bg-green-800">
+          FREE SHIPPING ON ALL ORDERS RS. 1999 & ABOVE
+        </p>
         <Navbar click={Click} />
         <AnimatePresence exitBeforeEnter>
-          <div key={asPath} className="mt-24 md:mt-2 z-0" onClick={handleClick}>
+          <div key={asPath} className="z-0 mt-24 md:mt-2" onClick={handleClick}>
             <Component {...pageProps} />
           </div>
           <Footer />
+          {/* adding the whatsapp button as CTA */}
+          <a href="https://wa.me/+923343866227/?text=Welcome to Funncart! How can we help you?" className="fixed p-3 bg-green-800 rounded-full cursor-pointer fi bottom-4 right-4">
+            <BsWhatsapp className="text-2xl text-[#d8ca75] md:text-2xl shake-y-animation"/>
+          </a>
         </AnimatePresence>
       </div>
     </>
