@@ -6,7 +6,7 @@ const style = {
 };
 
 const CategoriesNav = (props) => {
-  const [Click, setClick] = useState(Cookies.get('clickedNav'));
+  const [Click, setClick] = useState(Cookies.get('clickedNav') || 'allproducts');
   const handleNavClick = (value) => {
     setClick(value);
     props.clickedCategory(value);
