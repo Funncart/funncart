@@ -76,7 +76,7 @@ const Products = () => {
           {categoryHeading}
         </h2>
 
-        <CategoriesGrid category={Cookies.get('clickedNav')} data={product} />
+        <CategoriesGrid category={Cookies.get('clickedNav')|| 'allproducts'} data={product} />
       </div>
     </div>
   );
