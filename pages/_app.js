@@ -27,7 +27,7 @@ function MyApp({ Component, pageProps }) {
         />
       </Head>
       <div className="overflow-x-hidden bg-[#f6f6f6] z-0">
-        <p className="py-1 text-xs text-center text-white bg-green-800">
+        <p className="py-1 text-xs text-center bg-green-800 text-[#d3d3d3]">
           FREE SHIPPING ON ALL ORDERS RS. 1999 & ABOVE
         </p>
         <Navbar click={Click} />
