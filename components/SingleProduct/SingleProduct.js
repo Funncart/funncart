@@ -8,19 +8,19 @@ const SingleProduct = ({ item }) => {
   const { width } = useWindowSize();
   const style = {
     wrapper:
-      "px-2 md:px-4 py-4 md:py-4 bg-white flex flex-col items-start w-[60%] md:w-[20%]",
+      "px-2 md:px-4 py-4 md:py-4 bg-white flex flex-col items-start w-[80%] md:w-[20%]",
     img: "mb-4",
-    name: "font-semibold my-2 md:my-3 text-md md:text-lg text-green-900 mx-auto text-center md:text-left h-[20%] flex items-center justify-center  ",
+    name: "font-semibold my-2 md:my-3 text-lg md:text-lg text-green-900 mx-auto text-center md:text-left h-[20%] flex items-center justify-center  ",
     price: `font-bold my-1 md:my-3 text-sm md:text-lg text-green-900 ${
       item.discount && "line-through"
     }`,
     buttonContainer:
-      "mx-auto transition-all duration-[350ms] cursor-pointer flex items-center justify-center bg-green-700 hover:bg-opacity-[0.8] px-2 md:px-8 py-2 md:py-3  w-[100%] md:max-w-none md:w-[100%]",
+      "mx-auto transition-all duration-[350ms] cursor-pointer flex items-center justify-center bg-green-700 hover:bg-opacity-[0.8] px-2 md:px-8 py-3 md:py-3  w-[100%] md:max-w-none md:w-[100%]",
     btn: "flex-1 tracking-wide text-white text-xs md:text-sm",
     hoverButton:
       "font-bold px-3 py-6 bg-green-700 rounded-full cursor-pointer text-white",
     discoutnedPrice:
-      "my-1 md:my-3 text-lg md:text-lg text-green-900 ml-4 font-bold",
+      "my-1 md:my-3 text-2xl md:text-lg text-green-900 ml-4 font-bold",
     freeDelivery: "text-white text-center mx-auto bg-green-700 px-5 py-0 md:py-1",
   };
   return (
@@ -33,7 +33,7 @@ const SingleProduct = ({ item }) => {
             <img
               src={`${urlForThumbnail(item.images[0])}`}
               alt="Image for product"
-              width={`${width < 700 ? 240 : 230}`}
+              width={`${width < 700 ? 270 : 230}`}
               height={`${width < 700 ? 140 : 230}`}
             />
           </div>

@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-
+import Cookies from "js-cookie";
 const style = {
   wrapper:
     "my-8 flex items-center justify-around w-[100%] md:w-[60%] lg:w-[50%] mx-auto flex-wrap",
 };
 
 const CategoriesNav = (props) => {
-  const [Click, setClick] = useState("allproducts");
+  const [Click, setClick] = useState(Cookies.get('clickedNav'));
   const handleNavClick = (value) => {
     setClick(value);
     props.clickedCategory(value);

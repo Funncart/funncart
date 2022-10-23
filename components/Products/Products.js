@@ -3,6 +3,7 @@ import Header from "../Header/Header";
 import CategoriesNav from "./CategoriesNav";
 import CategoriesGrid from "./CategoriesGrid";
 import client from "../../pages/api/client";
+import Cookies from "js-cookie";
 const style = {
   wrapper: "bg-[#F5F4F4] ",
   catergoriesContainer:
@@ -16,6 +17,7 @@ const Products = () => {
   const [category, setCategory] = useState("allproducts");
   const [product, setProduct] = useState([]);
   const handleClickedCategory = (value) => {
+    Cookies.set("clickedNav", value);
     setCategory(value);
   };
   // sending the request to get the data from the server of sanity
@@ -28,26 +30,26 @@ const Products = () => {
   }, []);
   // console.log(product);
   let categoryHeading;
-  if ((category == "allproducts")) {
+  if (category == "allproducts") {
     categoryHeading = "All Products";
   }
-  if ((category == "tabletop")) {
+  if (category == "tabletop") {
     categoryHeading = "Table Top";
   }
-  if ((category == "vintage")) {
+  if (category == "vintage") {
     categoryHeading = "Vintage";
   }
-  console.log(category)
-  if ((category == "lightsandlamps")) {
+  console.log(category);
+  if (category == "lightsandlamps") {
     categoryHeading = "Lights and Lamps";
   }
-  if ((category == "hourglass")) {
+  if (category == "hourglass") {
     categoryHeading = "Hour Glass";
   }
-  if ((category == "mirrorcomb")) {
+  if (category == "mirrorcomb") {
     categoryHeading = "Mirror Comb";
   }
-  if ((category == "woodenartifacts")) {
+  if (category == "woodenartifacts") {
     categoryHeading = "Wooden Artifacts";
   }
 
@@ -74,7 +76,7 @@ const Products = () => {
           {categoryHeading}
         </h2>
 
-        <CategoriesGrid category={category} data={product} />
+        <CategoriesGrid category={Cookies.get('clickedNav')} data={product} />
       </div>
     </div>
   );
