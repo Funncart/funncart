@@ -14,8 +14,19 @@ const style = {
     "border-b-2 border-green-900 outline-none ring-none w-[30%] placeholder:text-xs",
   promoContainer:
     "flex items-center justify-between w-[75%] md:w-[50%] mx-auto my-6 text-black ",
+  onlinePayment:
+    "flex flex-col items-center justify-center w-[75%] md:w-[80%] mx-auto my-6 text-black ",
+  oninePaymentDetailsContainer:
+    "flex flex-col items-center justify-between w-[75%] md:w-[100%]",
+  singlePaymentMethod:
+    "flex flex-row md:flex-col items-center justify-around my-4",
+  onlinePaymentNumber: "text-green-900 my-2",
 };
 const PaymentDetails = (props) => {
+  const [PayOnline, setPayOnline] = useState(true);
+  const payOnlineClickHandler = () => {
+    setPayOnline((prev) => !prev);
+  };
   const [Promo, setPromo] = useState("");
   const handlePromoChange = (e) => {
     setPromo(e.target.value);
@@ -79,7 +90,41 @@ const PaymentDetails = (props) => {
         >
           ADD
         </button>
+        {/* adding the online payment option */}
       </form>
+      <div className={style.onlinePayment}>
+        <div className="onlineContainer flex items-center justify-center flex-col">
+          <p className="text-green-900 text-center mx-auto">
+            {" "}
+            Get 5% off via online Payment
+          </p>
+          <p
+            onClick={payOnlineClickHandler}
+            className="hover:bg-opacity-[0.95] cursor-pointer text-white text-center mx-auto bg-green-800 px-3 md:px-6 py-2 md:py-1 my-3 tracking-wider"
+          >
+            Pay Online
+          </p>
+        </div>
+        {/* showing the online payment details */}
+        {PayOnline && (
+          <div className={style.oninePaymentDetailsContainer}>
+            <div className={style.singlePaymentMethod}>
+              <img src="/abl.png" alt="" width={120} height={60} />
+              <p className={style.onlinePaymentNumber}>04190010063543230010</p>
+            </div>
+            <div className={style.singlePaymentMethod}>
+              <img src="/easy.png" alt="" width={70} height={60} />
+              <p className={style.onlinePaymentNumber}>0334-3866227</p>
+            </div>
+            <div className={style.singlePaymentMethod}>
+              <img src="/jazz.jpeg" alt="" width={70} height={60} />
+              <p className={style.onlinePaymentNumber}>0334-3866227</p>
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* ADDING THE ORDER TOTAL */}
       <div
         className={style.orderTotal}
         style={{ fontFamily: "Poppins, sans-serif" }}
@@ -101,7 +146,7 @@ const PaymentDetails = (props) => {
       )}
 
       <button className={style.btn} onClick={props.placeOrder}>
-        Place Order
+        {PayOnline ? "Paid and Place Order" : "Place Order"}
       </button>
     </div>
   );
