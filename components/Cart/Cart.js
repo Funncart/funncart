@@ -117,6 +117,10 @@ const Cart = () => {
                   address: CheckoutData.Address,
                   order: [...orderItems],
                   total: `${Total} + Rs199 (Shipping Fee)`,
+                  total:
+                    Total >= 1999
+                      ? `${Total} + Free Shipping`
+                      : `${Total} + Rs199 (Shipping Fee)`,
                 },
               },
             ],
