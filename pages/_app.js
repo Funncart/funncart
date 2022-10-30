@@ -37,7 +37,7 @@ function MyApp({ Component, pageProps }) {
           </div>
           <Footer />
           {/* adding the whatsapp button as CTA */}
-          <a href="https://wa.me/+923343866227/?text=Welcome to Funncart! How can we help you?" className="fixed p-3 bg-green-800 rounded-full cursor-pointer fi bottom-4 right-4">
+          <a href="https://wa.me/+923343866227/?text=" className="fixed p-3 bg-green-800 rounded-full cursor-pointer fi bottom-4 right-4">
             <BsWhatsapp className="text-2xl text-[#d8ca75] md:text-2xl shake-y-animation"/>
           </a>
         </AnimatePresence>
