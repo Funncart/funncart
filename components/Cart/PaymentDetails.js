@@ -46,6 +46,20 @@ const PaymentDetails = (props) => {
         props.handleTotal(300);
       }
     }
+    if (Promo === "NUSTIAN") {
+      if (props.total.toFixed(1) * 0.1 < 300) {
+        props.handleTotal(10);
+      } else {
+        props.handleTotal(300);
+      }
+    }
+    if (Promo === "FUNNCART10") {
+      if (props.total.toFixed(1) * 0.1 < 300) {
+        props.handleTotal(10);
+      } else {
+        props.handleTotal(300);
+      }
+    }
   };
   return (
     <div
