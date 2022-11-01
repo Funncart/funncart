@@ -23,7 +23,7 @@ const style = {
   onlinePaymentNumber: "text-green-900 my-2",
 };
 const PaymentDetails = (props) => {
-  const [PayOnline, setPayOnline] = useState(true);
+  const [PayOnline, setPayOnline] = useState(false);
   const payOnlineClickHandler = () => {
     setPayOnline((prev) => !prev);
   };
