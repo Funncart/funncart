@@ -108,10 +108,9 @@ const PaymentDetails = (props) => {
       </form>
       <div className={style.onlinePayment}>
         <div className="onlineContainer flex items-center justify-center flex-col">
-          <p className="text-green-900 text-center mx-auto">
-            {" "}
+          {/* <p className="text-green-900 text-center mx-auto">
             Get 5% off via online Payment
-          </p>
+          </p> */}
           <p
             onClick={payOnlineClickHandler}
             className="hover:bg-opacity-[0.95] cursor-pointer text-white text-center mx-auto bg-green-800 px-3 md:px-6 py-2 md:py-1 my-3 tracking-wider"
