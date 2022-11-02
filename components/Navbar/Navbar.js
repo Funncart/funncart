@@ -10,7 +10,7 @@ const Navbar = ({ click }) => {
   const screenWidth = useWindowSize();
   const style = {
     wrapper:
-      "absolute sm:relative text-gray-200 w-[100%] lg:w-[75%] mx-auto py-3 z-10 bg-[#f6f6f6]",
+      "absolute sm:relative text-gray-200 w-[100%] lg:w-[75%] mx-auto py-2 z-10 bg-[#f6f6f6]",
     list: "cursor-pointer block my-4 py-2 pr-4 pl-3 text-green-700 hover:text-green-800 hover:mx-3 md:border-0 font-bold md:p-0     transition-all duration-[300ms] border-move-animation",
     listHome:
       "cursor-pointer text-green-700 hover:text-green-800 block my-4 py-2 pr-4 pl-3 hover:text-stone-900 hover:mx-3  font-bold md:p-0 transition-all duration-[300ms] border-move-animation",
