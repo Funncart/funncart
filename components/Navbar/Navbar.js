@@ -43,13 +43,13 @@ const Navbar = ({ click }) => {
             </div>
           </Link>
           <div className="target flex items-center md:order-2">
+            <Link href="/seller">
+              <div className={style.seller}>Become a seller</div>
+            </Link>
             <Link href="/cart">
               <div className={style.cart}>
                 <AiOutlineShoppingCart />
               </div>
-            </Link>
-            <Link href="/seller">
-              <div className={style.seller}>Become a seller</div>
             </Link>
             {/* the hamburger button */}
             <button
@@ -91,7 +91,7 @@ const Navbar = ({ click }) => {
                   </p>
                 </Link>
               </li>
-            
+
               <Link href="/categories">
                 <li>
                   <p className={style.list}>Categories</p>
