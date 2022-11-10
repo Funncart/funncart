@@ -33,31 +33,31 @@ const PaymentDetails = (props) => {
   };
   const handleApplyPromo = () => {
     if (Promo === "NEW10") {
-      if (props.total.toFixed(1) * 0.1 < 300) {
+      if (props.total.toFixed(1) * 0.1 < 500) {
         props.handleTotal(10);
       } else {
-        props.handleTotal(300);
+        props.handleTotal(500);
       }
     }
     if (Promo === "NEW20") {
-      if (props.total.toFixed(1) * 0.2 < 300) {
+      if (props.total.toFixed(1) * 0.2 < 500) {
         props.handleTotal(20);
       } else {
-        props.handleTotal(300);
+        props.handleTotal(500);
       }
     }
-    if (Promo === "NUSTIAN") {
-      if (props.total.toFixed(1) * 0.1 < 300) {
+    if (Promo === "NUSTIAN"|| Promo==='Nustian'||Promo ==='nustian') {
+      if (props.total.toFixed(1) * 0.1 < 500) {
         props.handleTotal(10);
       } else {
-        props.handleTotal(300);
+        props.handleTotal(500);
       }
     }
     if (Promo === "FUNNCART10") {
-      if (props.total.toFixed(1) * 0.1 < 300) {
+      if (props.total.toFixed(1) * 0.1 < 500) {
         props.handleTotal(10);
       } else {
-        props.handleTotal(300);
+        props.handleTotal(500);
       }
     }
   };

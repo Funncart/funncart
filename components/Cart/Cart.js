@@ -70,9 +70,9 @@ const Cart = () => {
       setApply(true);
       setTotal((prev) => prev * 0.8);
     }
-    if (value == 300 && !Apply) {
+    if (value == 500 && !Apply) {
       setApply(true);
-      setTotal((prev) => prev - 300);
+      setTotal((prev) => prev - 500);
     }
   };
   const handleCheckoutData = (data) => {
