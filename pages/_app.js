@@ -27,6 +27,8 @@ function MyApp({ Component, pageProps }) {
         />
       </Head>
       <div className="overflow-x-hidden bg-[#f6f6f6] z-0">
+        <p style={{fontFamily:'Playfair Display, serif'}} className="py-2 text-sm   text-center bg-red-800 text-[#d3d3d3]">
+11.11 Sale Now Active. Limited Time Discouts        </p>
         <p className="py-1 text-xs text-center bg-green-800 text-[#d3d3d3]">
           FREE SHIPPING ON ALL ORDERS RS. 1999 & ABOVE
         </p>
