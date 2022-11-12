@@ -3,13 +3,14 @@ import React from "react";
 import client from "./api/client";
 import Home from "./../components/Home/Home";
 import Animator from "../components/UI/Animator";
+import Products from "../components/Products/Products";
 const style = {};
 
 const App = (props) => {
   
   return (
     <Animator>
-      <Home  />
+      <Products  />
     </Animator>
   );
 };
