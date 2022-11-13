@@ -49,8 +49,8 @@ const Products = () => {
   if (category == "mirrorcomb") {
     categoryHeading = "Mirror Comb";
   }
-  if (category == "woodenartifacts") {
-    categoryHeading = "Wooden Artifacts";
+  if (category == "woodwork") {
+    categoryHeading = "Wood Work";
   }
 
   return (

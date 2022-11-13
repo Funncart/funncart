@@ -63,11 +63,11 @@ const CategoriesNav = (props) => {
       </li>
       <li
         className={`text-green-900 border-move-animation-products cursor-pointer mx-4 my-2 ${
-          Click == "woodenartifacts" && " font-bold "
+          Click == "woodwork" && " font-bold "
         }`}
-        onClick={() => handleNavClick("woodenartifacts")}
+        onClick={() => handleNavClick("woodwork")}
       >
-        Wooden Artifacts
+        Wood Work
       </li>
     </ul>
   );
