@@ -11,6 +11,7 @@ const style = {
   productsGrid: "flex flex-col items-center justify-center py-4 md:py-12",
   smallHeading:
     "mb-8 border-b-2 border-stone-200 text-xl md:text-2xl max-w-fit mx-auto py-2 text-green-900 ",
+    let:'',
 };
 
 const Products = () => {
