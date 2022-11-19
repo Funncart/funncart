@@ -27,6 +27,11 @@ const MoreDetails = ({
         ? "bg-green-700 text-gray-50"
         : "bg-[#ffffff] text-stone-600"
     }    px-4 sm:px-16 md:px-24 lg:px-36 py-2 md:py-4 lg:px-32 text-lg cursor-pointer my-7 md:my-6`,
+    button3: `w-[50%] md:w-[50%] text-center hover:bg-opacity-[0.9] transition duration-[200ms] ${
+      WhichNav == "description"
+        ? "bg-green-700 text-gray-50"
+        : "bg-[#ffffff] text-stone-600"
+    }    px-4 sm:px-16 md:px-24 lg:px-36 py-2 md:py-4 lg:px-32 text-lg cursor-pointer my-7 md:my-6`,
   };
   return (
     <div className={style.wrapper} style={{ fontFamily: "Lato,sans-serif" }}>
@@ -41,12 +46,12 @@ const MoreDetails = ({
         <p className={style.button2} onClick={() => handleNavClick("reviews")}>
           Reviews
         </p>
-        {/* <p
+        <p
           className={style.button3}
-          onClick={() => handleNavClick("information")}
+          onClick={() => handleNavClick("description")}
         >
-          Information
-        </p> */}
+          Description
+        </p>
       </div>
       {/* adding the content */}
       {/* ADDING THE DESCRIPTION */}
