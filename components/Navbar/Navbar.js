@@ -85,14 +85,14 @@ const Navbar = ({ click }) => {
           >
             <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 text-md md:text-md tracking-wider ">
               <li>
-                <Link href="/">
+                <Link href="/home">
                   <p className={style.listHome} aria-current="page">
                     Home
                   </p>
                 </Link>
               </li>
 
-              <Link href="/categories">
+              <Link href="/">
                 <li>
                   <p className={style.list}>Categories</p>
                 </li>
