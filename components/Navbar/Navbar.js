@@ -10,15 +10,15 @@ const Navbar = ({ click }) => {
   const screenWidth = useWindowSize();
   const style = {
     wrapper:
-      "absolute sm:relative text-gray-200 w-[100%] lg:w-[75%] mx-auto py-2 z-10 bg-[#f6f6f6]",
-    list: "cursor-pointer block my-4 py-2 pr-4 pl-3 text-green-700 hover:text-green-800 hover:mx-3 md:border-0 font-bold md:p-0     transition-all duration-[300ms] border-move-animation",
+      "absolute sm:relative text-gray-200 w-[100%] lg:w-[75%] mx-auto py-2 z-10",
+    list: "cursor-pointer block my-4 py-2 pr-4 pl-3 text-primary hover:text-primary hover:mx-3 md:border-0 font-bold md:p-0     transition-all duration-[300ms] border-move-animation",
     listHome:
-      "cursor-pointer text-green-700 hover:text-green-800 block my-4 py-2 pr-4 pl-3 hover:text-stone-900 hover:mx-3  font-bold md:p-0 transition-all duration-[300ms] border-move-animation",
+      "cursor-pointer text-primary hover:text-primary block my-4 py-2 pr-4 pl-3 hover:text-stone-900 hover:mx-3  font-bold md:p-0 transition-all duration-[300ms] border-move-animation",
     cart: `hover:scale-[1.3] px-2 py-2 md:py-2 border-2 border-transparent  rounded-full font-bold  transition-all duration-[300ms] cursor-pointer text-2xl ${
       screenWidth.width < 1024 ? "text-green-900" : "text-green-900"
     }`,
     seller:
-      "text-xs md:text-md text-[#ffffff] bg-green-700 px-4 py-1 md:px-8 md:py-2  cursor-pointer hover:bg-opacity-[0.9] mx-4",
+      "text-xs md:text-md text-[#ffffff] bg-primary px-4 py-1 md:px-8 md:py-2  cursor-pointer hover:bg-opacity-[0.9] mx-4",
   };
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const handleSmallMenu = () => {
@@ -48,7 +48,7 @@ const Navbar = ({ click }) => {
             </Link>
             <Link href="/cart">
               <div className={style.cart}>
-                <AiOutlineShoppingCart />
+                <AiOutlineShoppingCart className="text-primary"/>
               </div>
             </Link>
             {/* the hamburger button */}

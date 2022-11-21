@@ -3,7 +3,7 @@ import React from 'react'
 
 const style = {
     wrapper: 'flex flex-col text-md md:text-md tracking-wider mx-auto z-10 bg-red-300',
-    list: 'mx-auto block my-4 py-2 px-2 border-b-2 border-green-800 font-bold  transition duration-[300ms] text-lg text-green-800 text-center',
+    list: 'mx-auto block my-4 py-2 px-2 border-b-2 border-primary font-bold  transition duration-[300ms] text-lg text-primary text-center',
 
 
 }

@@ -8,20 +8,20 @@ const SingleProduct = ({ item }) => {
   const { width } = useWindowSize();
   const style = {
     wrapper:
-      "px-2 md:px-4 py-4 md:py-4 bg-white flex flex-col items-start w-[45%] md:w-[20%] my-2",
+      "px-2 md:px-4 py-4 md:py-4 bg-white flex flex-col items-start w-[45%] md:w-[20%] my-2 border-gray-100 border-2",
     img: "mb-4",
-    name: "font-semibold my-2 md:my-3 text-lg md:text-lg text-green-900 mx-auto text-center md:text-left h-[20%] flex items-center justify-center  ",
-    price: `font-bold my-1 md:my-3 text-sm md:text-lg text-green-900 ${
+    name: "font-semibold my-2 md:my-3 text-lg md:text-lg text-primary mx-auto text-center md:text-center h-[20%] flex items-center justify-center  ",
+    price: `font-bold my-1 md:my-3 text-sm md:text-lg text-primary ${
       item.discount && "line-through"
     }`,
     buttonContainer:
-      "mx-auto transition-all duration-[350ms] cursor-pointer flex items-center justify-center bg-green-700 hover:bg-opacity-[0.8] px-2 md:px-8 py-3 md:py-3  w-[100%] md:max-w-none md:w-[100%]",
+      "mx-auto transition-all duration-[350ms] cursor-pointer flex items-center justify-center bg-secondary hover:bg-opacity-[0.8] px-2 md:px-8 py-3 md:py-3  w-[100%] md:max-w-none md:w-[100%]",
     btn: "flex-1 tracking-wide text-white text-xs md:text-sm",
     hoverButton:
-      "font-bold px-3 py-6 bg-green-700 rounded-full cursor-pointer text-white",
+      "font-bold px-3 py-6 bg-secondary rounded-full cursor-pointer text-white",
     discoutnedPrice:
-      "my-1 md:my-3 text-2xl md:text-lg text-green-900 ml-4 font-bold",
-    freeDelivery: "text-white text-center mx-auto bg-green-700 px-5 py-0 md:py-1",
+      "my-1 md:my-3 text-2xl md:text-lg text-primary ml-4 font-bold",
+    freeDelivery: "text-white text-center mx-auto bg-red-700 px-5 py-0 md:py-1",
   };
   return (
     <NextLink href={`/${item.slug.current}`} passHref>
@@ -59,8 +59,8 @@ const SingleProduct = ({ item }) => {
         </div>
         {/* adding the discount value */}
         {item.discount && (
-          <div className="flex items-center justify-center mx-auto md:mx-0 my-0 border-[2px] border-green-800 w-[100%] mb-2">
-            <h1 className="text-sm font-bold text-green-900">
+          <div className="flex items-center justify-center mx-auto md:mx-0 my-0 border-[2px] border-red-700 w-[100%] mb-2 bg-red-700">
+            <h1 className="text-sm font-bold text-white">
               {item.discount}% off
             </h1>
           </div>

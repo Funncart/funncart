@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 const style = {
   wrapper: " bg-white my-12  w-[90%] md:w-[50%] lg:w-[40%] mx-auto py-4",
   smallHeading:
-    "border-b-2 border-green-900 text-2xl md:text-3xl max-w-fit mx-auto py-2 text-green-900 ",
+    "border-b-2 border-primary text-2xl md:text-3xl max-w-fit mx-auto py-2 text-primary ",
   form: "flex flex-col my-6",
   input:
     "px-3  md:px-4 py-2 md:py-3 placeholder:text-black ring-none outline-none bg-[#F5F4F4] my-4 w-[90%] md:w-[85%] mx-auto",

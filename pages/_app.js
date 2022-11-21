@@ -26,10 +26,15 @@ function MyApp({ Component, pageProps }) {
           content="A marketplace for handmade products"
         />
       </Head>
-      <div className="overflow-x-hidden bg-[#f6f6f6] z-0">
-        <p style={{fontFamily:'Playfair Display, serif'}} className="py-2 text-sm   text-center bg-red-800 text-[#d3d3d3]">
-11.11 Sale Now Active. Limited Time Discounts        </p>
-        <p className="py-1 text-xs text-center bg-green-800 text-[#d3d3d3]">
+      {/* bg-[#f6f6f6] */}
+      <div className="overflow-x-hidden  z-0">
+        <p
+          style={{ fontFamily: "Playfair Display, serif" }}
+          className="py-2 text-sm text-center bg-red-800 text-white"
+        >
+          11.11 Sale Now Active. Limited Time Discounts{" "}
+        </p>
+        <p className="py-1 text-xs text-center bg-primary text-white">
           FREE SHIPPING ON ALL ORDERS RS. 1999 & ABOVE
         </p>
         <Navbar click={Click} />
@@ -39,8 +44,11 @@ function MyApp({ Component, pageProps }) {
           </div>
           <Footer />
           {/* adding the whatsapp button as CTA */}
-          <a href="https://wa.me/+923343866227/?text=" className="fixed p-3 bg-green-800 rounded-full cursor-pointer fi bottom-4 right-4">
-            <BsWhatsapp className="text-2xl text-[#d8ca75] md:text-2xl shake-y-animation"/>
+          <a
+            href="https://wa.me/+923343866227/?text="
+            className="fixed p-3 bg-primary rounded-full cursor-pointer fi bottom-4 right-4 text-white"
+          >
+            <BsWhatsapp className="text-2xl text-white md:text-2xl shake-y-animation" />
           </a>
         </AnimatePresence>
       </div>

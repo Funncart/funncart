@@ -14,7 +14,7 @@ const CategoriesNav = (props) => {
   return (
     <ul className={style.wrapper} style={{ fontFamily: "Poppins, sans-serif" }}>
       <li
-        className={`text-green-900 border-move-animation-products cursor-pointer mx-4 my-2 ${
+        className={`text-primary border-move-animation-products cursor-pointer mx-4 my-2 ${
           Click == "allproducts" && " font-bold "
         }`}
         onClick={() => handleNavClick("allproducts")}
@@ -22,7 +22,7 @@ const CategoriesNav = (props) => {
         All Products
       </li>
       <li
-        className={`text-green-900 border-move-animation-products cursor-pointer mx-4 my-2 ${
+        className={`text-primary border-move-animation-products cursor-pointer mx-4 my-2 ${
           Click == "tabletop" && " font-bold "
         }`}
         onClick={() => handleNavClick("tabletop")}
@@ -30,7 +30,7 @@ const CategoriesNav = (props) => {
         Table Top
       </li>
       <li
-        className={`text-green-900 border-move-animation-products cursor-pointer mx-4 my-2 ${
+        className={`text-primary border-move-animation-products cursor-pointer mx-4 my-2 ${
           Click == "vintage" && " font-bold "
         }`}
         onClick={() => handleNavClick("vintage")}
@@ -38,7 +38,7 @@ const CategoriesNav = (props) => {
         Vintage
       </li>
       <li
-        className={`text-green-900 border-move-animation-products cursor-pointer mx-4 my-2 ${
+        className={`text-primary border-move-animation-products cursor-pointer mx-4 my-2 ${
           Click == "lightsandlamps" && " font-bold "
         }`}
         onClick={() => handleNavClick("lightsandlamps")}
@@ -46,7 +46,7 @@ const CategoriesNav = (props) => {
         Lights and Lamp
       </li>
       <li
-        className={`text-green-900 border-move-animation-products cursor-pointer mx-4 my-2 ${
+        className={`text-primary border-move-animation-products cursor-pointer mx-4 my-2 ${
           Click == "hourglass" && " font-bold "
         }`}
         onClick={() => handleNavClick("hourglass")}
@@ -54,7 +54,7 @@ const CategoriesNav = (props) => {
         Hourglass
       </li>
       <li
-        className={`text-green-900 border-move-animation-products cursor-pointer mx-4 my-2 ${
+        className={`text-primary border-move-animation-products cursor-pointer mx-4 my-2 ${
           Click == "mirrorcomb" && " font-bold "
         }`}
         onClick={() => handleNavClick("mirrorcomb")}
@@ -62,7 +62,7 @@ const CategoriesNav = (props) => {
         Mirror Comb
       </li>
       <li
-        className={`text-green-900 border-move-animation-products cursor-pointer mx-4 my-2 ${
+        className={`text-primary border-move-animation-products cursor-pointer mx-4 my-2 ${
           Click == "woodwork" && " font-bold "
         }`}
         onClick={() => handleNavClick("woodwork")}

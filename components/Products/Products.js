@@ -5,12 +5,13 @@ import CategoriesGrid from "./CategoriesGrid";
 import client from "../../pages/api/client";
 import Cookies from "js-cookie";
 const style = {
-  wrapper: "bg-[#F5F4F4] ",
+  // bg-[#F5F4F4] 
+  wrapper: "",
   catergoriesContainer:
     "flex flex-col items-center justify-center my-3 md:my-8",
   productsGrid: "flex flex-col items-center justify-center py-4 md:py-12",
   smallHeading:
-    "mb-8 border-b-2 border-stone-200 text-xl md:text-2xl max-w-fit mx-auto py-2 text-green-900 ",
+    "mb-8 border-b-2 border-stone-200 text-xl md:text-2xl max-w-fit mx-auto py-2 text-primary ",
     let:'',
 };
 

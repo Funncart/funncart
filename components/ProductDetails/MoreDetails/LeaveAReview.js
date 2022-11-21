@@ -4,12 +4,12 @@ import Rating from "@mui/material/Rating";
 import axios from "axios";
 const style = {
   wrapper: "mt-12",
-  heading: "text-2xl md:text-3xl text-green-800 my-6 font-bold smallDivider",
+  heading: "text-2xl md:text-3xl text-primary my-6 font-bold smallDivider",
   para: "text-stone-600 font-semibold text-xs",
   reviewContainer: "flex flex-col justify-start",
   input:
-    "bg-[#f6f6f6] my-4 px-3 py-3 md:px-4 md:px-5 outline-none border-2 border-transparent focus:border-green-700",
-  btn: "bg-opacity-[0.8] hover:bg-opacity-[0.95] transition duration-[300ms] my-6 bg-green-700 max-w-fit px-8 md:px-12 py-2 md:py-3 text-stone-100 font-bold tracking-wider",
+    "bg-[#f6f6f6] my-4 px-3 py-3 md:px-4 md:px-5 outline-none border-2 border-transparent focus:border-primary",
+  btn: "bg-opacity-[0.8] hover:bg-opacity-[0.95] transition duration-[300ms] my-6 bg-primary max-w-fit px-8 md:px-12 py-2 md:py-3 text-stone-100 font-bold tracking-wider",
 };
 const LeaveAReview = ({ slug }) => {
   const [Review, setReview] = useState("");

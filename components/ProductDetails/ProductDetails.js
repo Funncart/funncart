@@ -40,13 +40,13 @@ const ProductDetails = ({
       " md:mr-12 overflow-hidden flex items-center justify-center flex-col",
     contentContainer: "w-[100%] md:w-[60%] flex flex-col",
     header1: "flex items-center justify-center mt-4",
-    name: "text-2xl md:text-3xl font-semibold text-green-700 flex-1",
-    priceTextCut: `text-green-800 font-bold text-xl md:text-2xl my-3 decoration-green-700 ${
+    name: "text-2xl md:text-3xl font-semibold text-secondary flex-1",
+    priceTextCut: `text-primary font-bold text-xl md:text-2xl my-3 decoration-secondary ${
       discount && "line-through"
     }`,
-    priceText: "text-green-800 font-bold text-xl md:text-2xl my-3 mx-4",
-    description: "text-sm text-green-900",
-    btn: "hover:bg-opacity-[0.9] transition duration-[200ms] my-6 bg-green-700 max-w-fit px-8 md:px-12 py-2 md:py-3 text-white font-bold tracking-wide mx-auto md:mx-0",
+    priceText: "text-red-700 font-bold text-xl md:text-2xl my-3 mx-4",
+    description: "text-sm text-black",
+    btn: "hover:bg-opacity-[0.9] transition duration-[200ms] my-6 bg-secondary max-w-fit px-8 md:px-12 py-2 md:py-3 text-white font-bold tracking-wide mx-auto md:mx-0",
     outOfStockBtn:
       "transition duration-[200ms] my-6 bg-green-900 bg-opacity-[0.7] max-w-fit px-8 md:px-12 py-2 md:py-3 text-white font-bold tracking-wide mx-auto md:mx-0 cursor-not-allowed",
 
@@ -225,7 +225,7 @@ const ProductDetails = ({
                       >
                         <img
                           className={`cursor-pointer pb-1 ${
-                            ImgKey == it._key && "border-b-2 border-green-800 "
+                            ImgKey == it._key && "border-b-2 border-primary "
                           }`}
                           src={`${urlForThumbnail(it)}`}
                           height={width < 700 ? 60 : 70}
@@ -241,7 +241,7 @@ const ProductDetails = ({
             {/* content side of the container */}
             <div className={style.contentContainer}>
               {IsAdded ? (
-                <p className="bg-green-700 px-4 py-2 text-white rounded max-w-fit my-2">
+                <p className="bg-secondary px-4 py-2 text-white rounded max-w-fit my-2">
                   Successfully added to cart
                 </p>
               ) : (
@@ -281,7 +281,7 @@ const ProductDetails = ({
                           0
                         )}
                       </p>
-                      <p className="text-sm text-green-900">
+                      <p className="text-sm text-red-700 font-semibold">
                         ( {discount}% off )
                       </p>
                     </div>
@@ -325,7 +325,7 @@ const ProductDetails = ({
               {stock ? (
                 <div className="flex items-center">
                   <button className={style.outOfStockBtn}>Add to Cart</button>
-                  <p className="mx-4 text-green-900">Available Soon!</p>
+                  <p className="mx-4 text-primary">Available Soon!</p>
                 </div>
               ) : (
                 <button className={style.btn} onClick={handleAddToCart}>

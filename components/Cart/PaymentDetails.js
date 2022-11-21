@@ -3,15 +3,15 @@ import React, { useState } from "react";
 const style = {
   wrapper: "flex flex-col py-4",
   smallHeading:
-    "border-b-2 border-green-900 text-2xl md:text-3xl max-w-fit mx-auto py-2 text-green-900 ",
-  btn: "bg-opacity-[1] hover:bg-opacity-[0.95] transition duration-[300ms] my-6 bg-green-800 mx-auto px-8 md:px-12 py-2 md:py-3 text-stone-50 font-bold tracking-wide",
-  subtotal: " text-green-800 flex w-[75%] md:w-[50%] mx-auto my-6 ",
+    "border-b-2 border-primary text-2xl md:text-3xl max-w-fit mx-auto py-2 text-primary ",
+  btn: "bg-opacity-[1] hover:bg-opacity-[0.95] transition duration-[300ms] my-6 bg-primary mx-auto px-8 md:px-12 py-2 md:py-3 text-stone-50 font-bold tracking-wide",
+  subtotal: " text-primary flex w-[75%] md:w-[50%] mx-auto my-6 ",
   para: "  flex-1",
   amount: "",
   orderTotal:
-    "text-red-400 w-[75%] md:w-[50%] mx-auto my-6 font-normal flex border-t-[2px] border-green-900 py-3",
+    "text-red-400 w-[75%] md:w-[50%] mx-auto my-6 font-normal flex border-t-[2px] border-primary py-3",
   input:
-    "border-b-2 border-green-900 outline-none ring-none w-[30%] placeholder:text-xs",
+    "border-b-2 border-primary outline-none ring-none w-[30%] placeholder:text-xs",
   promoContainer:
     "flex items-center justify-between w-[75%] md:w-[50%] mx-auto my-6 text-black ",
   onlinePayment:
@@ -20,7 +20,7 @@ const style = {
     "flex flex-col items-center justify-between w-[75%] md:w-[100%]",
   singlePaymentMethod:
     "flex flex-row md:flex-col items-center justify-around my-4",
-  onlinePaymentNumber: "text-green-900 my-2",
+  onlinePaymentNumber: "text-primary my-2",
 };
 const PaymentDetails = (props) => {
   const [PayOnline, setPayOnline] = useState(false);
@@ -100,7 +100,7 @@ const PaymentDetails = (props) => {
         />
         <button
           onClick={handleApplyPromo}
-          className="px-4 py-2 bg-green-800 bg-opacity-[1] hover:bg-opacity-[0.9] text-white text-xs"
+          className="px-4 py-2 bg-primary bg-opacity-[1] hover:bg-opacity-[0.9] text-white text-xs"
         >
           ADD
         </button>
@@ -108,12 +108,12 @@ const PaymentDetails = (props) => {
       </form>
       <div className={style.onlinePayment}>
         <div className="onlineContainer flex items-center justify-center flex-col">
-          {/* <p className="text-green-900 text-center mx-auto">
+          {/* <p className="text-primary text-center mx-auto">
             Get 5% off via online Payment
           </p> */}
           <p
             onClick={payOnlineClickHandler}
-            className="hover:bg-opacity-[0.95] cursor-pointer text-white text-center mx-auto bg-green-800 px-3 md:px-6 py-2 md:py-1 my-3 tracking-wider"
+            className="hover:bg-opacity-[0.95] cursor-pointer text-white text-center mx-auto bg-primary px-3 md:px-6 py-2 md:py-1 my-3 tracking-wider"
           >
             Pay Online
           </p>

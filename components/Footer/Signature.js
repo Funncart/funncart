@@ -2,7 +2,7 @@ import React from "react";
 
 const style = {
   wrapper:
-    "bg-green-900 flex flex-col mx-auto items-center justify-center py-1 md:py-4",
+    "bg-primary flex flex-col mx-auto items-center justify-center py-1 md:py-4",
   list: "block my-4 py-2 px-2 md:px-4 font-sm md:text-md text-gray-100 font-bold hover:text-green-100 hover:mx-3 transition-all duration-[300ms]",
   signatureContent: "text-white text-xs md:text-sm text-white py-2",
 };
