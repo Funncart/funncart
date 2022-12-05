@@ -9,7 +9,7 @@ const style = {
 const ProductsRoute = () => {
   return (
     <Animator>
-      <Home />
+      <Products />
     </Animator>
   )
 }

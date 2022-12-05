@@ -10,7 +10,7 @@ const App = (props) => {
   
   return (
     <Animator>
-      <Products  />
+      <Home  />
     </Animator>
   );
 };

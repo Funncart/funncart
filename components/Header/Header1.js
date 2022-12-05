@@ -3,23 +3,15 @@ import React from "react";
 import Link from "next/link";
 const style = {
   wrapper: "h-[35vh] w-[100vw] flex items-center justify-center flex flex-col",
-  smallHeading: "text-4xl md:text-6xl text-stone-50 tracking-wider my-12",
+  smallHeading: "text-4xl md:text-6xl text-primary tracking-wider my-12",
   pagination: "flex flex-row",
-  pagi: "text-lg md:text-md text-stone-50 mx-1 cursor-pointer",
+  pagi: "text-lg md:text-md text-primary mx-1 cursor-pointer",
 };
 const Header1 = ({ headingText }) => {
   return (
     // will take the text as the argument
     <div
       className={style.wrapper}
-      style={{
-        background:
-          'radial-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),url("/img/header.webp")',
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundAttachment: "auto",
-      }}
     >
       <h2
         className={style.smallHeading}

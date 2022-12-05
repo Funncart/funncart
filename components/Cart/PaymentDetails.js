@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const style = {
   wrapper: "flex flex-col py-4",
   smallHeading:
-    "border-b-2 border-primary text-2xl md:text-3xl max-w-fit mx-auto py-2 text-primary ",
+    "border-b-2 border-primary text-2xl md:text-3xl max-w-fit mx-auto py-2 text-primary font-semibold",
   btn: "bg-opacity-[1] hover:bg-opacity-[0.95] transition duration-[300ms] my-6 bg-primary mx-auto px-8 md:px-12 py-2 md:py-3 text-stone-50 font-bold tracking-wide",
   subtotal: " text-primary flex w-[75%] md:w-[50%] mx-auto my-6 ",
   para: "  flex-1",
@@ -46,7 +46,7 @@ const PaymentDetails = (props) => {
         props.handleTotal(500);
       }
     }
-    if (Promo === "NUSTIAN"|| Promo==='Nustian'||Promo ==='nustian') {
+    if (Promo === "NUSTIAN" || Promo === "Nustian" || Promo === "nustian") {
       if (props.total.toFixed(1) * 0.1 < 500) {
         props.handleTotal(10);
       } else {
@@ -66,12 +66,7 @@ const PaymentDetails = (props) => {
       className={style.wrapper}
       style={{ fontFamily: "Poppins, sans-serif" }}
     >
-      <h2
-        className={style.smallHeading}
-        style={{ fontFamily: "Yeseva One, cursive" }}
-      >
-        Payment Details
-      </h2>
+      <h2 className={style.smallHeading}>Payment Details</h2>
       <div
         className={style.subtotal}
         style={{ fontFamily: "Poppins, sans-serif" }}
@@ -94,7 +89,7 @@ const PaymentDetails = (props) => {
         {/* <p className={style.para}>Promo Code</p> */}
         <input
           className={style.input}
-          placeholder="Enter Code..."
+          placeholder="Promo..."
           value={Promo}
           onChange={handlePromoChange}
         />

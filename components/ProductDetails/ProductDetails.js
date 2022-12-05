@@ -11,6 +11,7 @@ import Colors from "./Colors";
 import Size from "./Size";
 import CustomCategory from "./CustomCategory";
 import useWindowSize from "../../hooks/windowSize";
+import Link from "next/link";
 const ProductDetails = ({
   productName,
   price,
@@ -31,26 +32,27 @@ const ProductDetails = ({
   discount,
   categoryColors, //array of colors for every category
 }) => {
+  
   const style = {
     wrapper:
-      "w-[95%] md:w-[80%] lg:w-[65%] mx-auto py-12 sm:py-16 md:py-24 lg:py-32 flex flex-col",
+      "w-[95%] md:w-[80%] lg:w-[65%] mx-auto py-12 sm:py-16 md:py-24 lg:py-32 flex flex-col font ",
     detailsContainer:
       "px-0 sm:px-6 md:px-8 lg:px-12  py-5 sm:py-6 md:py-8 lg:py-12 bg-white flex flex-col md:flex-row items-center",
     imageContainer:
       " md:mr-12 overflow-hidden flex items-center justify-center flex-col",
     contentContainer: "w-[100%] md:w-[60%] flex flex-col",
-    header1: "flex items-center justify-center mt-4",
-    name: "text-2xl md:text-3xl font-semibold text-secondary flex-1",
-    priceTextCut: `text-primary font-bold text-xl md:text-2xl my-3 decoration-secondary ${
+    header1: "font flex items-center justify-center mt-4",
+    name: "font text-2xl md:text-3xl font-semibold text-secondary flex-1",
+    priceTextCut: `font text-red-500 font-bold text-xl md:text-lg my-3 decoration-red-500 ${
       discount && "line-through"
     }`,
-    priceText: "text-red-700 font-bold text-xl md:text-2xl my-3 mx-4",
+    priceText: "font text-primary font-bold text-xl md:text-2xl my-3 mx-4",
     description: "text-sm text-black",
-    btn: "hover:bg-opacity-[0.9] transition duration-[200ms] my-6 bg-secondary max-w-fit px-8 md:px-12 py-2 md:py-3 text-white font-bold tracking-wide mx-auto md:mx-0",
+    btn: "hover:bg-opacity-[0.9] transition duration-[200ms] my-6 bg-primary max-w-fit px-8 md:px-12 py-2 md:py-3 text-white font-semibold tracking-wide mx-auto md:mx-0 md:mr-3",
     outOfStockBtn:
-      "transition duration-[200ms] my-6 bg-green-900 bg-opacity-[0.7] max-w-fit px-8 md:px-12 py-2 md:py-3 text-white font-bold tracking-wide mx-auto md:mx-0 cursor-not-allowed",
+      "transition duration-[200ms] my-6 bg-primary bg-opacity-[0.7] max-w-fit px-8 md:px-12 py-2 md:py-3 text-white font-bold tracking-wide mx-auto md:mx-0 cursor-not-allowed",
 
-    ratings: "text-xs text-stone-500",
+    ratings: "text-xs text-primary",
   };
   const [RatingValue, setRatingValue] = useState("0");
   const [PriceValue, setPriceValue] = useState(price);
@@ -241,7 +243,7 @@ const ProductDetails = ({
             {/* content side of the container */}
             <div className={style.contentContainer}>
               {IsAdded ? (
-                <p className="bg-secondary px-4 py-2 text-white rounded max-w-fit my-2">
+                <p className="bg-primary px-4 py-2 text-white rounded max-w-fit my-2">
                   Successfully added to cart
                 </p>
               ) : (
@@ -271,7 +273,7 @@ const ProductDetails = ({
                 </Box>
               </div>
               <div className="flex items-center justify-between">
-                <div className="flex">
+                <div className="flex items-center">
                   <p className={style.priceTextCut}>Rs. {PriceValue}</p>
                   {discount && (
                     <div className="flex items-center justify-center">
@@ -281,7 +283,7 @@ const ProductDetails = ({
                           0
                         )}
                       </p>
-                      <p className="text-sm text-red-700 font-semibold">
+                      <p className="text-sm text-primary font-semibold">
                         ( {discount}% off )
                       </p>
                     </div>
@@ -289,7 +291,7 @@ const ProductDetails = ({
                 </div>
 
                 {stock && (
-                  <p className="text-red-700 font-bold text-md md:text-xl">
+                  <p className="text-primary font-bold text-md md:text-xl">
                     Out of Stock
                   </p>
                 )}
@@ -316,11 +318,6 @@ const ProductDetails = ({
                   SelectedCategory && SelectedCategory[0].categorySizeContainer
                 }
               />
-              {/* <CustomCategory
-                customCategoryData={customCategoryData1}
-                categoryMainTitle={categoryMainTitle1}
-                selectedCategory={handleSelectedCategory1}
-              /> */}
               <ItemCount itemCount={handleGetItemCount} />
               {stock ? (
                 <div className="flex items-center">
@@ -328,11 +325,15 @@ const ProductDetails = ({
                   <p className="mx-4 text-primary">Available Soon!</p>
                 </div>
               ) : (
-                <button className={style.btn} onClick={handleAddToCart}>
-                  Add to Cart
-                </button>
+                <div className="flex">
+                  <button className={style.btn} onClick={handleAddToCart}>
+                    Add to Cart
+                  </button>
+                  <Link href="/cart">
+                    <button className={style.btn}>VIEW CART</button>
+                  </Link>
+                </div>
               )}
-
               <div className={style.refImageContainer}>
                 {/* <Image src={''} height={} width={}/>
             <Image src={''} height={} width={}/>

@@ -6,8 +6,8 @@ const style = {
   side1: "w-full md:w-[45%] h-full mx-auto",
   side2: "w-full md:w-[45%] flex items-center justify-center mx-auto hidden md:flex",
   heading:
-    "font-bold text-5xl sm:text-6xl md:text-6xl lg:text-7xl my-8 text-green-700",
-  details: "text-green-900 py-3 ",
+    "font-bold text-5xl sm:text-6xl md:text-6xl lg:text-7xl my-8 text-primary",
+  details: "text-primary py-3 ",
   divider: "border-b-[1px] border-gray-200 p-2",
   coutnerContainer: "",
   signature:
@@ -44,19 +44,7 @@ const About = () => {
             <Counter />
           </div>
           {/* adding the signature */}
-          {/* <div className={style.signature}>
-            <img
-              src="https://res.cloudinary.com/shariqcloud/image/upload/v1649881629/Estate1/1649881617380_fsgbp2.png"
-              alt=""
-              className={style.signatureImg}
-            />
-            <h2
-              className={style.name}
-              style={{ fontFamily: "Cormorant Garamond, serif" }}
-            >
-              _Sharique
-            </h2>
-          </div> */}
+        
         </div>
         <div className={style.side2}>
           <img

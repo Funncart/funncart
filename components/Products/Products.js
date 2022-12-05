@@ -5,14 +5,14 @@ import CategoriesGrid from "./CategoriesGrid";
 import client from "../../pages/api/client";
 import Cookies from "js-cookie";
 const style = {
-  // bg-[#F5F4F4] 
-  wrapper: "",
+  // bg-[#F5F4F4]
+  wrapper: "font",
   catergoriesContainer:
     "flex flex-col items-center justify-center my-3 md:my-8",
   productsGrid: "flex flex-col items-center justify-center py-4 md:py-12",
   smallHeading:
-    "mb-8 border-b-2 border-stone-200 text-xl md:text-2xl max-w-fit mx-auto py-2 text-primary ",
-    let:'',
+    "mb-8 border-b-2 border-stone-200 text-xl md:text-2xl max-w-fit mx-auto py-2 text-primary font-semibold",
+  let: "",
 };
 
 const Products = () => {
@@ -32,9 +32,6 @@ const Products = () => {
   }, []);
   // console.log(product);
   let categoryHeading;
-  if (category == "allproducts") {
-    categoryHeading = "All Products";
-  }
   if (category == "tabletop") {
     categoryHeading = "Table Top";
   }
@@ -59,26 +56,18 @@ const Products = () => {
     <div className={style.wrapper}>
       <Header headingText="OUR CATEGORIES" />
       {/* adding the categories */}
-
       <div className={style.catergoriesContainer}>
-        <h2
-          className={style.smallHeading}
-          style={{ fontFamily: "Yeseva One, cursive" }}
-        >
-          Categories
-        </h2>
+        <h2 className={style.smallHeading}>Categories</h2>
         <CategoriesNav clickedCategory={handleClickedCategory} />
       </div>
       {/* add the products rendering function */}
       <div className={style.productsGrid}>
-        <h2
-          className={style.smallHeading}
-          style={{ fontFamily: "Yeseva One, cursive" }}
-        >
-          {categoryHeading}
-        </h2>
+        <h2 className={style.smallHeading}>{categoryHeading}</h2>
 
-        <CategoriesGrid category={Cookies.get('clickedNav')|| 'allproducts'} data={product} />
+        <CategoriesGrid
+          category={Cookies.get("clickedNav") || "vintage"}
+          data={product}
+        />
       </div>
     </div>
   );

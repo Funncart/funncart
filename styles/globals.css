@@ -3,10 +3,11 @@
 @tailwind utilities;
 @layer base {
   :root {
-    --color-primary: 251 191 36;
-    --color-secondary: 111 114 185;
+    --color-primary: 68 64 60;
+    --color-secondary: 111 114 0;
   }
 }
+
 ke-y-animation {
   animation: shakeY 1s infinite;
   position: relative;
@@ -25,11 +26,25 @@ ke-y-animation {
   width: 0;
   height: 2px;
   /* background: #15803d; */
-  background: #eab308;
+  background: #1e293b;
   transition: width 0.3s;
 }
 
 .border-move-animation:hover::after {
+  width: 100%;
+  transition: width 0.3s;
+}
+.border-move-animation1::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  /* background: #15803d; */
+  background: #ffffff;
+  transition: width 0.3s;
+}
+
+.border-move-animation1:hover::after {
   width: 100%;
   transition: width 0.3s;
 }
@@ -39,7 +54,7 @@ ke-y-animation {
   display: block;
   width: 0;
   height: 2px;
-  background: #eab308;
+  background: #1e293b;
   transition: width 0.3s;
 }
 
@@ -53,7 +68,7 @@ ke-y-animation {
   display: block;
   width: 50px;
   height: 3px;
-  background: #eab308;
+  background: #1e293b;
   transition: width 0.3s;
 }
 .content {
@@ -64,7 +79,7 @@ ke-y-animation {
   overflow: hidden;
 }
 .content .content-overlay {
-  background: radial-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+  background: radial-gradient(rgba(30,41,59, 0.6), rgba(30,41,59, 0.6));
   position: absolute;
   height: 100%;
   width: 100%;
@@ -76,6 +91,7 @@ ke-y-animation {
   -webkit-transition: all 0.4s ease-in-out 0s;
   -moz-transition: all 0.4s ease-in-out 0s;
   transition: all 0.4s ease-in-out 0s;
+  color: black;
 }
 
 .content:hover .content-overlay {
@@ -89,7 +105,6 @@ ke-y-animation {
 .content-details {
   position: absolute;
   text-align: center;
-
   top: 50%;
   left: 50%;
   opacity: 0;
@@ -128,4 +143,8 @@ ke-y-animation {
 
 .fadeIn-right {
   left: 80%;
+}
+
+.font {
+  font-family: "Poppins", sans-serif;
 }

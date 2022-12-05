@@ -6,13 +6,12 @@ import Checkout from "./Checkout";
 import axios from "axios";
 import { useRouter } from "next/router";
 const style = {
-  wrapper: "bg-[#F5F4F4] pb-8",
+  wrapper: " pb-8",
   cartNav: "flex w-[98%] md:w-[70%] lg:w-[55%] mx-auto justify-around",
   nav1: "px-6 md:px-12 py-4 md:py-6 bg-primary text-stone-50 font-bold tracking-wide w-[45%] flex items-center justify-center cursor-pointer hover:bg-opacity-[0.85] transition-all duration-[350ms] my-8 text-xs md:text-sm",
   itemsContainer:
     "bg-white px-4 md:px-6 py-6 md:py-8 w-[95%] lg:w-[85%] mx-auto",
-  itemsNav:
-    " bg-[#F5F4F4] flex text-primary py-2 items-center justify-around",
+  itemsNav: " bg-primary flex text-white py-2 items-center justify-around",
   para: " text-center w-[20%] text-xs md:text-sm ",
   singleItemListContainer: "flex flex-col",
   paymentDetails: "my-12 bg-white w-[90%] md:w-[50%] lg:w-[40%] mx-auto",
@@ -175,79 +174,48 @@ const Cart = () => {
   return (
     <div className={style.wrapper}>
       <Header headingText="CART" />
-      {/* adding the cart nav (cart and checkout)*/}
-      <div className={style.cartNav}>
+      {/* adding the items container */}
+      <div className={style.itemsContainer}>
+        {/* nav */}
         <div
-          className={style.nav1}
-          onClick={() => {
-            handleMenuClick("shoppingcart");
-          }}
+          className={style.itemsNav}
+          style={{ fontFamily: "Poppins, sans-serif" }}
         >
-          SHOPPING CART
+          <p className={style.para}>PRODUCT</p>
+          <p className={style.para}>PRICE</p>
+          <p className={style.para}>QUANTITY</p>
+          <p className={style.para}>TOTAL</p>
+          <p className={style.para}>REMOVE</p>
         </div>
-        <div
-          className={style.nav1}
-          onClick={() => {
-            handleMenuClick("checkout");
-          }}
-        >
-          CHECKOUT
+        {/* mapping the items-list */}
+        <div className={style.singleItemListContainer}>
+          {CartItems && CartItems.length > 0 ? (
+            CartItems.map((r) => {
+              return (
+                <SingleCartItem
+                  item={r}
+                  key={r.name}
+                  handleRemove={handleRemove}
+                />
+              );
+            })
+          ) : (
+            <div className=" text-xl md:text-2xl text-center my-24 text-primary font-bold">
+              Cart Empty
+            </div>
+          )}
         </div>
       </div>
+      <Checkout checkoutData={handleCheckoutData} />
 
-      {/* adding the items container */}
-      {menu === "shoppingcart" ? (
-        <div className={style.itemsContainer}>
-          {/* nav */}
-          <div
-            className={style.itemsNav}
-            style={{ fontFamily: "Poppins, sans-serif" }}
-          >
-            <p className={style.para}>PRODUCT</p>
-            <p className={style.para}>PRICE</p>
-            <p className={style.para}>QUANTITY</p>
-            <p className={style.para}>TOTAL</p>
-            <p className={style.para}>REMOVE</p>
-          </div>
-          {/* mapping the items-list */}
-          <div className={style.singleItemListContainer}>
-            {CartItems && CartItems.length > 0 ? (
-              CartItems.map((r) => {
-                return (
-                  <SingleCartItem
-                    item={r}
-                    key={r.name}
-                    handleRemove={handleRemove}
-                  />
-                );
-              })
-            ) : (
-              <div className=" text-xl md:text-2xl text-center my-24 text-primary font-bold">
-                Cart Empty
-              </div>
-            )}
-          </div>
-          {/* adding the payment details */}
-        </div>
-      ) : (
-        <Checkout checkoutData={handleCheckoutData} />
-      )}
-      {/* {IsSubmit && (
-        <p className="bg-[#c8a165] px-4 py-2 text-gray-50 rounded max-w-fit my-6 mx-auto">
-          Your Order is placed successfully
-        </p>
-      )} */}
-
-      {menu == "checkout" && (
-        <div className={style.paymentDetails}>
-          <PaymentDetails
-            total={Total}
-            handleTotal={handleTotal}
-            placeOrder={handlePlaceOrder}
-            DetailsError={DetailsError}
-          />
-        </div>
-      )}
+      <div className={style.paymentDetails}>
+        <PaymentDetails
+          total={Total}
+          handleTotal={handleTotal}
+          placeOrder={handlePlaceOrder}
+          DetailsError={DetailsError}
+        />
+      </div>
     </div>
   );
 };

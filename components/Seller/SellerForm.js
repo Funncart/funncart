@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 const style = {
-  wrapper: "",
+  wrapper: "font",
   smallHeading:
-    "border-b-2 border-green-900 text-2xl md:text-3xl max-w-fit mx-auto py-2 text-green-900 my-8 md:my-10",
+    "border-b-2 border-primary text-2xl md:text-3xl max-w-fit mx-auto py-2 text-primary my-8 md:my-10 font-semibold",
   formContainer: "flex flex-col",
   input:
     "px-3 md:px-4 py-2 md:py-3 placeholder:text-gray-900 ring-none outline-none bg-[#F5F4F4] my-4 w-[90%] md:w-[85%] mx-auto",
-  btn: "text-white bg-opacity-[0.8] hover:bg-opacity-[0.95] transition duration-[300ms] my-6 bg-green-700 mx-auto px-8 md:px-12 py-2 md:py-3 font-bold tracking-wide",
+  btn: "text-white bg-opacity-[0.8] hover:bg-opacity-[0.95] transition duration-[300ms] my-6 bg-primary mx-auto px-8 md:px-12 py-2 md:py-3 font-bold tracking-wide",
 };
 
 const SellerForm = () => {
@@ -84,7 +84,6 @@ const SellerForm = () => {
     <div className={style.wrapper}>
       <h2
         className={style.smallHeading}
-        style={{ fontFamily: "Yeseva One, cursive" }}
       >
         Enter your details
       </h2>

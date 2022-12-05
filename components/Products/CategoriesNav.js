@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import Cookies from "js-cookie";
 const style = {
   wrapper:
-    "my-8 flex items-center justify-around w-[100%] md:w-[60%] lg:w-[50%] mx-auto flex-wrap",
+    "my-8 flex items-center justify-around w-[100%] md:w-[60%] lg:w-[50%] mx-auto flex-wrap font",
 };
 
 const CategoriesNav = (props) => {
-  const [Click, setClick] = useState(Cookies.get('clickedNav') || 'allproducts');
+  const [Click, setClick] = useState(
+    Cookies.get("clickedNav") || "allproducts"
+  );
   const handleNavClick = (value) => {
     setClick(value);
     props.clickedCategory(value);
@@ -15,12 +17,13 @@ const CategoriesNav = (props) => {
     <ul className={style.wrapper} style={{ fontFamily: "Poppins, sans-serif" }}>
       <li
         className={`text-primary border-move-animation-products cursor-pointer mx-4 my-2 ${
-          Click == "allproducts" && " font-bold "
+          Click == "vintage" && " font-bold "
         }`}
-        onClick={() => handleNavClick("allproducts")}
+        onClick={() => handleNavClick("vintage")}
       >
-        All Products
+        Vintage
       </li>
+
       <li
         className={`text-primary border-move-animation-products cursor-pointer mx-4 my-2 ${
           Click == "tabletop" && " font-bold "
@@ -28,14 +31,6 @@ const CategoriesNav = (props) => {
         onClick={() => handleNavClick("tabletop")}
       >
         Table Top
-      </li>
-      <li
-        className={`text-primary border-move-animation-products cursor-pointer mx-4 my-2 ${
-          Click == "vintage" && " font-bold "
-        }`}
-        onClick={() => handleNavClick("vintage")}
-      >
-        Vintage
       </li>
       <li
         className={`text-primary border-move-animation-products cursor-pointer mx-4 my-2 ${

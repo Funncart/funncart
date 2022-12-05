@@ -28,18 +28,23 @@ function MyApp({ Component, pageProps }) {
       </Head>
       {/* bg-[#f6f6f6] */}
       <div className="overflow-x-hidden  z-0">
-        <p
+        {/* <p
           style={{ fontFamily: "Playfair Display, serif" }}
           className="py-2 text-sm text-center bg-red-800 text-white"
         >
           11.11 Sale Now Active. Limited Time Discounts{" "}
-        </p>
+        </p> */}
         <p className="py-1 text-xs text-center bg-primary text-white">
           FREE SHIPPING ON ALL ORDERS RS. 1999 & ABOVE
         </p>
         <Navbar click={Click} />
         <AnimatePresence exitBeforeEnter>
-          <div key={asPath} className="z-0 mt-24 md:mt-2" onClick={handleClick}>
+          <div
+            key={asPath}
+            className="z-0 mt-16 md:mt-2"
+            onClick={handleClick}
+            style={{ fontFamily: "Poppins,serif" }}
+          >
             <Component {...pageProps} />
           </div>
           <Footer />
