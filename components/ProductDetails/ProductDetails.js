@@ -12,6 +12,7 @@ import Size from "./Size";
 import CustomCategory from "./CustomCategory";
 import useWindowSize from "../../hooks/windowSize";
 import Link from "next/link";
+import SimilarProducts from "./SimilarProducts";
 const ProductDetails = ({
   productName,
   category,
@@ -350,6 +351,7 @@ const ProductDetails = ({
             productName={productName}
             slug={slugValue}
           />
+          <SimilarProducts category={category} />
         </div>
       </div>
     </Animator>

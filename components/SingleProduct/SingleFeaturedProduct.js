@@ -8,7 +8,7 @@ const SingleFeaturedProduct = ({ item }) => {
   const { width } = useWindowSize();
   const style = {
     wrapper:
-      "px-2 md:px-4 py-4 md:py-4 bg-white flex flex-col items-start w-[55%] md:w-[20%] my-2 ",
+      "px-2 md:px-4 py-4 md:py-4 bg-white flex flex-col items-start w-[75%] md:w-[30%] my-2 ",
     img: "mb-4",
     name: "font font-semibold my-2 md:my-3 text-sm md:text-sm text-primary mx-auto text-center md:text-center h-[20%] flex items-center justify-center  ",
     price: `font font-bold my-1 md:my-3  text-primary ${

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import LeaveAReview from "./LeaveAReview";
 const style = {
   wrapper:
-    " bg-[#ffffff] px-5 sm:px-6 md:px-8 lg:px-12  py-5 sm:py-6 md:py-8 lg:py-12 flex flex-col",
+    " bg-[#ffffff] px-5 sm:px-6 md:px-8 lg:px-12  py-5 sm:py-6 md:py-8 lg:py-5 flex flex-col",
   heading: "text-2xl md:text-3xl text-primary my-6 font-bold smallDivider",
   reviewContainer: "flex flex-col justify-start",
   name: "text-xl md:text-2xl text-primary font-bold my-3",

@@ -15,7 +15,7 @@ const MoreDetails = ({
     setWhichNav(value);
   };
   const style = {
-    wrapper: "py-12 sm:py-16 md:py-12 lg:py-32 rounded-md font",
+    wrapper: "py-6 sm:py-4 md:py-4 lg:py-5 rounded-md font",
     navContainer: "flex justify-between bg-white px-1 sm:px-6 md:px-8 lg:px-12",
     button1: `rounded-md w-[50%] md:w-[50%] text-center hover:bg-opacity-[0.9] transition duration-[200ms] ${
       WhichNav == "information"
