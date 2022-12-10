@@ -10,9 +10,7 @@ const style = {
 const CategoriesGrid = ({ category, data }) => {
   let filteredData = [];
   if (category !== "allproducts" && data) {
-    filteredData = data.filter(
-      (item) => item.category === category
-    );
+    filteredData = data.filter((item) => item.category === category);
   } else {
     filteredData = data;
   }

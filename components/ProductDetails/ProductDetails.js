@@ -14,6 +14,7 @@ import useWindowSize from "../../hooks/windowSize";
 import Link from "next/link";
 const ProductDetails = ({
   productName,
+  category,
   price,
   description,
   information,
@@ -32,7 +33,6 @@ const ProductDetails = ({
   discount,
   categoryColors, //array of colors for every category
 }) => {
-  
   const style = {
     wrapper:
       "w-[95%] md:w-[80%] lg:w-[65%] mx-auto py-12 sm:py-16 md:py-24 lg:py-32 flex flex-col font ",

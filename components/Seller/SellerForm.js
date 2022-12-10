@@ -7,12 +7,10 @@ const style = {
   formContainer: "flex flex-col",
   input:
     "px-3 md:px-4 py-2 md:py-3 placeholder:text-gray-900 ring-none outline-none bg-[#F5F4F4] my-4 w-[90%] md:w-[85%] mx-auto",
-  btn: "text-white bg-opacity-[0.8] hover:bg-opacity-[0.95] transition duration-[300ms] my-6 bg-primary mx-auto px-8 md:px-12 py-2 md:py-3 font-bold tracking-wide",
+  btn: "text-white bg-opacity-[1] hover:bg-opacity-[0.9] transition duration-[300ms] my-6 bg-primary mx-auto px-8 md:px-12 py-2 md:py-3 font-bold tracking-wide",
 };
 
 const SellerForm = () => {
-  const [isError, setError] = useState(false);
-  const [formIsValid, setFormIsValid] = useState(false);
   const [isSubmit, setIsSubmit] = useState(false);
   const [Name, setName] = useState("");
   const [PhoneNumber, setPhoneNumber] = useState("");
@@ -82,11 +80,7 @@ const SellerForm = () => {
   };
   return (
     <div className={style.wrapper}>
-      <h2
-        className={style.smallHeading}
-      >
-        Enter your details
-      </h2>
+      <h2 className={style.smallHeading}>Enter your details</h2>
       <form
         className={style.formContainer}
         onSubmit={submitHandler}

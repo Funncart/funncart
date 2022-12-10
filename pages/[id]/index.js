@@ -52,6 +52,7 @@ const index = () => {
           images={ProductData[0].images}
           stock={ProductData[0].stock}
           discount={ProductData[0].discount}
+          category={ProductData[0].category}
           // categoryColors={ProductData[0].categoryColors}
         />
       )}

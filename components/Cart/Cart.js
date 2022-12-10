@@ -8,10 +8,10 @@ import { useRouter } from "next/router";
 const style = {
   wrapper: " pb-8",
   cartNav: "flex w-[98%] md:w-[70%] lg:w-[55%] mx-auto justify-around",
-  nav1: "px-6 md:px-12 py-4 md:py-6 bg-primary text-stone-50 font-bold tracking-wide w-[45%] flex items-center justify-center cursor-pointer hover:bg-opacity-[0.85] transition-all duration-[350ms] my-8 text-xs md:text-sm",
+  nav1: "px-6 md:px-12 py-4 md:py-6 bg-primary text-stone-50 font-bold tracking-wide w-[45%] flex items-center justify-center cursor-pointer hover:bg-opacity-[0.85] transition-all duration-[350ms] my-8 text-xs md:text-sm rounded-sm",
   itemsContainer:
     "bg-white px-4 md:px-6 py-6 md:py-8 w-[95%] lg:w-[85%] mx-auto",
-  itemsNav: " bg-primary flex text-white py-2 items-center justify-around",
+  itemsNav: " bg-primary flex text-white py-2 items-center justify-around rounded-md",
   para: " text-center w-[20%] text-xs md:text-sm ",
   singleItemListContainer: "flex flex-col",
   paymentDetails: "my-12 bg-white w-[90%] md:w-[50%] lg:w-[40%] mx-auto",

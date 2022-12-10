@@ -30,7 +30,6 @@ const Products = () => {
     };
     fetchData();
   }, []);
-  // console.log(product);
   let categoryHeading;
   if (category == "tabletop") {
     categoryHeading = "Table Top";

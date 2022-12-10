@@ -3,7 +3,7 @@ import React from "react";
 import Link from "next/link";
 const style = {
   wrapper: "h-[25vh] w-[100vw] flex items-center justify-center flex flex-col",
-  smallHeading: "text-4xl md:text-6xl text-primary tracking-wider my-12",
+  smallHeading: "text-4xl md:text-6xl text-primary tracking-wider my-12 text-center",
   pagination: "flex flex-row",
   pagi: "text-lg md:text-md text-primary mx-1 cursor-pointer",
 };
