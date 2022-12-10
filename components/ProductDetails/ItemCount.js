@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const style = {
   wrapper:
-    "flex bg-[#f6f6f6] max-w-fit px-3 py-3 my-5 items-center justify-center mt-9 md:mt-7 mx-auto md:mx-0",
+    "flex bg-[#f6f6f6] max-w-fit px-3 py-3 my-5 items-center justify-center mt-9 md:mt-7 mx-auto md:mx-0 rounded-md",
   value:
     "border-l-[1px] border-r-[1px] border-primary px-5 md:px-10 cursor-pointer text-primary font-bold",
   value1: "px-5 px-10 cursor-pointer text-lg text-primary font-bold",

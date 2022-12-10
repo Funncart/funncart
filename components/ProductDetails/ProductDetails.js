@@ -48,7 +48,7 @@ const ProductDetails = ({
     }`,
     priceText: "font text-primary font-bold text-xl md:text-2xl my-3 mx-4",
     description: "text-sm text-black",
-    btn: "hover:bg-opacity-[0.9] transition duration-[200ms] my-6 bg-primary max-w-fit px-8 md:px-12 py-2 md:py-3 text-white font-semibold tracking-wide mx-auto md:mx-0 md:mr-3",
+    btn: "rounded-md hover:bg-opacity-[0.9] transition duration-[200ms] my-6 bg-primary max-w-fit px-8 md:px-12 py-2 md:py-3 text-white font-semibold tracking-wide mx-auto md:mx-0 md:mr-3",
     outOfStockBtn:
       "transition duration-[200ms] my-6 bg-primary bg-opacity-[0.7] max-w-fit px-8 md:px-12 py-2 md:py-3 text-white font-bold tracking-wide mx-auto md:mx-0 cursor-not-allowed",
 

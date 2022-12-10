@@ -3,8 +3,8 @@ import React, { useState, useEffect } from "react";
 const Size = (props) => {
   // props.categoryData WILL CONTAIN THE ARRAY OF OBJECTS
   const style = {
-    wrapper: `flex items-center mt-9 md:mt-9 ${"px-2 max-w-fit "}`,
-    para: `text-green-800 text-md font-bold `,
+    wrapper: `flex items-center mt-9 md:mt-9 ${"px-2 max-w-fit "} rounded-md`,
+    para: `text-primary text-md font-bold `,
     sizeContainer: "flex ml-6 flex-wrap",
   };
   const [Size, setSize] = useState(
@@ -35,8 +35,8 @@ const Size = (props) => {
                 <p
                   className={`${
                     Size == i.categorySizeTitle &&
-                    "flex items-center justify-center bg-green-700 text-white "
-                  } mx-3 px-4 py-2 cursor-pointer text-green-800 my-2 w-[20%] md:w-auto text-center`}
+                    "flex items-center justify-center bg-primarytext-white "
+                  } mx-3 px-4 py-2 cursor-pointer text-gray-800 my-2 w-[20%] md:w-auto text-center rounded-md`}
                   onClick={() =>
                     handleClick([i.categorySizeTitle, i.categorySizePrice])
                   }

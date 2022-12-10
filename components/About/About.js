@@ -12,7 +12,7 @@ const style = {
   coutnerContainer: "",
   signature:
     "my-8 flex justify-around items-center w-[70%] md:w-[60%] mx-auto md:mx-0",
-  img: "",
+  img: "scale-[0.8]",
   name: "text-xl sm:text-xl md:text-3xl lg:text-3xl italic ",
   signatureImg: "scale-[0.7] md:scale-[0.95]",
 };
@@ -48,7 +48,7 @@ const About = () => {
         </div>
         <div className={style.side2}>
           <img
-            src="/img/about.webp"
+            src="/img/about.jpg"
             alt=""
             className={style.img}
             style={{ clipPath: "polygon(0 0, 100% 10%, 100% 88%, 1% 100%)" }}

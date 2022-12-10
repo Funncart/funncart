@@ -22,9 +22,9 @@ const style = {
   heading:
     "text-5xl md:text-7xl text-secondary  my-2 md:my-3 w-[100%] md:w-[40%] text-center md:text-left font-semibold",
   para: "tracking-wider text-secondary text-lg md:text-xl my-3 md:my-8 text-center md:text-left",
-  btn: "px-8 md:px-6 py-3 md:py-4 transition duration-[200ms] max-w-fit mx-auto md:mx-0 ",
+  btn: "rounded-md px-8 md:px-6 py-3 md:py-4 transition duration-[200ms] max-w-fit mx-auto md:mx-0 ",
   btnContainer:
-    "my-2 flex items-center justify-start bg-secondary hover:bg-primary hover:text-secondary text-primary w-[80%] md:w-[20%] px-4",
+    "rounded-md my-2 flex items-center justify-start bg-secondary hover:bg-primary hover:text-secondary text-primary w-[80%] md:w-[20%] px-4",
   arrow: `text-xl`,
   mainContent:
     "w-[90%] md:w-[80%] mx-auto flex flex-col items-center md:items-start ",

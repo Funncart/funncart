@@ -12,7 +12,7 @@ const Navbar = () => {
     mainNav: "flex items-center justify-between py-1 hidden sm:flex",
     list: "list-none cursor-pointer   text-primary font-semibold md:mx-4 hover:opacity-[0.8]",
     navContainer: "flex items-center justify-center",
-    cartButton: "flex items-center justify-center mx-5 bg-primary px-3 py-1",
+    cartButton: "flex items-center justify-center mx-5 bg-primary px-3 py-1 rounded",
     img: "",
   };
 
