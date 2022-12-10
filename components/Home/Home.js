@@ -1,22 +1,10 @@
 import React, { useState } from "react";
-import Link from "next/link";
-import { Swiper, SwiperSlide } from "swiper/react";
 import useWindowSize from "../../hooks/windowSize";
 import { AiOutlineArrowRight } from "react-icons/ai";
-import "swiper/css";
 import styled from "styled-components";
-import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
-import Features from "./Features/Features";
 import FeaturedProducts from "./FeaturedProducts/FeaturedProducts";
-import ProductsButton from "./ProductsButton/ProductsButton";
-import Image from "next/image";
-import "swiper/css/effect-fade";
-import Overlay from "./Overlay/Overlay";
 import Info from "./Info/Info";
+import HomeCategories from "./HomeCategories/HomeCategories";
 const style = {
   wrapper: "h-[100vh] w-[100vw] flex flex-col h-[70%]",
   heading:
@@ -66,6 +54,7 @@ const Home = ({}) => {
         </div>
       </FeaturedBackground1>
       <FeaturedProducts />
+      <HomeCategories />
       <Info />
     </div>
   );

@@ -8,11 +8,13 @@ const SingleFeaturedProduct = ({ item }) => {
   const { width } = useWindowSize();
   const style = {
     wrapper:
-      "px-2 md:px-4 py-4 md:py-4 bg-white flex flex-col items-start w-[75%] md:w-[30%] my-2 ",
+      "px-2 md:px-4 py-4 md:py-4 bg-white flex flex-col justify-center items-center w-[75%] md:w-[30%] my-2 ",
     img: "mb-4",
     name: "font font-semibold my-2 md:my-3 text-sm md:text-sm text-primary mx-auto text-center md:text-center h-[20%] flex items-center justify-center  ",
     price: `font font-bold my-1 md:my-3  text-primary ${
-      item.discount ? "line-through opacity-[0.4] text-sm md:text-md" : 'text-sm md:text-lg'
+      item.discount
+        ? "line-through opacity-[0.4] text-sm md:text-md"
+        : "text-sm md:text-lg"
     }`,
     buttonContainer:
       "mx-auto transition-all duration-[350ms] cursor-pointer flex items-center justify-center bg-secondary hover:bg-opacity-[0.8] px-2 md:px-8 py-3 md:py-3  w-[100%] md:max-w-none md:w-[100%]",
@@ -21,20 +23,20 @@ const SingleFeaturedProduct = ({ item }) => {
       " px-3 py-6 bg-secondary rounded-full cursor-pointer text-black transform rotate-[-45deg] font-bold",
     discoutnedPrice:
       "font my-1 md:my-3 text-sm md:text-lg text-primary ml-6 font-bold",
-    freeDelivery: "text-white text-center mx-auto bg-pink-500 px-5 py-0 md:py-1",
+    freeDelivery:
+      "text-white text-center mx-auto bg-pink-500 px-5 py-0 md:py-1",
   };
   return (
     <NextLink href={`/${item.slug.current}`} passHref>
       <div className={style.wrapper} style={{ fontFamily: "Lato, sans-serif" }}>
         <div className="content">
           <div class="content-overlay"></div>
-
-          <div className="content-image">
+          <div className="content-image flex items-center justify-center">
             <img
               src={`${urlForThumbnail(item.images[0])}`}
               alt="Image for product"
-              width={`${width < 700 ? 270 : 230}`}
-              height={`${width < 700 ? 140 : 230}`}
+              width={`${width < 700 ? 270 : 250}`}
+              height={`${width < 700 ? 140 : 250}`}
             />
           </div>
           <div class="content-details fadeIn-bottom fadeIn-right text-black">

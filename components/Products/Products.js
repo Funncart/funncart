@@ -37,7 +37,6 @@ const Products = () => {
   if (category == "vintage") {
     categoryHeading = "Vintage";
   }
-  console.log(category);
   if (category == "lightsandlamps") {
     categoryHeading = "Lights and Lamps";
   }
