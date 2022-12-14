@@ -5,6 +5,7 @@ import styled from "styled-components";
 import FeaturedProducts from "./FeaturedProducts/FeaturedProducts";
 import Info from "./Info/Info";
 import HomeCategories from "./HomeCategories/HomeCategories";
+import Link from "next/link";
 const style = {
   wrapper: "h-[100vh] w-[100vw] flex flex-col h-[70%]",
   heading:
@@ -47,10 +48,12 @@ const Home = ({}) => {
         <div className={style.mainContent}>
           <h2 className={style.heading}>Flash Sale is ON</h2>
           <p className={style.para}>Get upto 20% off sitewide</p>
-          <div className={style.btnContainer}>
-            <button className={style.btn}>SHOP NOW</button>
-            <AiOutlineArrowRight className={style.arrow} />
-          </div>
+          <Link href="/products">
+            <div className={style.btnContainer}>
+              <button className={style.btn}>SHOP NOW</button>
+              <AiOutlineArrowRight className={style.arrow} />
+            </div>
+          </Link>
         </div>
       </FeaturedBackground1>
       <FeaturedProducts />

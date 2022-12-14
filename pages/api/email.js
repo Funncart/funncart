@@ -9,7 +9,7 @@ export default function (req, res) {
           },
           secure: true,
         })
-        console.log(req.body)
+        // console.log(req.body)
         const mailData = {
           from: 'aandh.firm@gmail.com',
           to: 'funncartstore@gmail.com',
