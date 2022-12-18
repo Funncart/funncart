@@ -48,8 +48,10 @@ const NavDrawer = () => {
           className="h-[60vh] font flex flex-col my-12"
           style={{ fontFamily: "Poppins, serif" }}
         >
-          {/* <Image src={""} height={1} width={1}/> */}
-          <h2 className="mx-auto my-16">LOGO</h2>
+          <div className="flex items-center justify-center">
+            <img src={"/logo.png"} height={40} width={100} />
+          </div>
+          {/* <h2 className="mx-auto my-16">LOGO</h2> */}
           {/* adding the navs */}
           <div className="flex  flex-col">
             <Link href="/">
@@ -114,8 +116,8 @@ const NavDrawer = () => {
               }
             </div>
             <div>
-              {/* <Image src={""} height={1} width={1}/> */}
-              <p className="w-[70%]">logo</p>
+              <Image src={"/logo.png"} height={35} width={35} />
+              {/* <p className="w-[70%]">logo</p> */}
             </div>
             <Link href="">
               <button className="flex items-center justify-end mx-0  px-1 py-1 text-xs w-[15%]">

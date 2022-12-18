@@ -10,12 +10,12 @@ const style = {
   btnContainer: "flex md:flex-row mb-7 mt-7 justify-around",
   left: "flex flex-col items-center md:items-start justify-between md:w-[50%] mx-3 md:mx-12",
   right:
-    "flex flex-col md:flex-row md:w-[50%] md:items-start md:justify-center",
-  col1: "md:w-[50%] flex flex-col items-start justify-start mx-8 md:mx-0",
-  col2: "md:w-[50%] flex flex-col items-start justify-start mx-8 md:mx-0",
-  list: "text-white decoration-none list-none my-2 cursor-pointer border-move-animation1",
+    "flex flex-col md:flex-row md:w-[50%] md:items-center md:justify-center mx-auto ",
+  col1: "md:w-[50%] flex flex-col items-center justify-center mx-8 md:mx-0",
+  col2: "md:w-[50%] flex flex-col items-center justify-center mx-8 md:mx-0",
+  list: "text-white decoration-none list-none my-2 cursor-pointer border-move-animation1 text-center ",
   list1:
-    "text-white decoration-none list-none my-2 cursor-pointer border-move-animation1 ",
+    "text-white decoration-none list-none my-2 cursor-pointer border-move-animation1 text-center ",
 };
 const Footer = () => {
   const tokenWithWriteAccess =
@@ -56,12 +56,12 @@ const Footer = () => {
     <div className={style.wrapper} style={{ fontFamily: "Poppins,serif" }}>
       <div className={style.footerNav}>
         {/* left side of the footer */}
-        <div className={style.left}>
-          {/* <Image width={190} height={190} src="/logo.png" /> */}
+        {/* <div className={style.left}>
+          <Image width={190} height={190} src="/logo.png" />
           <h2 className="text-white text-5xl">LOGO HERE</h2>
-          {/* adding the play store and apps store buttons */}
+          adding the play store and apps store buttons
           <div className={style.btnContainer}></div>
-        </div>
+        </div> */}
         <div className={style.right}>
           <div className={style.col1}>
             <Link href="/">

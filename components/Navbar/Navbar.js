@@ -8,12 +8,13 @@ const Navbar = () => {
   const style = {
     navDrawer: "flex sm:hidden items-center justify-between ",
     wrapper:
-      "absolute sm:relative text-gray-200 w-[100%] lg:w-[96%] pt-1 md:pt-2 z-10",
+      " text-gray-200 w-[100%] lg:w-[100%]  z-10 fixed bg-white",
     mainNav: "flex items-center justify-between py-1 hidden sm:flex",
     list: "list-none cursor-pointer   text-primary font-semibold md:mx-4 hover:opacity-[0.8]",
     navContainer: "flex items-center justify-center",
-    cartButton: "flex items-center justify-center mx-5 bg-primary px-3 py-1 rounded",
-    img: "",
+    cartButton:
+      "flex items-center justify-center mx-5 bg-primary px-3 py-1 rounded",
+    img: "mx-12",
   };
 
   return (
@@ -21,7 +22,7 @@ const Navbar = () => {
     <div className={style.wrapper}>
       <nav className={style.mainNav}>
         <div className={style.img}>
-          {/* <Image src={""} height={1} width={1} /> */}
+          <Image src={"/logo.png"} height={50} width={50} />
           {/* <img src={""} height={1} width={1} /> */}
         </div>
         <div className="flex items-center justify-center">

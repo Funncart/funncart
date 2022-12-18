@@ -43,7 +43,7 @@ const ProductDetails = ({
       " md:mr-12 overflow-hidden flex items-center justify-center flex-col",
     contentContainer: "w-[100%] md:w-[60%] flex flex-col",
     header1: "font flex items-center justify-center mt-4",
-    name: "font text-2xl md:text-3xl font-semibold text-secondary flex-1",
+    name: "font text-2xl md:text-3xl font-semibold text-primary flex-1",
     priceTextCut: `font text-red-500 font-bold text-xl md:text-lg my-3 decoration-red-500 ${
       discount && "line-through"
     }`,

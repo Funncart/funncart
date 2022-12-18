@@ -17,7 +17,7 @@ const SingleFeaturedProduct = ({ item }) => {
         : "text-sm md:text-lg"
     }`,
     buttonContainer:
-      "mx-auto transition-all duration-[350ms] cursor-pointer flex items-center justify-center bg-secondary hover:bg-opacity-[0.8] px-2 md:px-8 py-3 md:py-3  w-[100%] md:max-w-none md:w-[100%]",
+      "mx-auto transition-all duration-[350ms] cursor-pointer flex items-center justify-center bg-primary hover:bg-opacity-[0.9] px-2 md:px-8 py-3 md:py-3  w-[100%] md:max-w-none md:w-[100%]",
     btn: "flex-1 tracking-wide text-white text-xs md:text-sm",
     hoverButton:
       " px-3 py-6 bg-secondary rounded-full cursor-pointer text-black transform rotate-[-45deg] font-bold",
