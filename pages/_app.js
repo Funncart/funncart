@@ -34,9 +34,9 @@ function MyApp({ Component, pageProps }) {
         >
           11.11 Sale Now Active. Limited Time Discounts{" "}
         </p> */}
-        <p className="py-1 text-xs text-center bg-primary text-white">
+        {/* <p className="py-1 text-xs text-center bg-primary text-white">
           FREE SHIPPING ON ALL ORDERS RS. 1999 & ABOVE
-        </p>
+        </p> */}
         <Navbar click={Click} />
         <AnimatePresence exitBeforeEnter>
           <div
