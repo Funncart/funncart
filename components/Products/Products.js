@@ -16,7 +16,7 @@ const style = {
 };
 
 const Products = () => {
-  const [category, setCategory] = useState("allproducts");
+  const [category, setCategory] = useState("");
   const [product, setProduct] = useState([]);
   const handleClickedCategory = (value) => {
     Cookies.set("clickedNav", value);
@@ -48,6 +48,9 @@ const Products = () => {
   }
   if (category == "woodwork") {
     categoryHeading = "Wood Work";
+  }
+  if (category == "allproducts") {
+    categoryHeading = "All Products";
   }
 
   return (

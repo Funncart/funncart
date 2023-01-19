@@ -17,6 +17,14 @@ const CategoriesNav = (props) => {
     <ul className={style.wrapper} style={{ fontFamily: "Poppins, sans-serif" }}>
       <li
         className={`text-primary border-move-animation-products cursor-pointer mx-4 my-2 ${
+          Click == "allproducts" && " font-bold "
+        }`}
+        onClick={() => handleNavClick("allproducts")}
+      >
+        All Products
+      </li>
+      <li
+        className={`text-primary border-move-animation-products cursor-pointer mx-4 my-2 ${
           Click == "vintage" && " font-bold "
         }`}
         onClick={() => handleNavClick("vintage")}
