@@ -23,9 +23,9 @@ const style = {
   onlinePaymentNumber: "text-primary my-2",
 };
 const PaymentDetails = (props) => {
-  const [PayOnline, setPayOnline] = useState(true);
+  const [PayOnline, setPayOnline] = useState(false);
   const payOnlineClickHandler = () => {
-    // setPayOnline((prev) => !prev);
+    setPayOnline((prev) => !prev);
   };
   const [Promo, setPromo] = useState("");
   const handlePromoChange = (e) => {

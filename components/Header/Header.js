@@ -2,13 +2,13 @@ import React from "react";
 // imprt header.webp
 import Link from "next/link";
 const style = {
-  wrapper: "h-[25vh] w-[100vw] flex items-center justify-center flex flex-col",
+  wrapper: "h-[40vh] w-[100vw] flex items-center justify-center flex flex-col",
   smallHeading: "text-4xl md:text-6xl text-primary tracking-wider my-12 text-center",
   pagination: "flex flex-row",
   pagi: "text-lg md:text-md text-primary mx-1 cursor-pointer",
 };
 const Header = ({ headingText }) => {
-  return (
+  return (  
     // will take the text as the argument
     <div
       className={style.wrapper}
