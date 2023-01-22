@@ -35,7 +35,7 @@ const Cart = () => {
   useEffect(() => {
     if (typeof window !== "undefined") {
       console.log(localStorage.getItem("cart"));
-      console.log(Total);
+      // console.log(Total);
       if (localStorage.getItem("cart")) {
         const data = JSON.parse(localStorage.getItem("cart"));
         let sum = 0;
@@ -61,9 +61,9 @@ const Cart = () => {
     setCartItems(arr);
   };
   const handleTotal = (value) => {
-    if (value == 10 && !Apply) {
+    if (value == 15 && !Apply) {
       setApply(true);
-      setTotal((prev) => prev * 0.9);
+      setTotal((prev) => prev * 0.85);
     }
     if (value == 20 && !Apply) {
       setApply(true);
@@ -115,9 +115,9 @@ const Cart = () => {
                   city: CheckoutData.City,
                   address: CheckoutData.Address,
                   order: [...orderItems],
-                  total: `${Total} + Rs199 (Shipping Fee)`,
+                  // total: `${Total} + Rs199 (Shipping Fee)`,
                   total:
-                    Total >= 1999
+                    Total >= 1998
                       ? `${Total} + Free Shipping`
                       : `${Total} + Rs199 (Shipping Fee)`,
                 },

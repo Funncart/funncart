@@ -47,8 +47,8 @@ const PaymentDetails = (props) => {
       }
     }
     if (Promo === "NUSTIAN" || Promo === "Nustian" || Promo === "nustian") {
-      if (props.total.toFixed(1) * 0.1 < 500) {
-        props.handleTotal(10);
+      if (props.total.toFixed(1) * 0.15 < 500) {
+        props.handleTotal(15);
       } else {
         props.handleTotal(500);
       }
@@ -76,7 +76,7 @@ const PaymentDetails = (props) => {
       </div>
       <div className={style.subtotal}>
         <p className={style.para}>Shipping Fee</p>
-        {props.total > 1999 ? (
+        {props.total > 1998 ? (
           <p className={style.amount}>Free</p>
         ) : (
           <p className={style.amount}>+ Rs 199</p>
@@ -138,7 +138,7 @@ const PaymentDetails = (props) => {
         style={{ fontFamily: "Poppins, sans-serif" }}
       >
         <p className={style.para}>Order Total </p>
-        {props.total > 1999 ? (
+        {props.total > 1998 ? (
           <p className={style.amount}>Rs. {Math.round(+props.total)}</p>
         ) : (
           <p className={style.amount}>Rs. {Math.round(+props.total + 199)}</p>
