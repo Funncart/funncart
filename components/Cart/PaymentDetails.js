@@ -23,9 +23,9 @@ const style = {
   onlinePaymentNumber: "text-primary my-2",
 };
 const PaymentDetails = (props) => {
-  const [PayOnline, setPayOnline] = useState(false);
-  const payOnlineClickHandler = () => {
-    setPayOnline((prev) => !prev);
+  const [PayOnline, setPayOnline] = useState("COD");
+  const payOnlineClickHandler = (e) => {
+    setPayOnline(e.target.value);
   };
   const [Promo, setPromo] = useState("");
   const handlePromoChange = (e) => {
@@ -102,19 +102,31 @@ const PaymentDetails = (props) => {
         {/* adding the online payment option */}
       </form>
       <div className={style.onlinePayment}>
-        <div className="onlineContainer flex items-center justify-center flex-col">
-          {/* <p className="text-primary text-center mx-auto">
-            Get 5% off via online Payment
-          </p> */}
-          <p
-            onClick={payOnlineClickHandler}
-            className="rounded hover:bg-opacity-[0.95] cursor-pointer text-white text-center mx-auto bg-primary px-3 md:px-6 py-2 md:py-1 my-3 tracking-wider"
-          >
-            Pay Online
-          </p>
-        </div>
+        <section className="flex flex w-[75%] md:w-[50%] mx-auto my-3">
+          <input
+            type="radio"
+            id="COD"
+            value="COD"
+            onChange={payOnlineClickHandler}
+            checked={PayOnline == "COD" ? true : false}
+            className="mx-8 flex "
+          />
+          <label htmlFor="COD">Cash on Delivery</label>
+        </section>
+        <section className="flex flex w-[75%] md:w-[50%] mx-auto my-3">
+          <input
+            type="radio"
+            id="online"
+            value="online"
+            checked={PayOnline == "online" ? true : false}
+            className="mx-8"
+            onChange={payOnlineClickHandler}
+          />
+          <label htmlFor="online">Online Payment</label>
+        </section>
+
         {/* showing the online payment details */}
-        {PayOnline && (
+        {PayOnline == "online" && (
           <div className={style.oninePaymentDetailsContainer}>
             <div className={style.singlePaymentMethod}>
               <img src="/abl.png" alt="" width={120} height={60} />
@@ -154,7 +166,7 @@ const PaymentDetails = (props) => {
       )}
 
       <button className={style.btn} onClick={props.placeOrder}>
-        {PayOnline ? "Paid and Place Order" : "Place Order"}
+        {PayOnline == "online" ? "Paid and Place Order" : "Place Order"}
       </button>
     </div>
   );
