@@ -97,11 +97,8 @@ const NavDrawer = () => {
       {/* below string will set the location of the drawer */}
       {["left"].map((anchor) => (
         <React.Fragment key={anchor}>
-          <button
-            onClick={toggleDrawer(anchor, true)}
-            className="p-2 my-1 flex items-center justify-between w-[100vw]"
-          >
-            <div className="w-[15%]">
+          <button className="p-2 my-1 flex items-center justify-between w-[100vw]">
+            <div className="w-[15%]"  onClick={toggleDrawer(anchor, true)}>
               {
                 <svg
                   viewBox="0 0 100 80"
@@ -119,7 +116,7 @@ const NavDrawer = () => {
               <Image src={"/logo.png"} height={35} width={35} />
               {/* <p className="w-[70%]">logo</p> */}
             </div>
-            <Link href="">
+            <Link href="/cart">
               <button className="flex items-center justify-end mx-0  px-1 py-1 text-xs w-[15%]">
                 <AiOutlineShoppingCart className="text-2xl md:text-xl text-primary mx-2" />
               </button>
