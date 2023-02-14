@@ -15,8 +15,8 @@ const style = {
   let: "",
 };
 
-const Products = () => {
-  const [category, setCategory] = useState("");
+const Products = ({ cat }) => {
+  const [category, setCategory] = useState(Cookies.get("clickedNav"));
   const [product, setProduct] = useState([]);
   const handleClickedCategory = (value) => {
     Cookies.set("clickedNav", value);
@@ -24,6 +24,9 @@ const Products = () => {
   };
   // sending the request to get the data from the server of sanity
   useEffect(() => {
+    if (Cookies.get("clickedNav") === "") {
+      Cookies.set("clickedNav", cat);
+    }
     const fetchData = async () => {
       const p = await client.fetch(`*[_type == "allProduct"]`);
       setProduct(p);
@@ -59,16 +62,12 @@ const Products = () => {
       {/* adding the categories */}
       <div className={style.catergoriesContainer}>
         <h2 className={style.smallHeading}>Categories</h2>
-        <CategoriesNav clickedCategory={handleClickedCategory} />
+        <CategoriesNav clickedCategory={handleClickedCategory} cat={cat} />
       </div>
       {/* add the products rendering function */}
       <div className={style.productsGrid}>
         <h2 className={style.smallHeading}>{categoryHeading}</h2>
-
-        <CategoriesGrid
-          category={Cookies.get("clickedNav") || "vintage"}
-          data={product}
-        />
+        <CategoriesGrid category={Cookies.get("clickedNav")} data={product} />
       </div>
     </div>
   );

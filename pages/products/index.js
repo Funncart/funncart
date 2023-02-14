@@ -1,17 +1,15 @@
-import React from 'react'
-import Products from '../../components/Products/Products'
-import Animator from '../../components/UI/Animator'
-import Home from '../../components/Home/Home'
-const style = {
-
-
-}
+import React from "react";
+import Products from "../../components/Products/Products";
+import Animator from "../../components/UI/Animator";
+import Cookies from "js-cookie";
+const style = {};
+Cookies.set("clickedNav", "allproducts");
 const ProductsRoute = () => {
   return (
     <Animator>
-      <Products />
+      <Products cat={"allproducts"} />
     </Animator>
-  )
-}
+  );
+};
 
-export default ProductsRoute
+export default ProductsRoute;
