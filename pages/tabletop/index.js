@@ -6,12 +6,12 @@ const style = {
 
 
 }
-Cookies.set("clickedNav", "tabletop");
+// Cookies.set("clickedNav", "tabletop");
 
 const ProductsRoute = () => {
   return (
     <Animator>
-      <Products cat={'tabletop'}/>
+      <Products cat={'tabletop'} categoryHeading={'Table Top'}/>
     </Animator>
   )
 }

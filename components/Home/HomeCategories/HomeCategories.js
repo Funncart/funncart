@@ -1,6 +1,6 @@
 import React from "react";
-import Link from "next/link";
 import Cookies from "js-cookie";
+import Link from "next/link";
 const style = {
   wrapper: "px-4 py-4",
   headingContainer: "flex items-center jusitfy-center flex-col my-8",
@@ -25,7 +25,7 @@ function HomeCategories() {
       </div>
       <div className={style.categoriesContainer}>
         <div className="w-[90%] md:w-[50%] flex flex-col items-center justify-center">
-          <Link href="/products">
+          <Link href="/vintage">
             <p
               className={style.singleCategory}
               onClick={() => Cookies.set("clickedNav", "vintage")}
@@ -33,7 +33,7 @@ function HomeCategories() {
               VINTAGE
             </p>
           </Link>
-          <Link href="/products">
+          <Link href="/tabletop">
             <p
               className={style.singleCategory}
               onClick={() => Cookies.set("clickedNav", "tabletop")}
@@ -41,7 +41,7 @@ function HomeCategories() {
               TABLE TOP
             </p>
           </Link>
-          <Link href="/products">
+          <Link href="/lightsandlamps">
             <p
               className={style.singleCategory}
               onClick={() => Cookies.set("clickedNav", "lightsandlamps")}
@@ -51,7 +51,7 @@ function HomeCategories() {
           </Link>
         </div>
         <div className="w-[90%] md:w-[50%] flex flex-col items-center justify-center">
-          <Link href="/products">
+          <Link href="/hourglass">
             <p
               className={style.singleCategory}
               onClick={() => Cookies.set("clickedNav", "hourglass")}
@@ -59,7 +59,7 @@ function HomeCategories() {
               HOURGLASS
             </p>
           </Link>
-          <Link href="/products">
+          <Link href="/mirrorcomb">
             <p
               className={style.singleCategory}
               onClick={() => Cookies.set("clickedNav", "mirrorcomb")}
@@ -67,7 +67,7 @@ function HomeCategories() {
               MIRROR COMB
             </p>
           </Link>
-          <Link href="/products">
+          <Link href="/woodwork">
             <p
               className={style.singleCategory}
               onClick={() => Cookies.set("clickedNav", "woodwork")}

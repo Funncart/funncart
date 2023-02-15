@@ -6,12 +6,12 @@ const style = {
 
 
 }
-Cookies.set("clickedNav", "vintage");
+// Cookies.set("clickedNav", "vintage");
 
 const ProductsRoute = () => {
   return (
     <Animator>
-      <Products cat={'vintage'}/>
+      <Products cat={'vintage'} categoryHeading={'Vintage'}/>
     </Animator>
   )
 }

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Header from "../Header/Header";
 import CategoriesNav from "./CategoriesNav";
 import CategoriesGrid from "./CategoriesGrid";
+import Link from "next/link";
 import client from "../../pages/api/client";
 import Cookies from "js-cookie";
 const style = {
@@ -15,7 +16,7 @@ const style = {
   let: "",
 };
 
-const Products = ({ cat }) => {
+const Products = ({ cat, categoryHeading: heading }) => {
   const [category, setCategory] = useState(Cookies.get("clickedNav"));
   const [product, setProduct] = useState([]);
   const handleClickedCategory = (value) => {
@@ -62,12 +63,14 @@ const Products = ({ cat }) => {
       {/* adding the categories */}
       <div className={style.catergoriesContainer}>
         <h2 className={style.smallHeading}>Categories</h2>
-        <CategoriesNav clickedCategory={handleClickedCategory} cat={cat} />
+        {/* <CategoriesNav clickedCategory={handleClickedCategory} cat={cat} /> */}
+        <CategoriesNav cat={cat} />
       </div>
       {/* add the products rendering function */}
       <div className={style.productsGrid}>
-        <h2 className={style.smallHeading}>{categoryHeading}</h2>
-        <CategoriesGrid category={Cookies.get("clickedNav")} data={product} />
+        <h2 className={style.smallHeading}>{heading}</h2>
+        <CategoriesGrid category={cat} data={product} />
+        {/* <CategoriesGrid category={Cookies.get("clickedNav")} data={product} /> */}
       </div>
     </div>
   );
