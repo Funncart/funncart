@@ -23,7 +23,7 @@ function MyApp({ Component, pageProps }) {
         <link rel="shortcut icon" href="/logo.png" type="image/x-icon" />
         <meta
           name="description"
-          content="A marketplace for handmade products"
+          content="Funncart | Market place for handcrafted products"
         />
       </Head>
       {/* bg-[#f6f6f6] */}
