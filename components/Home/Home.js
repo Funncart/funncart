@@ -6,6 +6,7 @@ import FeaturedProducts from "./FeaturedProducts/FeaturedProducts";
 import Info from "./Info/Info";
 import HomeCategories from "./HomeCategories/HomeCategories";
 import Link from "next/link";
+import Sellers from "./Sellers/Sellers";
 const style = {
   wrapper: "h-[100vh] w-[100vw] flex flex-col h-[70%]",
   heading:
@@ -58,6 +59,7 @@ const Home = ({}) => {
       </FeaturedBackground1>
       <FeaturedProducts />
       <HomeCategories />
+      <Sellers />
       <Info />
     </div>
   );
