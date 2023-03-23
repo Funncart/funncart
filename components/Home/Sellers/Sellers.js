@@ -8,7 +8,7 @@ const style = {
   trendingProductsContainer:
     "flex items-center justify-around w-[95%] md:w-[70%] mx-auto flex-wrap",
   smallHeading:
-    " text-4xl md:text-4xl max-w-fit mx-auto py-2 text-green-900 flex",
+    "text-4xl md:text-4xl max-w-fit mx-auto py-2 text-green-900 flex",
   sellersContainer:
     "flex w-[99%] lg:w-[50%] mx-auto items-start md:items-center justify-between my-8 md:my-8 flex-col md:flex-row",
   singleSeller: "font text-primary hover:opacity-[0.9] py-5 font-semibold w-[100%] md:w-[70%] ",
@@ -27,12 +27,12 @@ const Sellers = () => {
         <section className={style.singleSeller}>
           <section className="">
             <h2 className={style.sellerName}>Shahriyar Amin</h2>
-            <p className={style.sellerDetails}>
+            {/* <p className={style.sellerDetails}>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo
               deleniti enim dolore optio culpa, ullam aliquam ut odit nisi
               quaerat.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo
               deleniti enim dolore optio culpa, ullam aliquam ut odit nisi
-            </p>
+            </p> */}
           </section>
         </section>
         <Link href="/woodwork">
