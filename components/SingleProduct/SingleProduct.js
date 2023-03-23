@@ -44,8 +44,8 @@ const SingleProduct = ({ item }) => {
         <h2 className={style.name}>{item.name.toUpperCase()}</h2>
         {item.discount
           ? (item.price - (item.price * item.discount) / 100).toFixed(0) >=
-              1999 && <div className={style.freeDelivery}>Free Delivery</div>
-          : item.price >= 1999 && (
+              2998 && <div className={style.freeDelivery}>Free Delivery</div>
+          : item.price >= 2998 && (
               <div className={style.freeDelivery}>Free Delivery</div>
             )}
         {/* adding the discounted price */}

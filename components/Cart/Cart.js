@@ -117,7 +117,7 @@ const Cart = () => {
                   order: [...orderItems],
                   // total: `${Total} + Rs199 (Shipping Fee)`,
                   total:
-                    Total >= 1998
+                    Total >= 2998
                       ? `${Total} + Free Shipping`
                       : `${Total} + Rs199 (Shipping Fee)`,
                 },
