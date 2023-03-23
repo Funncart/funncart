@@ -48,7 +48,7 @@ const Home = ({}) => {
       <FeaturedBackground1>
         <div className={style.mainContent}>
           <h2 className={style.heading}>A Marketplace for handcrafted products</h2>
-          <p className={style.para}>Free shipping on orders above Rs.1999</p>
+          <p className={style.para}>Free shipping on orders above Rs.2999</p>
           <Link href="/products">
             <div className={style.btnContainer}>
               <button className={style.btn}>SHOP NOW</button>
