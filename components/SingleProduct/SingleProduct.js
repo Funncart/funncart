@@ -25,7 +25,7 @@ const SingleProduct = ({ item }) => {
   };
   return (
     <NextLink href={`/${item.slug.current}`} passHref>
-      <div className={style.wrapper} style={{ fontFamily: "Lato, sans-serif" }}>
+      <a className={style.wrapper} style={{ fontFamily: "Lato, sans-serif" }}>
         <div className="content">
           <div class="content-overlay"></div>
 
@@ -70,7 +70,7 @@ const SingleProduct = ({ item }) => {
           <button className={style.btn}>View Details</button>
           <AiOutlineShoppingCart className="mx-3 text-lg text-white" />
         </div>
-      </div>
+      </a>
     </NextLink>
   );
 };
