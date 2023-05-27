@@ -98,19 +98,17 @@ const NavDrawer = () => {
       {["left"].map((anchor) => (
         <React.Fragment key={anchor}>
           <button className="p-2 my-1 flex items-center justify-between w-[100vw]">
-            <div className="w-[15%]"  onClick={toggleDrawer(anchor, true)}>
-              {
-                <png
-                  viewBox="0 0 100 80"
-                  width="30"
-                  height="20"
-                  style={{ fill: "rgb(30,41,59)" }}
-                >
-                  <rect width="100" height="20"></rect>
-                  <rect y="30" width="100" height="20"></rect>
-                  <rect y="60" width="100" height="20"></rect>
-                </png>
-              }
+            <div className="w-[15%]" onClick={toggleDrawer(anchor, true)}>
+              <svg
+                viewBox="0 0 100 80"
+                width="30"
+                height="20"
+                style={{ fill: "rgb(30,41,59)" }}
+              >
+                <rect width="100" height="20"></rect>
+                <rect y="30" width="100" height="20"></rect>
+                <rect y="60" width="100" height="20"></rect>
+              </svg>
             </div>
             <div>
               <Image src={"/logo1.png"} height={35} width={35} />
