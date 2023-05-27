@@ -49,11 +49,11 @@ const NavDrawer = () => {
           style={{ fontFamily: "Poppins, serif" }}
         >
           <div className="flex items-center justify-center">
-            <img src={"/logo.png"} height={40} width={100} />
+            <img src={"/Logo-Colored.svg"} height={40} width={100} />
           </div>
           {/* <h2 className="mx-auto my-16">LOGO</h2> */}
           {/* adding the navs */}
-          <div className="flex  flex-col">
+          <div className="flex  flex-col mt-48">
             <Link href="/">
               <h2 className="text-primary font font-semibold mx-4 my-2 cursor-pointer">
                 HOME
@@ -113,7 +113,7 @@ const NavDrawer = () => {
               }
             </div>
             <div>
-              <Image src={"/logo.png"} height={35} width={35} />
+              <Image src={"/Logo-Colored.svg"} height={35} width={35} />
               {/* <p className="w-[70%]">logo</p> */}
             </div>
             <Link href="/cart">
