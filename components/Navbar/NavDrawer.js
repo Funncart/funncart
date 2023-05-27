@@ -49,7 +49,7 @@ const NavDrawer = () => {
           style={{ fontFamily: "Poppins, serif" }}
         >
           <div className="flex items-center justify-center">
-            <img src={"/Logo-Colored.svg"} height={40} width={100} />
+            <img src={"/Logo-Colored.png"} height={40} width={100} />
           </div>
           {/* <h2 className="mx-auto my-16">LOGO</h2> */}
           {/* adding the navs */}
@@ -100,7 +100,7 @@ const NavDrawer = () => {
           <button className="p-2 my-1 flex items-center justify-between w-[100vw]">
             <div className="w-[15%]"  onClick={toggleDrawer(anchor, true)}>
               {
-                <svg
+                <png
                   viewBox="0 0 100 80"
                   width="30"
                   height="20"
@@ -109,11 +109,11 @@ const NavDrawer = () => {
                   <rect width="100" height="20"></rect>
                   <rect y="30" width="100" height="20"></rect>
                   <rect y="60" width="100" height="20"></rect>
-                </svg>
+                </png>
               }
             </div>
             <div>
-              <Image src={"/Logo-Colored.svg"} height={35} width={35} />
+              <Image src={"/Logo-Colored.png"} height={35} width={35} />
               {/* <p className="w-[70%]">logo</p> */}
             </div>
             <Link href="/cart">
