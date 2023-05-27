@@ -20,7 +20,7 @@ function MyApp({ Component, pageProps }) {
           Funncart | Market place for handcrafted products
         </title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+        <link rel="shortcut icon" href="/fav1.png" type="image/x-icon" />
         <meta
           name="description"
           content="Funncart | Market place for handcrafted products"
