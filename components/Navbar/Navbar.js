@@ -22,7 +22,7 @@ const Navbar = () => {
       <nav className={style.mainNav}>
         <Link  href="/">
           <div className={style.img}>
-            <Image src={"/Logo-Colored.png"} height={50} width={50} />
+            <Image src={"/logo1.png"} height={50} width={50} />
           </div>
           {/* <img src={""} height={1} width={1} /> */}
         </Link>
