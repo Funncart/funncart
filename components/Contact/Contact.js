@@ -33,7 +33,7 @@ const Contact = () => {
         </div>
         <div className={style.singleContactContainer}>
           <AiOutlineMail className="text-3xl text-primary bg-white rounded-full p-1 mx-4" />
-          <p className={style.para}>funncartstore@gmail.com</p>
+          <p className={style.para}>store.funncart@gmail.com </p>
         </div>
         {/* contact form */}
         <ContactForm />

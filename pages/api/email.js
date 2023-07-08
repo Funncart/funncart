@@ -12,7 +12,7 @@ export default function (req, res) {
         // console.log(req.body)
         const mailData = {
           from: 'aandh.firm@gmail.com',
-          to: 'funncartstore@gmail.com',
+          to: 'store.funncart@gmail.com',
           subject: `Message From Funncart Order Bot`,
           text: req.body[0][0],
           html: `<div>${req.body[0][0]} Ordered By ${req.body[1]} ( ${req.body[2]})</div>`
