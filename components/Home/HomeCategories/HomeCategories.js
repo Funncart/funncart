@@ -49,6 +49,13 @@ function HomeCategories() {
               LIGHTS AND LAMPS
             </p>
           </Link>
+          <Link href="/jewellery">
+            <p
+              className={style.singleCategory}
+              onClick={() => Cookies.set("clickedNav", "jewellery")}
+            >
+JEWELLERY            </p>
+          </Link>
         </div>
         <div className="w-[90%] md:w-[50%] flex flex-col items-center justify-center">
           <Link href="/hourglass">
@@ -75,6 +82,7 @@ function HomeCategories() {
               WOOD WORK
             </p>
           </Link>
+         
         </div>
       </div>
     </div>

@@ -85,6 +85,16 @@ const CategoriesNav = (props) => {
           Wood Work
         </li>
       </Link>
+      <Link href="/jewellery">
+        <li
+          className={`text-primary border-move-animation-products cursor-pointer mx-4 my-2 ${
+            Click == "jewellery" && " font-bold "
+          }`}
+          onClick={() => handleNavClick("jewellery")}
+        >
+          Jewellery
+        </li>
+      </Link>
     </ul>
   );
 };

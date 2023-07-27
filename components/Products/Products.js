@@ -53,6 +53,9 @@ const Products = ({ cat, categoryHeading: heading }) => {
   if (category == "woodwork") {
     categoryHeading = "Wood Work";
   }
+  if (category == "jewellery") {
+    categoryHeading = "Jewellery";
+  }
   if (category == "allproducts") {
     categoryHeading = "All Products";
   }
